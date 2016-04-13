@@ -20,28 +20,6 @@
                                 expression="org.springframework.stereotype.Controller"/>
     </context:component-scan>
 
-    <!-- 拦截器 -->
-    <!--<mvc:interceptors>-->
-
-        <!-- 全局变量注入拦截器 -->
-        <!--<bean class="com.xst.interceptor.FirstInterceptor"/>-->
-
-        <!--<mvc:interceptor>-->
-            <!--<mvc:mapping path="/resource/**" />-->
-        <!--</mvc:interceptor>-->
-
-        <!--<mvc:interceptor>-->
-            <!--&lt;!&ndash; 匹配路径 &ndash;&gt;-->
-            <!--<mvc:mapping path="/index/**" />-->
-            <!--<mvc:mapping path="/course/**" />-->
-            <!--<mvc:mapping path="/resource/**" />-->
-            <!--<mvc:mapping path="/group/**" />-->
-            <!--<bean-->
-                    <!--class="com.xst.interceptor.BreadCrumbInterceptor" />-->
-        <!--</mvc:interceptor>-->
-
-
-    <!--</mvc:interceptors>-->
 
     <!-- 系统配置 -->
     <context:property-placeholder location="classpath:conf/config.properties"/>
