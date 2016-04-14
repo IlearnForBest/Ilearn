@@ -28,19 +28,37 @@ public class CategoryDao extends BaseDao {
 
     public List<CateBean> getSecondCategory(){
 
-
         List<CateBean> cateBeans = new ArrayList<>();
         List<String> cate1s = getFirstCategory();
 
         for(String cate1 : cate1s){
 
             CateBean cateBean = new CateBean();
+
+            List<CateBean> cate2Beans = new ArrayList<>();
+            //cate2Beans = cateBean.getChildren();
+
             cateBean.setCate_name(cate1);
+
+
             String hql = "select distinct cate.category2 from CategoryEntity as cate where cate.category1='"+cate1+"'";
             Query query = query(hql);
-//            query.setString(0, cate2);
             List<String> cate2s =  query.list();
             cateBean.setCate2s(cate2s);
+
+            for(String cate2 : cate2s){
+
+                System.out.println("cate2: "+cate2);
+                CateBean cate2Bean = new CateBean();
+
+                cate2Bean.setCate2s(getThirdCategory(cate2));
+                cate2Bean.setCate_name(cate2);
+                cate2Beans.add(cate2Bean);
+
+            }
+
+
+            cateBean.setChildren(cate2Beans);
             cateBeans.add(cateBean);
         }
 
@@ -48,29 +66,17 @@ public class CategoryDao extends BaseDao {
 
     }
 
-    public List<CateBean> getThirdCategory(String firstCate){
+    public List<String> getThirdCategory(String cate2){
 
-
-        List<CateBean> cateBeans = new ArrayList<>();
-
-        String hql = "select distinct cate.category2 from CategoryEntity as cate where cate.category1=?";
+        String hql = "select cate.cateName from CategoryEntity as cate where cate.category2='"+cate2+"'";
         Query query = query(hql);
-        query.setString(0, firstCate);
-        List<String> cate2s = query.list();
+        List<String> cate3s =  query.list();
 
-        for(String cate2 : cate2s){
-
-            CateBean cateBean = new CateBean();
-            cateBean.setCate_name(cate2);
-            String hql1 = "from CategoryEntity as cate1 where cate1.category2='"+cate2+"'";
-            Query query1 = query(hql1);
-//            query.setString(0, cate2);
-            List<CategoryEntity> categoryEntities =  query1.list();
-            cateBean.setChildren(categoryEntities);
-            cateBeans.add(cateBean);
+        for(String cate3 : cate3s){
+            System.out.println("cate3 : "+cate3);
         }
 
-        return cateBeans;
+        return cate3s;
 
     }
 

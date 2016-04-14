@@ -9,7 +9,7 @@ public class CateBean {
 
     private String cate_name;
     private List<String> cate2s;
-    private List<CategoryEntity> children;
+    private List<CateBean> children;
 
     public String getCate_name() {
         return cate_name;
@@ -19,11 +19,11 @@ public class CateBean {
         this.cate_name = cate_name;
     }
 
-    public List<CategoryEntity> getChildren() {
+    public List<CateBean> getChildren() {
         return children;
     }
 
-    public void setChildren(List<CategoryEntity> children) {
+    public void setChildren(List<CateBean> children) {
         this.children = children;
     }
 
