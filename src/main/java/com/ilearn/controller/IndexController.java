@@ -31,7 +31,7 @@ public class IndexController {
 
         secondCates = categoryDao.getSecondCategory();
 
-        model.addAttribute("firstcates",firstCates);
+//        model.addAttribute("firstcates",firstCates);
         model.addAttribute("secondcates",secondCates);
 
 
