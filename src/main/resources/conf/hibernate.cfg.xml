@@ -13,14 +13,12 @@
 		<!-- 是否对sql语句格式化 -->
 		<property name="format_sql">true</property>
 
-
 		<!-- 设置数据隔离级别 -->
 		<property name="connection.isolation">2</property>
-		<!--<property name="autoReconnect">true</property>-->
+
 		<property name="connection.characterEncoding">utf8</property>
 		<property name="connection.url">jdbc:mysql://localhost:3306/db_ilearn</property>
 		<property name="connection.driver_class">com.mysql.jdbc.Driver</property>
-		<mapping class="com.ilearn.bean.ResourcesEntity"/>
 
 	</session-factory>
 </hibernate-configuration>

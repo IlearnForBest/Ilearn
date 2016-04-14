@@ -20,6 +20,19 @@
                                 expression="org.springframework.stereotype.Controller"/>
     </context:component-scan>
 
+    <!-- 拦截器 -->
+    <mvc:interceptors>
+
+        <!-- 全局变量注入拦截器 -->
+        <bean class="com.ilearn.interceptor.FirstInterceptor"/>
+
+        <mvc:interceptor>
+            <mvc:mapping path="/admin/*"/>
+            <bean id="loginInterceptor" class="com.ilearn.interceptor.LoginInterceptor"/>
+        </mvc:interceptor>
+
+
+    </mvc:interceptors>
 
     <!-- 系统配置 -->
     <context:property-placeholder location="classpath:conf/config.properties"/>
@@ -36,6 +49,9 @@
         <property name="suffix" value=".jsp"/>
     </bean>
 
-    <!-- 拦截器 -->
+
+    <!--<bean id="exceptionResolver" class="com.xst.controller.BaseController" />-->
+
+
 
 </beans>
