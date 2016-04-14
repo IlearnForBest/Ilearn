@@ -69,14 +69,18 @@
 
                                 <div class="list-menu">
                                     <ul>
-                                        <c:forEach items="${oneTwo.cate2s}" var="oneTwo_list" begin="0" end="4">            <%--这里取出了模型中的List--%>
+                                        <c:forEach items="${oneTwo.children}" var="oneTwo_list" begin="0" end="4">            <%--这里取出了模型中的List--%>
                                         <li class="list-floor">
-                                            <div class="floor-head"><strong>${oneTwo_list}</strong></div>      <%--右边二级目录测试--%>
+                                            <div class="floor-head"><strong>${oneTwo_list.cate_name}</strong></div>      <%--右边二级目录测试--%>
                                             <ul class="list-inline floor-menu">
-                                                <li class="entry">Android</li>
-                                                <li class="entry">IOS</li>
-                                                <li class="entry">WP</li>
-                                                <li class="entry">黑莓</li>
+                                                <c:forEach items="${oneTwo_list.cate2s}" var="thirdCate">
+                                                    <li class="entry">${thirdCate}</li>
+                                                    <%--<li class="entry">Android</li>--%>
+                                                    <%--<li class="entry">Android</li>--%>
+                                                    <%--<li class="entry">IOS</li>--%>
+                                                    <%--<li class="entry">WP</li>--%>
+                                                    <%--<li class="entry">黑莓</li>--%>
+                                                </c:forEach>
                                             </ul>
                                         </li>
                                         </c:forEach>
