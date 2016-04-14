@@ -34,15 +34,17 @@ public class CategoryDaoTest {
     @Test
     public void testGetSecondCategory(){
 
-        List<CateBean> cateBeans = categoryDao.getSecondCategory("IT/互联网");
+//        List<String> firstcates = categoryDao.getFirstCategory();
 
-        Assert.assertNotNull(cateBeans);
+        List<CateBean> secondCategory = categoryDao.getSecondCategory();
 
-        for(CateBean cateBean : cateBeans){
-            System.out.println(cateBean.getCate2_name());
-            List<CategoryEntity> cate3s = cateBean.getCate3_names();
-            for(CategoryEntity cate3 : cate3s){
-                System.out.println(cate3.getCateName());
+        Assert.assertNotNull(secondCategory);
+
+        for(CateBean cateBean : secondCategory){
+            System.out.println(cateBean.getCate_name());
+            List<String> cate2s = cateBean.getCate2s();
+            for(String  cate2 : cate2s){
+                System.out.println(cate2);
             }
             System.out.println();
 

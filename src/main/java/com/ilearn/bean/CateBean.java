@@ -7,22 +7,31 @@ import java.util.List;
  */
 public class CateBean {
 
-    private String cate2_name;
-    private List<CategoryEntity> cate3_names;
+    private String cate_name;
+    private List<String> cate2s;
+    private List<CategoryEntity> children;
 
-    public String getCate2_name() {
-        return cate2_name;
+    public String getCate_name() {
+        return cate_name;
     }
 
-    public void setCate2_name(String cate2_name) {
-        this.cate2_name = cate2_name;
+    public void setCate_name(String cate_name) {
+        this.cate_name = cate_name;
     }
 
-    public List<CategoryEntity> getCate3_names() {
-        return cate3_names;
+    public List<CategoryEntity> getChildren() {
+        return children;
     }
 
-    public void setCate3_names(List<CategoryEntity> cate3_names) {
-        this.cate3_names = cate3_names;
+    public void setChildren(List<CategoryEntity> children) {
+        this.children = children;
+    }
+
+    public List<String> getCate2s() {
+        return cate2s;
+    }
+
+    public void setCate2s(List<String> cate2s) {
+        this.cate2s = cate2s;
     }
 }

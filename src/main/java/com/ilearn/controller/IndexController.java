@@ -1,5 +1,6 @@
 package com.ilearn.controller;
 
+import com.ilearn.bean.CateBean;
 import com.ilearn.dao.CategoryDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -23,11 +24,18 @@ public class IndexController {
     @RequestMapping(value = "/index", method = RequestMethod.GET)
     public String index(Model model) {
 
+        List<CateBean> secondCates;
         List<String> firstCates;
 
         firstCates = categoryDao.getFirstCategory();
 
+        secondCates = categoryDao.getSecondCategory();
+
         model.addAttribute("firstcates",firstCates);
+        model.addAttribute("secondcates",secondCates);
+
+
+
         for(String s : firstCates){
             System.out.println("test : " + s);
         }
