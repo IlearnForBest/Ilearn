@@ -17,6 +17,10 @@ public class CategoryDao extends BaseDao {
 
 
 
+    public CategoryEntity getById(int id){
+        return get(CategoryEntity.class,id);
+    }
+
 
     public List<String> getFirstCategory(){
         String hql = "select distinct category1 from CategoryEntity";

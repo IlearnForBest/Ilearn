@@ -1,10 +1,12 @@
 package com.ilearn.dao;
 
+import com.ilearn.bean.CategoryEntity;
 import com.ilearn.bean.ResourcesEntity;
 import com.ilearn.page.Page;
 import com.ilearn.page.PageHandler;
 import org.hibernate.Query;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Repository;
 
 import javax.print.DocFlavor;
@@ -18,6 +20,10 @@ import java.util.List;
 public class ResourcesDao extends BaseDao {
 
     @Autowired
+    @Qualifier("categoryDao")
+    private CategoryDao categoryDao;
+
+    @Autowired
     private PageHandler pageHandler;
 
     public ResourcesEntity getById(int rid){
@@ -25,26 +31,31 @@ public class ResourcesDao extends BaseDao {
     }
 
 
-    public void saveResource(int rid , String  title , String url , String imgurl,String category1
-    ,String category2,int collection,int remark,int grade,double satisfaction,int join_number,
-                             String source_web){
 
-        ResourcesEntity resourcesEntity = new ResourcesEntity();
+    /**
+     * 获取叶子结点下的所有资源(分页查询)
+     */
+    public Page<ResourcesEntity> getPageResourcesOfLeaf(int id , int pageNum){
 
-        resourcesEntity.setTitle(title);
-        resourcesEntity.setUrl(url);
-        resourcesEntity.setImgutl(imgurl);
-        resourcesEntity.setCategory1(category1);
-        resourcesEntity.setCategory2(category2);
-        resourcesEntity.setCollection(collection);
-        resourcesEntity.setRemark(remark);
-        resourcesEntity.setGrade(grade);
-        resourcesEntity.setSatisfaction(satisfaction);
-        resourcesEntity.setJoin_number(join_number);
-        resourcesEntity.setSource_web(source_web);
-        save(resourcesEntity);
+        CategoryEntity category = categoryDao.getById(id);
+
+        return PageQuery("cateName",category.getCateName(),pageNum);
 
     }
+
+
+    public Page<ResourcesEntity> getPageResourcesOfCateName(String cateName , int pageNum){
+        if(HQuery("category1" , cateName) != null){
+            return PageQuery("category1" , cateName , pageNum);
+        }else if(HQuery("category2" , cateName) != null){
+            return PageQuery("category2" , cateName , pageNum);
+        }else{
+            return null;
+        }
+    }
+
+
+
 
     public Page<ResourcesEntity> queryByPage(int pageNum , int pageSize){
         String hql = "from ResourcesEntity as resources";
@@ -54,6 +65,8 @@ public class ResourcesDao extends BaseDao {
         return pageHandler.getPage(pageNum,pageSize,
                 ResourcesEntity.class,query);
     }
+
+
 
     public List<ResourcesEntity> getResourcesByCate(String category,int grade){
         String hql = "";
@@ -70,4 +83,38 @@ public class ResourcesDao extends BaseDao {
         List<ResourcesEntity> resourcesEntities = query.list();
         return resourcesEntities;
     }
+
+
+    /**
+     * 查询
+     * @param colume
+     * @param value
+     * @return
+     */
+    private List<ResourcesEntity> HQuery(String colume , String value){
+        String hql = "from ResourcesEntity as resources where resources."+colume+"=?";
+        Query query = query(hql);
+        query.setString(0, String.valueOf(value));
+        List<ResourcesEntity> results = query.list();
+        return results;
+    }
+
+
+    /**
+     * 分页查询
+     * @param colume
+     * @param value
+     * @param pageNum
+     * @return
+     */
+    private Page<ResourcesEntity> PageQuery(String colume , String value , int pageNum){
+        String hql = "from ResourcesEntity as resources where resources."+colume+"=?";
+
+        Query query = query(hql);
+        query.setString(0, String.valueOf(value));
+
+        return pageHandler.getPage(pageNum,20,
+                ResourcesEntity.class,query);
+    }
+
 }

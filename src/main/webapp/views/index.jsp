@@ -57,7 +57,8 @@
                         <c:forEach items="${secondcates}" var="oneTwo" varStatus="status">
                             <li class="list-head">             <!--这是一个大头！！！！-->
                                 <div>
-                                    <a href="">${oneTwo.cate_name}</a>
+                                    <%--resource/${oneTwo.cate_name}--%>
+                                    <a href="/Ilearn/resource/course">${oneTwo.cate_name}</a>
                                     <ul class="list-inline">
                                         <li>
                                             <c:forEach items="${oneTwo.cate2s}" var="oneTwo_list" begin="0" end="2">

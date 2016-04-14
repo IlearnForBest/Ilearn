@@ -2,8 +2,11 @@ package com.ilearn.controller;
 
 import com.ilearn.bean.ResourcesEntity;
 import com.ilearn.dao.ResourcesDao;
+import com.ilearn.page.Page;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -17,7 +20,7 @@ import java.util.List;
  * 获取资源用的controller
  */
 @Controller
-@RequestMapping("/resources")
+@RequestMapping("/Ilearn/resource")
 public class ResourcesController {
     private static final String ORDERBYCOLLECTION = "collection";
     private static final String ORDERBYREMARK = "remark";
@@ -26,7 +29,51 @@ public class ResourcesController {
     @Autowired
     private ResourcesDao resourcesDao;
 
-//    根据前端给出的参数对资源进行排序
+    @RequestMapping(value = "/course" , method = RequestMethod.GET)
+    public String list(Model model){
+
+        model.addAttribute("coursePage1",resourcesDao.queryByPage(1,20));
+
+        return "course";
+    }
+
+
+    /**
+     * 根据三级目录的id查找资源
+     * @param id
+     * @param pageNum
+     * @return
+     */
+    @RequestMapping(value = "/course/{id}/{pageNum}" , method = RequestMethod.GET)
+    public Page<ResourcesEntity> getPageResoucesOfLeaf(@PathVariable("id") int id ,
+                                        @PathVariable("pageNum") int pageNum){
+
+        return resourcesDao.getPageResourcesOfLeaf(id,pageNum);
+
+    }
+
+
+    /**
+     * 根据一级或二级目录的名字查找资源
+     * @param cateName
+     * @param pageNum
+     * @return
+     */
+    @RequestMapping(value = "/course/{cateName}/{pageNum}" , method = RequestMethod.GET)
+    public Page<ResourcesEntity> getPageResoucesOfCateName(@PathVariable("cateName") String cateName ,
+                                                           @PathVariable("pageNum") int pageNum){
+
+        return resourcesDao.getPageResourcesOfCateName(cateName,pageNum);
+
+    }
+
+
+
+
+
+
+
+    //    根据前端给出的参数对资源进行排序
     @RequestMapping(value = "/sort", method = RequestMethod.POST)
     public String sort(HttpServletRequest request, HttpServletResponse response,
                                       @RequestParam String sort) {
@@ -78,5 +125,7 @@ public class ResourcesController {
         request.getSession().setAttribute("list",list);
         return "";
     }
+
+
 
 }

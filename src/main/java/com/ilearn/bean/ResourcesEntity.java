@@ -3,7 +3,7 @@ package com.ilearn.bean;
 import javax.persistence.*;
 
 /**
- * Created by sl on 16-4-2.
+ * Created by sl on 16-4-15.
  */
 @Entity
 @Table(name = "ilearn_resources", schema = "", catalog = "db_ilearn")
@@ -11,18 +11,19 @@ public class ResourcesEntity {
     private int rid;
     private String title;
     private String url;
-    private String imgutl;
+    private String imgurl;
     private String category1;
     private String category2;
-    private int collection;
-    private int remark;
-    private int grade;
-    private double satisfaction;
-    private int join_number;
-    private String source_web;
+    private String category3;
+    private Integer collection;
+    private Integer remark;
+    private Integer grade;
+    private Double satisfaction;
+    private Integer joinNumber;
+    private String sourceWeb;
 
     @Id
-    @Column(name="rid")
+    @Column(name = "rid", nullable = false, insertable = true, updatable = true)
     public int getRid() {
         return rid;
     }
@@ -32,7 +33,7 @@ public class ResourcesEntity {
     }
 
     @Basic
-    @Column(name = "title")
+    @Column(name = "title", nullable = true, insertable = true, updatable = true, length = 255)
     public String getTitle() {
         return title;
     }
@@ -42,7 +43,7 @@ public class ResourcesEntity {
     }
 
     @Basic
-    @Column(name = "url")
+    @Column(name = "url", nullable = true, insertable = true, updatable = true, length = 255)
     public String getUrl() {
         return url;
     }
@@ -52,17 +53,17 @@ public class ResourcesEntity {
     }
 
     @Basic
-    @Column(name = "imgurl")
-    public String getImgutl() {
-        return imgutl;
+    @Column(name = "imgurl", nullable = true, insertable = true, updatable = true, length = 255)
+    public String getImgurl() {
+        return imgurl;
     }
 
-    public void setImgutl(String imgutl) {
-        this.imgutl = imgutl;
+    public void setImgurl(String imgurl) {
+        this.imgurl = imgurl;
     }
 
     @Basic
-    @Column(name = "cateroty_1")
+    @Column(name = "category_1", nullable = true, insertable = true, updatable = true, length = 255)
     public String getCategory1() {
         return category1;
     }
@@ -72,7 +73,7 @@ public class ResourcesEntity {
     }
 
     @Basic
-    @Column(name = "cateroty_2")
+    @Column(name = "category_2", nullable = true, insertable = true, updatable = true, length = 255)
     public String getCategory2() {
         return category2;
     }
@@ -82,62 +83,114 @@ public class ResourcesEntity {
     }
 
     @Basic
-    @Column(name = "collection")
-    public int getCollection() {
+    @Column(name = "category_3", nullable = true, insertable = true, updatable = true, length = 255)
+    public String getCategory3() {
+        return category3;
+    }
+
+    public void setCategory3(String category3) {
+        this.category3 = category3;
+    }
+
+    @Basic
+    @Column(name = "collection", nullable = true, insertable = true, updatable = true)
+    public Integer getCollection() {
         return collection;
     }
 
-    public void setCollection(int collection) {
+    public void setCollection(Integer collection) {
         this.collection = collection;
     }
 
     @Basic
-    @Column(name = "remark")
-    public int getRemark() {
+    @Column(name = "remark", nullable = true, insertable = true, updatable = true)
+    public Integer getRemark() {
         return remark;
     }
 
-    public void setRemark(int remark) {
+    public void setRemark(Integer remark) {
         this.remark = remark;
     }
 
     @Basic
-    @Column(name = "grade")
-    public int getGrade() {
+    @Column(name = "grade", nullable = true, insertable = true, updatable = true)
+    public Integer getGrade() {
         return grade;
     }
 
-    public void setGrade(int grade) {
+    public void setGrade(Integer grade) {
         this.grade = grade;
     }
 
     @Basic
-    @Column(name = "satisfaction")
-    public double getSatisfaction() {
+    @Column(name = "satisfaction", nullable = true, insertable = true, updatable = true, precision = 4)
+    public Double getSatisfaction() {
         return satisfaction;
     }
 
-    public void setSatisfaction(double satisfaction) {
+    public void setSatisfaction(Double satisfaction) {
         this.satisfaction = satisfaction;
     }
 
     @Basic
-    @Column(name = "join_number")
-    public int getJoin_number() {
-        return join_number;
+    @Column(name = "join_number", nullable = true, insertable = true, updatable = true)
+    public Integer getJoinNumber() {
+        return joinNumber;
     }
 
-    public void setJoin_number(int join_number) {
-        this.join_number = join_number;
+    public void setJoinNumber(Integer joinNumber) {
+        this.joinNumber = joinNumber;
     }
 
     @Basic
-    @Column(name = "source_web")
-    public String getSource_web() {
-        return source_web;
+    @Column(name = "source_web", nullable = true, insertable = true, updatable = true, length = 255)
+    public String getSourceWeb() {
+        return sourceWeb;
     }
 
-    public void setSource_web(String source_web) {
-        this.source_web = source_web;
+    public void setSourceWeb(String sourceWeb) {
+        this.sourceWeb = sourceWeb;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        ResourcesEntity that = (ResourcesEntity) o;
+
+        if (rid != that.rid) return false;
+        if (title != null ? !title.equals(that.title) : that.title != null) return false;
+        if (url != null ? !url.equals(that.url) : that.url != null) return false;
+        if (imgurl != null ? !imgurl.equals(that.imgurl) : that.imgurl != null) return false;
+        if (category1 != null ? !category1.equals(that.category1) : that.category1 != null) return false;
+        if (category2 != null ? !category2.equals(that.category2) : that.category2 != null) return false;
+        if (category3 != null ? !category3.equals(that.category3) : that.category3 != null) return false;
+        if (collection != null ? !collection.equals(that.collection) : that.collection != null) return false;
+        if (remark != null ? !remark.equals(that.remark) : that.remark != null) return false;
+        if (grade != null ? !grade.equals(that.grade) : that.grade != null) return false;
+        if (satisfaction != null ? !satisfaction.equals(that.satisfaction) : that.satisfaction != null) return false;
+        if (joinNumber != null ? !joinNumber.equals(that.joinNumber) : that.joinNumber != null) return false;
+        if (sourceWeb != null ? !sourceWeb.equals(that.sourceWeb) : that.sourceWeb != null) return false;
+
+        return true;
+    }
+
+    @Override
+    public int hashCode() {
+        int result = rid;
+        result = 31 * result + (title != null ? title.hashCode() : 0);
+        result = 31 * result + (url != null ? url.hashCode() : 0);
+        result = 31 * result + (imgurl != null ? imgurl.hashCode() : 0);
+        result = 31 * result + (category1 != null ? category1.hashCode() : 0);
+        result = 31 * result + (category2 != null ? category2.hashCode() : 0);
+        result = 31 * result + (category3 != null ? category3.hashCode() : 0);
+        result = 31 * result + (collection != null ? collection.hashCode() : 0);
+        result = 31 * result + (remark != null ? remark.hashCode() : 0);
+        result = 31 * result + (grade != null ? grade.hashCode() : 0);
+        result = 31 * result + (satisfaction != null ? satisfaction.hashCode() : 0);
+        result = 31 * result + (joinNumber != null ? joinNumber.hashCode() : 0);
+        result = 31 * result + (sourceWeb != null ? sourceWeb.hashCode() : 0);
+        return result;
     }
 }

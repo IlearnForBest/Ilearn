@@ -1,7 +1,6 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 pageEncoding="UTF-8"%>
-<%--<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>--%>
 <%@ page isELIgnored="false" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 
@@ -9,12 +8,12 @@ pageEncoding="UTF-8"%>
 <head>
     <meta charset="UTF-8">
     <title></title>
-    <link rel="stylesheet" href="css/app.min.css"/>
+    <link rel="stylesheet" href="${assetsPath}/css/app.min.css"/>
     <!-- <link rel="stylesheet" href="css/course.css"/> -->
     <!--<script src="./js/jquery-1.7.2.min.js"></script>-->
     <script src="//cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
     <script src="//cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-    <script src="./js/navLink.js"></script>
+    <script src="${assetsPath}/js/navLink.js"></script>
 </head>
 <body>
 <header>
@@ -115,54 +114,56 @@ pageEncoding="UTF-8"%>
                     </div>
 
                     <ul>
+                        <c:forEach items="${coursePage1.list}" var="coursepage1">
                         <li>
                             <div class="image">
-                                <img src="images/courses4.png" alt=""/>
+                                <img src="${coursepage1.imgurl}" alt=""/>
                             </div>
-                            <div class="title">课程简介课程简介课程简介</div>
-                            <div class="price">免费</div>
+                            <div class="title">${coursepage1.title}</div>
+                            <%--<div class="price">${coursepage1.price}</div>--%>
                             <div class="add pull-left">附加信息</div>
-                            <div class="people pull-right">240人已学</div>
+                            <div class="people pull-right">${coursepage1.joinNumber}</div>
                             <div class="clearfix"></div>
                             <div class="line"></div>
-                            <div class="src">来自网易云课堂</div>
+                            <div class="src">${coursepage1.sourceWeb}</div>
                         </li>
-                        <li>
-                            <div class="image">
-                                <img src="images/courses4.png" alt=""/>
-                            </div>
-                            <div class="title">课程简介课程简介课程简介</div>
-                            <div class="price">免费</div>
-                            <div class="add pull-left">附加信息</div>
-                            <div class="people pull-right">240人已学</div>
-                            <div class="clearfix"></div>
-                            <div class="line"></div>
-                            <div class="src">来自网易云课堂</div>
-                        </li>
-                        <li>
-                            <div class="image">
-                                <img src="images/courses4.png" alt=""/>
-                            </div>
-                            <div class="title">课程简介课程简介课程简介</div>
-                            <div class="price">免费</div>
-                            <div class="add pull-left">附加信息</div>
-                            <div class="people pull-right">240人已学</div>
-                            <div class="clearfix"></div>
-                            <div class="line"></div>
-                            <div class="src">来自网易云课堂</div>
-                        </li>
-                        <li>
-                            <div class="image">
-                                <img src="images/courses4.png" alt=""/>
-                            </div>
-                            <div class="title">课程简介课程简介课程简介</div>
-                            <div class="price">免费</div>
-                            <div class="add pull-left">附加信息</div>
-                            <div class="people pull-right">240人已学</div>
-                            <div class="clearfix"></div>
-                            <div class="line"></div>
-                            <div class="src">来自网易云课堂</div>
-                        </li>
+                        </c:forEach>
+                        <%--<li>--%>
+                            <%--<div class="image">--%>
+                                <%--<img src="${assetsPath}/images/courses4.png" alt=""/>--%>
+                            <%--</div>--%>
+                            <%--<div class="title">课程简介课程简介课程简介</div>--%>
+                            <%--<div class="price">免费</div>--%>
+                            <%--<div class="add pull-left">附加信息</div>--%>
+                            <%--<div class="people pull-right">240人已学</div>--%>
+                            <%--<div class="clearfix"></div>--%>
+                            <%--<div class="line"></div>--%>
+                            <%--<div class="src">来自网易云课堂</div>--%>
+                        <%--</li>--%>
+                        <%--<li>--%>
+                            <%--<div class="image">--%>
+                                <%--<img src="${assetsPath}/images/courses4.png" alt=""/>--%>
+                            <%--</div>--%>
+                            <%--<div class="title">课程简介课程简介课程简介</div>--%>
+                            <%--<div class="price">免费</div>--%>
+                            <%--<div class="add pull-left">附加信息</div>--%>
+                            <%--<div class="people pull-right">240人已学</div>--%>
+                            <%--<div class="clearfix"></div>--%>
+                            <%--<div class="line"></div>--%>
+                            <%--<div class="src">来自网易云课堂</div>--%>
+                        <%--</li>--%>
+                        <%--<li>--%>
+                            <%--<div class="image">--%>
+                                <%--<img src="${assetsPath}/images/courses4.png" alt=""/>--%>
+                            <%--</div>--%>
+                            <%--<div class="title">课程简介课程简介课程简介</div>--%>
+                            <%--<div class="price">免费</div>--%>
+                            <%--<div class="add pull-left">附加信息</div>--%>
+                            <%--<div class="people pull-right">240人已学</div>--%>
+                            <%--<div class="clearfix"></div>--%>
+                            <%--<div class="line"></div>--%>
+                            <%--<div class="src">来自网易云课堂</div>--%>
+                        <%--</li>--%>
                         <div class="clearfix"></div>
                     </ul>
 
@@ -179,7 +180,7 @@ pageEncoding="UTF-8"%>
 <footer>
     <div class="container site-info">
         <div class="row">
-            <div class="col-xs-2"><a href="/"><img src="images/logo.png" alt="" width="120"></a></div>
+            <div class="col-xs-2"><a href="/"><img src="${assetsPath}/images/logo.png" alt="" width="120"></a></div>
             <div class="col-xs-6">
                 <div class="row">
                     <div class="col-xs-6">
