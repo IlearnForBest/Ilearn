@@ -97,7 +97,7 @@ pageEncoding="UTF-8"%>
                                 </div>
                                 <div class="input-group">
                                     <span class="input-group-addon"><span class="glyphicon glyphicon-envelope"></span></span>
-                                    <input type="password" class="form-control input-lg" id="password2"
+                                    <input type="password" class="form-control input-lg" id="email"
                                            placeholder="邮箱"/>
                                 </div>
 

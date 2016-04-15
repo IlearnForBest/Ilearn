@@ -49,6 +49,8 @@ public class ResourcesDao extends BaseDao {
             return PageQuery("category1" , cateName , pageNum);
         }else if(HQuery("category2" , cateName) != null){
             return PageQuery("category2" , cateName , pageNum);
+        }else if(HQuery("cateName" , cateName) != null){
+            return PageQuery("cateName" , cateName , pageNum);
         }else{
             return null;
         }

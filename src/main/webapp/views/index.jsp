@@ -99,7 +99,7 @@
                                 </div>
                                 <div class="input-group">
                                     <span class="input-group-addon"><span class="glyphicon glyphicon-envelope"></span></span>
-                                    <input type="password" class="form-control input-lg" id="password2"
+                                    <input type="password" class="form-control input-lg" id="email"
                                            placeholder="邮箱"/>
                                 </div>
 
@@ -141,11 +141,13 @@
                             <li class="list-head">             <!--这是一个大头！！！！-->
                                 <div>
                                     <%--resource/${oneTwo.cate_name}--%>
-                                    <a href="/Ilearn/resource/course">${oneTwo.cate_name}</a>
+                                    <a href="/Ilearn/resource/course/cate='${oneTwo.cate_name}'/page=1">${oneTwo.cate_name}</a>
                                     <ul class="list-inline">
                                         <li>
                                             <c:forEach items="${oneTwo.cate2s}" var="oneTwo_list" begin="0" end="2">
-                                                ${oneTwo_list}
+                                                <a href="/resource/course/JAVA/1">
+                                                        ${oneTwo_list}</a>
+
                                             </c:forEach>
                                         </li>
                                     </ul>

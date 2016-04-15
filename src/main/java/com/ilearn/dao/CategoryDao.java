@@ -52,7 +52,7 @@ public class CategoryDao extends BaseDao {
 
             for(String cate2 : cate2s){
 
-                System.out.println("cate2: "+cate2);
+//                System.out.println("cate2: "+cate2);
                 CateBean cate2Bean = new CateBean();
 
                 cate2Bean.setCate2s(getThirdCategory(cate2));
@@ -75,10 +75,6 @@ public class CategoryDao extends BaseDao {
         String hql = "select cate.cateName from CategoryEntity as cate where cate.category2='"+cate2+"'";
         Query query = query(hql);
         List<String> cate3s =  query.list();
-
-        for(String cate3 : cate3s){
-            System.out.println("cate3 : "+cate3);
-        }
 
         return cate3s;
 

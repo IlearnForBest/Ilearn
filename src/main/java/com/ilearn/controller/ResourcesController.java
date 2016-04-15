@@ -6,10 +6,7 @@ import com.ilearn.page.Page;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -20,7 +17,7 @@ import java.util.List;
  * 获取资源用的controller
  */
 @Controller
-@RequestMapping("/Ilearn/resource")
+@RequestMapping("/resource")
 public class ResourcesController {
     private static final String ORDERBYCOLLECTION = "collection";
     private static final String ORDERBYREMARK = "remark";
@@ -29,7 +26,7 @@ public class ResourcesController {
     @Autowired
     private ResourcesDao resourcesDao;
 
-    @RequestMapping(value = "/course" , method = RequestMethod.GET)
+    @RequestMapping(value = "/course/show" , method = RequestMethod.GET)
     public String list(Model model){
 
         model.addAttribute("coursePage1",resourcesDao.queryByPage(1,20));
@@ -44,27 +41,34 @@ public class ResourcesController {
      * @param pageNum
      * @return
      */
-    @RequestMapping(value = "/course/{id}/{pageNum}" , method = RequestMethod.GET)
+    @ResponseBody
+    @RequestMapping(value = "/course1/{id}/{pageNum}" , method = RequestMethod.GET)
     public Page<ResourcesEntity> getPageResoucesOfLeaf(@PathVariable("id") int id ,
                                         @PathVariable("pageNum") int pageNum){
 
         return resourcesDao.getPageResourcesOfLeaf(id,pageNum);
-
     }
 
 
     /**
      * 根据一级或二级目录的名字查找资源
-     * @param cateName
      * @param pageNum
      * @return
      */
-    @RequestMapping(value = "/course/{cateName}/{pageNum}" , method = RequestMethod.GET)
-    public Page<ResourcesEntity> getPageResoucesOfCateName(@PathVariable("cateName") String cateName ,
-                                                           @PathVariable("pageNum") int pageNum){
+    @RequestMapping(value = "/course/{cateName}/{pageNum}",
+            method = RequestMethod.GET)
+    public String  getPageResoucesOfCateName(@PathVariable("cateName") String cateName ,
+                                                           @PathVariable("pageNum") int pageNum ,
+                                                           Model model){
 
-        return resourcesDao.getPageResourcesOfCateName(cateName,pageNum);
 
+        model.addAttribute("pageNum",pageNum);
+
+        System.out.println("in getPageResoucesOfCateName ........");
+
+        model.addAttribute("resourcesOfCateName", resourcesDao.getPageResourcesOfCateName(cateName, pageNum));
+
+        return "course";
     }
 
 
