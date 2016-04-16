@@ -72,18 +72,18 @@ public class UserController {
     }
 
     @RequestMapping(value = "/login" , method = RequestMethod.POST)
-    public String login(String username , String password , HttpSession session){
+    public String login(String userName , String password , HttpSession session){
         int status = 0;
         String message = "";
         StatusMessage statusMessage = new StatusMessage(status,message);
 
 
-        System.out.println("1111111111111111111111"+username+"  "+password);
+        System.out.println("1111111111111111111111"+userName+"  "+password);
 
-        if(username == ""){
+        if(userName == ""){
             message = "请输入用户名";
         }else{
-            UserEntity user = userDao.getByName(username);
+            UserEntity user = userDao.getByName(userName);
             if(password == ""){
                 message = "请输入密码";
             }else if(!user.getPassword().equals(password)){
@@ -96,7 +96,7 @@ public class UserController {
                 statusMessage.setMessage(message);
                 System.out.println("message1 : "+message);
                 // redirectAttributes.addAttribute("loginMsg",message);
-                return "redirect:/index";
+                return "redirect:index";
             }
         }
 
@@ -104,7 +104,7 @@ public class UserController {
         statusMessage.setStatus(status);
         statusMessage.setMessage(message);
 //        redirectAttributes.addAttribute("loginMsg","登录失败");
-        return "redirect://index";
+        return "redirect:index";
     }
 
 

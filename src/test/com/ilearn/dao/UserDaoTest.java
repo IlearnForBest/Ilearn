@@ -42,4 +42,11 @@ public class UserDaoTest {
 
                 Assert.assertNotNull(user);
         }
+
+        @Test
+        public void testGetByName(){
+                UserEntity user = userDao.getByName("test");
+                Assert.assertNotNull(user);
+                Assert.assertEquals("123@qq.com",user.getEmail());
+        }
 }

@@ -52,7 +52,7 @@
                                 <div class="input-group">
                                     <!--<label for="examInputEmail1">邮箱:</label>-->
                                     <span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
-                                    <input type="text" class="form-control input-lg" id="examInputEmail1" name="username"
+                                    <input type="text" class="form-control input-lg" id="examInputEmail1" name="userName"
                                            placeholder="请输入您的用户名"/>
                                 </div>
                                 <div class="input-group">
@@ -104,7 +104,7 @@
                                 </div>
 
                                 <div class="form-group">
-                                    <button type="submit" class="btn btn-primary btn-lg btn-block" value="注册" id="register_id" />
+                                    <input type="submit" class="btn btn-primary btn-lg btn-block" value="注册" id="register_id" />
                                     <%--<button class="btn btn-primary btn-lg btn-block">注册</button>--%>
                                     <span><a href="javascript:void(0)" style="text-align: left">找回密码</a></span>
                                     <span><a href="javascript:void(0)" class="pull-right re-login">登录</a></span>
