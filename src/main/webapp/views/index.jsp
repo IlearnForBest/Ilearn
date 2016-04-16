@@ -48,7 +48,7 @@
                             <h1 class="text-center text-primary">登录</h1>
                         </div>
                         <div class="modal-body center-block">
-                            <form action="" class="form center-block">
+                            <form action="${rootPath}/user/login" method="post" class="form center-block">
                                 <div class="input-group">
                                     <!--<label for="examInputEmail1">邮箱:</label>-->
                                     <span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
@@ -80,7 +80,7 @@
                             <h1 class="text-center text-primary">注册</h1>
                         </div>
                         <div class="modal-body center-block">
-                            <form action="" class="form center-block">
+                            <form action="${rootPath}/user/register" method="post" class="form center-block">
                                 <div class="input-group">
                                     <!--<label for="examInputEmail1">邮箱:</label>-->
                                     <span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
@@ -104,6 +104,7 @@
                                 </div>
 
                                 <div class="form-group">
+                                    <%--<input type="submit" class="btn btn-primary btn-lg btn-block" value="登录" id="login-in">--%>
                                     <button class="btn btn-primary btn-lg btn-block">注册</button>
                                     <span><a href="javascript:void(0)" style="text-align: left">找回密码</a></span>
                                     <span><a href="javascript:void(0)" class="pull-right re-login">登录</a></span>
