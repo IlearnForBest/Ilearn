@@ -16,7 +16,11 @@ public class UserDao extends BaseDao{
         return get(UserEntity.class,userid);
     }
 
-    public void UserEntity(UserEntity user){
+    public void save(String userName , String password , String email){
+        UserEntity user = new UserEntity();
+        user.setUserName(userName);
+        user.setPassword(password);
+        user.setEmail(email);
         save(user);
     }
 
@@ -37,7 +41,7 @@ public class UserDao extends BaseDao{
      */
     public boolean isEmailExit(String email){
 
-        if(HQuery("email",email) == null){
+        if(HQuery("email",email).size() == 0){
             return false;
         }
 
@@ -52,7 +56,7 @@ public class UserDao extends BaseDao{
      */
     public boolean isUserNameExit(String userName){
 
-        if(HQuery("userName",userName) == null){
+        if(HQuery("userName",userName).size() == 0){
             return false;
         }
 
@@ -70,7 +74,7 @@ public class UserDao extends BaseDao{
     private List<UserEntity> HQuery(String colume , String value){
         String hql = "from UserEntity as user where user."+colume+"=?";
         Query query = query(hql);
-        query.setString(0, String.valueOf(value));
+        query.setString(0, value);
         List<UserEntity> results = query.list();
         return results;
     }

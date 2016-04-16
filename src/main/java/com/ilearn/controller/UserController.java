@@ -6,6 +6,7 @@ import com.ilearn.dao.UserDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -26,6 +27,11 @@ public class UserController {
 
 
 
+    @RequestMapping(value = "/login" , method = RequestMethod.GET)
+    public String login(){
+        return "login";
+    }
+
     @RequestMapping(value = "/register" , method = RequestMethod.GET)
     public String register(){
         return "register";
@@ -33,25 +39,31 @@ public class UserController {
 
 
 
+
+
     @ResponseBody
     @RequestMapping(value = "/register" , method = RequestMethod.POST)
-    public StatusMessage register(String userName , String email , String password,
-                                  String password2 , HttpSession session){
+    public StatusMessage register(String userName , String password,
+                                  String password1 ,String email){
+
+        System.out.println("111111111111111111  "+userName+" "+password+" "+password1
+        +" "+email);
 
         StatusMessage statusMessage;
         String message = null;
-        if(!userDao.isUserNameExit(userName)){
+        if(userDao.isUserNameExit(userName)){
             message = "该用户名已被注册";
             statusMessage = new StatusMessage(0,message);
         }else if(userDao.isEmailExit(email)){
             message = "该邮箱已被注册";
             statusMessage = new StatusMessage(0,message);
         }//else if(!captcha.equals())验证码没搞呢
-        else if(!password.equals(password2)){
+        else if(!password.equals(password1)){
             message = "两次密码不一致";
             statusMessage = new StatusMessage(0,message);
         }else{
             message = "注册成功";
+            userDao.save(userName,password,email);
             statusMessage = new StatusMessage(1,message);
         }
 
