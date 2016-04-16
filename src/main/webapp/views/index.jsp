@@ -141,11 +141,11 @@
                             <li class="list-head">             <!--这是一个大头！！！！-->
                                 <div>
                                     <%--resource/${oneTwo.cate_name}--%>
-                                    <a href="/Ilearn/resource/course/cate='${oneTwo.cate_name}'/page=1">${oneTwo.cate_name}</a>
+                                    <a href="${rootPath}/resource/course/${oneTwo.cate_name}/1">${oneTwo.cate_name}</a>
                                     <ul class="list-inline">
                                         <li>
                                             <c:forEach items="${oneTwo.cate2s}" var="oneTwo_list" begin="0" end="2">
-                                                <a href="/resource/course/JAVA/1">
+                                                <a href="${rootPath}/resource/course/JAVA/1">
                                                         ${oneTwo_list}</a>
 
                                             </c:forEach>

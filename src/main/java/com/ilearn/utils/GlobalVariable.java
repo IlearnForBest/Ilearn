@@ -15,9 +15,9 @@ public class GlobalVariable {
             this.map = new HashMap<String , String>();
         }
         // TODO 修改为读取config.ini
-        this.map.put("assetsPath", "/assets");
+        this.map.put("assetsPath", "/Ilearn/assets");
 //        this.map.put("uploadFilePath", "/usr/local/xst");
-        this.map.put("rootPath", "/ilearn");
+        this.map.put("rootPath", "/Ilearn");
     }
 
     public Map<String , String> getAll() {
