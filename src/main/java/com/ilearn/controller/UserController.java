@@ -6,7 +6,6 @@ import com.ilearn.dao.UserDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -96,7 +95,7 @@ public class UserController {
                 statusMessage.setMessage(message);
                 System.out.println("message1 : "+message);
                 // redirectAttributes.addAttribute("loginMsg",message);
-                return "redirect:index";
+                return "redirect:/index";
             }
         }
 
@@ -104,7 +103,7 @@ public class UserController {
         statusMessage.setStatus(status);
         statusMessage.setMessage(message);
 //        redirectAttributes.addAttribute("loginMsg","登录失败");
-        return "redirect:index";
+        return "redirect:/index";
     }
 
 
