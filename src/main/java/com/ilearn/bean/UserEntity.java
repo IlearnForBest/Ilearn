@@ -3,7 +3,7 @@ package com.ilearn.bean;
 import javax.persistence.*;
 
 /**
- * Created by sl on 16-4-16.
+ * Created by sl on 16-4-18.
  */
 @Entity
 @Table(name = "ilearn_user", schema = "", catalog = "db_ilearn")

@@ -3,7 +3,7 @@ package com.ilearn.bean;
 import javax.persistence.*;
 
 /**
- * Created by sl on 16-4-15.
+ * Created by sl on 16-4-18.
  */
 @Entity
 @Table(name = "ilearn_resources", schema = "", catalog = "db_ilearn")
@@ -21,6 +21,11 @@ public class ResourcesEntity {
     private Double satisfaction;
     private Integer joinNumber;
     private String sourceWeb;
+    private Integer category1Id;
+    private Integer category2Id;
+    private Integer category3Id;
+    private String rkey;
+    private Double recommendGrade;
 
     @Id
     @Column(name = "rid", nullable = false, insertable = true, updatable = true)
@@ -152,6 +157,56 @@ public class ResourcesEntity {
         this.sourceWeb = sourceWeb;
     }
 
+    @Basic
+    @Column(name = "category_1_id", nullable = true, insertable = true, updatable = true)
+    public Integer getCategory1Id() {
+        return category1Id;
+    }
+
+    public void setCategory1Id(Integer category1Id) {
+        this.category1Id = category1Id;
+    }
+
+    @Basic
+    @Column(name = "category_2_id", nullable = true, insertable = true, updatable = true)
+    public Integer getCategory2Id() {
+        return category2Id;
+    }
+
+    public void setCategory2Id(Integer category2Id) {
+        this.category2Id = category2Id;
+    }
+
+    @Basic
+    @Column(name = "category_3_id", nullable = true, insertable = true, updatable = true)
+    public Integer getCategory3Id() {
+        return category3Id;
+    }
+
+    public void setCategory3Id(Integer category3Id) {
+        this.category3Id = category3Id;
+    }
+
+    @Basic
+    @Column(name = "rkey", nullable = true, insertable = true, updatable = true, length = 255)
+    public String getRkey() {
+        return rkey;
+    }
+
+    public void setRkey(String rkey) {
+        this.rkey = rkey;
+    }
+
+    @Basic
+    @Column(name = "recommend_grade", nullable = true, insertable = true, updatable = true, precision = 4)
+    public Double getRecommendGrade() {
+        return recommendGrade;
+    }
+
+    public void setRecommendGrade(Double recommendGrade) {
+        this.recommendGrade = recommendGrade;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -172,6 +227,12 @@ public class ResourcesEntity {
         if (satisfaction != null ? !satisfaction.equals(that.satisfaction) : that.satisfaction != null) return false;
         if (joinNumber != null ? !joinNumber.equals(that.joinNumber) : that.joinNumber != null) return false;
         if (sourceWeb != null ? !sourceWeb.equals(that.sourceWeb) : that.sourceWeb != null) return false;
+        if (category1Id != null ? !category1Id.equals(that.category1Id) : that.category1Id != null) return false;
+        if (category2Id != null ? !category2Id.equals(that.category2Id) : that.category2Id != null) return false;
+        if (category3Id != null ? !category3Id.equals(that.category3Id) : that.category3Id != null) return false;
+        if (rkey != null ? !rkey.equals(that.rkey) : that.rkey != null) return false;
+        if (recommendGrade != null ? !recommendGrade.equals(that.recommendGrade) : that.recommendGrade != null)
+            return false;
 
         return true;
     }
@@ -191,6 +252,11 @@ public class ResourcesEntity {
         result = 31 * result + (satisfaction != null ? satisfaction.hashCode() : 0);
         result = 31 * result + (joinNumber != null ? joinNumber.hashCode() : 0);
         result = 31 * result + (sourceWeb != null ? sourceWeb.hashCode() : 0);
+        result = 31 * result + (category1Id != null ? category1Id.hashCode() : 0);
+        result = 31 * result + (category2Id != null ? category2Id.hashCode() : 0);
+        result = 31 * result + (category3Id != null ? category3Id.hashCode() : 0);
+        result = 31 * result + (rkey != null ? rkey.hashCode() : 0);
+        result = 31 * result + (recommendGrade != null ? recommendGrade.hashCode() : 0);
         return result;
     }
 }
