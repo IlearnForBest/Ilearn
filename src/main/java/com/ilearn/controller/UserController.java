@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 /**
@@ -42,7 +43,7 @@ public class UserController {
 
     @ResponseBody
     @RequestMapping(value = "/register" , method = RequestMethod.POST)
-    public StatusMessage register(String userName , String password,
+    public StatusMessage register(HttpServletRequest request, String userName , String password,
                                   String password1 ,String email){
 
         System.out.println("111111111111111111  "+userName+" "+password+" "+password1
@@ -64,6 +65,7 @@ public class UserController {
             message = "注册成功";
             userDao.save(userName,password,email);
             statusMessage = new StatusMessage(1,message);
+            request.getSession().setAttribute("username",userName);
         }
 
         return statusMessage;
@@ -71,7 +73,7 @@ public class UserController {
     }
 
     @RequestMapping(value = "/login" , method = RequestMethod.POST)
-    public String login(String userName , String password , HttpSession session){
+    public String login(HttpServletRequest request,String userName , String password , HttpSession session){
         int status = 0;
         String message = "";
         StatusMessage statusMessage = new StatusMessage(status,message);
@@ -94,6 +96,7 @@ public class UserController {
                 statusMessage.setStatus(status);
                 statusMessage.setMessage(message);
                 System.out.println("message1 : "+message);
+                request.getSession().setAttribute("username",userName);
                 // redirectAttributes.addAttribute("loginMsg",message);
                 return "redirect:/index";
             }
