@@ -32,10 +32,18 @@ pageEncoding="UTF-8"%>
                 </div><!-- /input-group -->
             </div>
             <div class="col-md-4 button-group">
-                <span class="login"><a href="javascript:void(0)" onclick="openLogin()">登录</a></span>
+                <span class="login"><a href="javascript:void(0)" onclick="openLogin()"><c:if test="${username ==null}">登录</c:if>
+                                                                    <c:if test="${username!=null}">${username} </c:if></a></span>
                 <span class="registe"><a href="javascript:void(0)" onclick="openRegister()">注册</a></span>
             </div>
 
+            <%--<script>--%>
+                <%--//            alert($("#nav-login").text());--%>
+                <%--if($("#login").text().trim()=="${user}"){--%>
+                    <%--$("#login").attr("onclick","window.location.href='/views/v3.6admin/user/user-info.jsp'");--%>
+                    <%--$("#logout").attr("onclick","window.location.href='${pageContext.request.contextPath}/main/logout'");--%>
+                <%--}--%>
+            <%--</script>--%>
 
             <div id="modal">
                 <!--弹出式登录框-->
