@@ -173,480 +173,19 @@
                             </li>
                         </c:forEach>
 
-
-
-
-                        <%----%>
-                        <%--<li class="list-head">             <!--这是一个大头！！！！-->--%>
-                            <%--<div>--%>
-                                <%--<a href="">语言留学</a>--%>
-
-                                <%--<ul class="list-inline">--%>
-                                    <%--<li>移动开发</li>--%>
-                                    <%--<li>编程</li>--%>
-                                    <%--<li>设计</li>--%>
-                                    <%--<li>产品策划</li>--%>
-                                <%--</ul>--%>
-                            <%--</div>--%>
-
-                            <%--<div class="list-menu">--%>
-                                <%--<ul>--%>
-                                    <%--<li class="list-floor">--%>
-                                        <%--<div class="floor-head"><strong>应用开发2</strong></div>--%>
-                                        <%--<ul class="list-inline floor-menu">--%>
-                                            <%--<li class="entry">Android</li>--%>
-                                            <%--<li class="entry">IOS</li>--%>
-                                            <%--<li class="entry">WP</li>--%>
-                                            <%--<li class="entry">黑莓</li>--%>
-                                        <%--</ul>--%>
-                                    <%--</li>--%>
-                                    <%--<li class="list-floor">--%>
-                                        <%--<div class="floor-head"><strong>前端进阶</strong></div>--%>
-                                        <%--<ul class="list-inline floor-menu">--%>
-                                            <%--<li class="entry">Typescript</li>--%>
-                                            <%--<li class="entry">前端安全</li>--%>
-                                            <%--<li class="entry">项目实战</li>--%>
-                                        <%--</ul>--%>
-                                    <%--</li>--%>
-                                    <%--<li class="list-floor">--%>
-                                        <%--<div class="floor-head"><strong>前端框架</strong></div>--%>
-                                        <%--<ul class="list-inline floor-menu">--%>
-                                            <%--<li class="entry">jQuery</li>--%>
-                                            <%--<li class="entry">jQueryUI</li>--%>
-                                            <%--<li class="entry">jQuery Mobile</li>--%>
-                                            <%--<li class="entry">Ext JS</li>--%>
-                                            <%--<li class="entry">AngularJS</li>--%>
-                                            <%--<li class="entry">ReactJS</li>--%>
-                                            <%--<li class="entry">Bootstrap</li>--%>
-                                            <%--<li class="entry">React Native</li>--%>
-                                            <%--<li class="entry">Backbone</li>--%>
-                                            <%--<li class="entry">Three.js</li>--%>
-                                            <%--<li class="entry">MooTools</li>--%>
-                                            <%--<li class="entry">Compass</li>--%>
-                                        <%--</ul>--%>
-                                    <%--</li>--%>
-                                    <%--<li class="list-floor">--%>
-                                        <%--<div class="floor-head"><strong>HTML5游戏</strong></div>--%>
-                                        <%--<ul class="list-inline floor-menu">--%>
-                                            <%--<li class="entry">Canvas</li>--%>
-                                            <%--<li class="entry">SVG</li>--%>
-                                            <%--<li class="entry">WebGL</li>--%>
-                                            <%--<li class="entry">Cocos2d-js</li>--%>
-                                            <%--<li class="entry">CreateJS</li>--%>
-                                            <%--<li class="entry">Flash</li>--%>
-                                            <%--<li class="entry">Unreal</li>--%>
-                                            <%--<li class="entry">Egret</li>--%>
-                                            <%--<li class="entry">Phaser</li>--%>
-                                        <%--</ul>--%>
-                                    <%--</li>--%>
-                                <%--</ul>--%>
-                            <%--</div>--%>
-                        <%--</li>--%>
-
-                        <%--<li class="list-head">             <!--这是一个大头！！！！-->--%>
-                            <%--<div>--%>
-                                <%--<a href="">IT互联网</a>--%>
-
-                                <%--<ul class="list-inline">--%>
-                                    <%--<li>移动开发</li>--%>
-                                    <%--<li>编程</li>--%>
-                                    <%--<li>设计</li>--%>
-                                    <%--<li>产品策划</li>--%>
-                                <%--</ul>--%>
-                            <%--</div>--%>
-
-                            <%--<div class="list-menu">--%>
-                                <%--<ul>--%>
-                                    <%--<li class="list-floor">--%>
-                                        <%--<div class="floor-head"><strong>应用开发1</strong></div>--%>
-                                        <%--<ul class="list-inline floor-menu">--%>
-                                            <%--<li class="entry">Android</li>--%>
-                                            <%--<li class="entry">IOS</li>--%>
-                                            <%--<li class="entry">WP</li>--%>
-                                            <%--<li class="entry">黑莓</li>--%>
-                                        <%--</ul>--%>
-                                    <%--</li>--%>
-                                    <%--<li class="list-floor">--%>
-                                        <%--<div class="floor-head"><strong>前端进阶</strong></div>--%>
-                                        <%--<ul class="list-inline floor-menu">--%>
-                                            <%--<li class="entry">Typescript</li>--%>
-                                            <%--<li class="entry">前端安全</li>--%>
-                                            <%--<li class="entry">项目实战</li>--%>
-                                        <%--</ul>--%>
-                                    <%--</li>--%>
-                                    <%--<li class="list-floor">--%>
-                                        <%--<div class="floor-head"><strong>前端框架</strong></div>--%>
-                                        <%--<ul class="list-inline floor-menu">--%>
-                                            <%--<li class="entry">jQuery</li>--%>
-                                            <%--<li class="entry">jQueryUI</li>--%>
-                                            <%--<li class="entry">jQuery Mobile</li>--%>
-                                            <%--<li class="entry">Ext JS</li>--%>
-                                            <%--<li class="entry">AngularJS</li>--%>
-                                            <%--<li class="entry">ReactJS</li>--%>
-                                            <%--<li class="entry">Bootstrap</li>--%>
-                                            <%--<li class="entry">React Native</li>--%>
-                                            <%--<li class="entry">Backbone</li>--%>
-                                            <%--<li class="entry">Three.js</li>--%>
-                                            <%--<li class="entry">MooTools</li>--%>
-                                            <%--<li class="entry">Compass</li>--%>
-                                        <%--</ul>--%>
-                                    <%--</li>--%>
-                                    <%--<li class="list-floor">--%>
-                                        <%--<div class="floor-head"><strong>HTML5游戏</strong></div>--%>
-                                        <%--<ul class="list-inline floor-menu">--%>
-                                            <%--<li class="entry">Canvas</li>--%>
-                                            <%--<li class="entry">SVG</li>--%>
-                                            <%--<li class="entry">WebGL</li>--%>
-                                            <%--<li class="entry">Cocos2d-js</li>--%>
-                                            <%--<li class="entry">CreateJS</li>--%>
-                                            <%--<li class="entry">Flash</li>--%>
-                                            <%--<li class="entry">Unreal</li>--%>
-                                            <%--<li class="entry">Egret</li>--%>
-                                            <%--<li class="entry">Phaser</li>--%>
-                                        <%--</ul>--%>
-                                    <%--</li>--%>
-                                <%--</ul>--%>
-                            <%--</div>--%>
-                        <%--</li>--%>
-                        <%--<li class="list-head">             <!--这是一个大头！！！！-->--%>
-                            <%--<div>--%>
-                                <%--<a href="">语言留学</a>--%>
-
-                                <%--<ul class="list-inline">--%>
-                                    <%--<li>移动开发</li>--%>
-                                    <%--<li>编程</li>--%>
-                                    <%--<li>设计</li>--%>
-                                    <%--<li>产品策划</li>--%>
-                                <%--</ul>--%>
-                            <%--</div>--%>
-
-                            <%--<div class="list-menu">--%>
-                                <%--<ul>--%>
-                                    <%--<li class="list-floor">--%>
-                                        <%--<div class="floor-head"><strong>应用开发2</strong></div>--%>
-                                        <%--<ul class="list-inline floor-menu">--%>
-                                            <%--<li class="entry">Android</li>--%>
-                                            <%--<li class="entry">IOS</li>--%>
-                                            <%--<li class="entry">WP</li>--%>
-                                            <%--<li class="entry">黑莓</li>--%>
-                                        <%--</ul>--%>
-                                    <%--</li>--%>
-                                    <%--<li class="list-floor">--%>
-                                        <%--<div class="floor-head"><strong>前端进阶</strong></div>--%>
-                                        <%--<ul class="list-inline floor-menu">--%>
-                                            <%--<li class="entry">Typescript</li>--%>
-                                            <%--<li class="entry">前端安全</li>--%>
-                                            <%--<li class="entry">项目实战</li>--%>
-                                        <%--</ul>--%>
-                                    <%--</li>--%>
-                                    <%--<li class="list-floor">--%>
-                                        <%--<div class="floor-head"><strong>前端框架</strong></div>--%>
-                                        <%--<ul class="list-inline floor-menu">--%>
-                                            <%--<li class="entry">jQuery</li>--%>
-                                            <%--<li class="entry">jQueryUI</li>--%>
-                                            <%--<li class="entry">jQuery Mobile</li>--%>
-                                            <%--<li class="entry">Ext JS</li>--%>
-                                            <%--<li class="entry">AngularJS</li>--%>
-                                            <%--<li class="entry">ReactJS</li>--%>
-                                            <%--<li class="entry">Bootstrap</li>--%>
-                                            <%--<li class="entry">React Native</li>--%>
-                                            <%--<li class="entry">Backbone</li>--%>
-                                            <%--<li class="entry">Three.js</li>--%>
-                                            <%--<li class="entry">MooTools</li>--%>
-                                            <%--<li class="entry">Compass</li>--%>
-                                        <%--</ul>--%>
-                                    <%--</li>--%>
-                                    <%--<li class="list-floor">--%>
-                                        <%--<div class="floor-head"><strong>HTML5游戏</strong></div>--%>
-                                        <%--<ul class="list-inline floor-menu">--%>
-                                            <%--<li class="entry">Canvas</li>--%>
-                                            <%--<li class="entry">SVG</li>--%>
-                                            <%--<li class="entry">WebGL</li>--%>
-                                            <%--<li class="entry">Cocos2d-js</li>--%>
-                                            <%--<li class="entry">CreateJS</li>--%>
-                                            <%--<li class="entry">Flash</li>--%>
-                                            <%--<li class="entry">Unreal</li>--%>
-                                            <%--<li class="entry">Egret</li>--%>
-                                            <%--<li class="entry">Phaser</li>--%>
-                                        <%--</ul>--%>
-                                    <%--</li>--%>
-                                <%--</ul>--%>
-                            <%--</div>--%>
-                        <%--</li>--%>
-                        <%--<li class="list-head">             <!--这是一个大头！！！！-->--%>
-                            <%--<div>--%>
-                                <%--<a href="">职场技能</a>--%>
-
-                                <%--<ul class="list-inline">--%>
-                                    <%--<li>移动开发</li>--%>
-                                    <%--<li>编程</li>--%>
-                                    <%--<li>设计</li>--%>
-                                    <%--<li>产品策划</li>--%>
-                                <%--</ul>--%>
-                            <%--</div>--%>
-
-                            <%--<div class="list-menu">--%>
-                                <%--<ul>--%>
-                                    <%--<li class="list-floor">--%>
-                                        <%--<div class="floor-head"><strong>应用开发3</strong></div>--%>
-                                        <%--<ul class="list-inline floor-menu">--%>
-                                            <%--<li class="entry">Android</li>--%>
-                                            <%--<li class="entry">IOS</li>--%>
-                                            <%--<li class="entry">WP</li>--%>
-                                            <%--<li class="entry">黑莓</li>--%>
-                                        <%--</ul>--%>
-                                    <%--</li>--%>
-                                    <%--<li class="list-floor">--%>
-                                        <%--<div class="floor-head"><strong>前端进阶</strong></div>--%>
-                                        <%--<ul class="list-inline floor-menu">--%>
-                                            <%--<li class="entry">Typescript</li>--%>
-                                            <%--<li class="entry">前端安全</li>--%>
-                                            <%--<li class="entry">项目实战</li>--%>
-                                        <%--</ul>--%>
-                                    <%--</li>--%>
-                                    <%--<li class="list-floor">--%>
-                                        <%--<div class="floor-head"><strong>前端框架</strong></div>--%>
-                                        <%--<ul class="list-inline floor-menu">--%>
-                                            <%--<li class="entry">jQuery</li>--%>
-                                            <%--<li class="entry">jQueryUI</li>--%>
-                                            <%--<li class="entry">jQuery Mobile</li>--%>
-                                            <%--<li class="entry">Ext JS</li>--%>
-                                            <%--<li class="entry">AngularJS</li>--%>
-                                            <%--<li class="entry">ReactJS</li>--%>
-                                            <%--<li class="entry">Bootstrap</li>--%>
-                                            <%--<li class="entry">React Native</li>--%>
-                                            <%--<li class="entry">Backbone</li>--%>
-                                            <%--<li class="entry">Three.js</li>--%>
-                                            <%--<li class="entry">MooTools</li>--%>
-                                            <%--<li class="entry">Compass</li>--%>
-                                        <%--</ul>--%>
-                                    <%--</li>--%>
-                                    <%--<li class="list-floor">--%>
-                                        <%--<div class="floor-head"><strong>HTML5游戏</strong></div>--%>
-                                        <%--<ul class="list-inline floor-menu">--%>
-                                            <%--<li class="entry">Canvas</li>--%>
-                                            <%--<li class="entry">SVG</li>--%>
-                                            <%--<li class="entry">WebGL</li>--%>
-                                            <%--<li class="entry">Cocos2d-js</li>--%>
-                                            <%--<li class="entry">CreateJS</li>--%>
-                                            <%--<li class="entry">Flash</li>--%>
-                                            <%--<li class="entry">Unreal</li>--%>
-                                            <%--<li class="entry">Egret</li>--%>
-                                            <%--<li class="entry">Phaser</li>--%>
-                                        <%--</ul>--%>
-                                    <%--</li>--%>
-                                <%--</ul>--%>
-                            <%--</div>--%>
-                        <%--</li>--%>
-                        <%--<li class="list-head">             <!--这是一个大头！！！！-->--%>
-                            <%--<div>--%>
-                                <%--<a href="">兴趣爱好</a>--%>
-
-                                <%--<ul class="list-inline">--%>
-                                    <%--<li>移动开发</li>--%>
-                                    <%--<li>编程</li>--%>
-                                    <%--<li>设计</li>--%>
-                                    <%--<li>产品策划</li>--%>
-                                <%--</ul>--%>
-                            <%--</div>--%>
-
-                            <%--<div class="list-menu">--%>
-                                <%--<ul>--%>
-                                    <%--<li class="list-floor">--%>
-                                        <%--<div class="floor-head"><strong>应用开发4</strong></div>--%>
-                                        <%--<ul class="list-inline floor-menu">--%>
-                                            <%--<li class="entry">Android</li>--%>
-                                            <%--<li class="entry">IOS</li>--%>
-                                            <%--<li class="entry">WP</li>--%>
-                                            <%--<li class="entry">黑莓</li>--%>
-                                        <%--</ul>--%>
-                                    <%--</li>--%>
-                                    <%--<li class="list-floor">--%>
-                                        <%--<div class="floor-head"><strong>前端进阶</strong></div>--%>
-                                        <%--<ul class="list-inline floor-menu">--%>
-                                            <%--<li class="entry">Typescript</li>--%>
-                                            <%--<li class="entry">前端安全</li>--%>
-                                            <%--<li class="entry">项目实战</li>--%>
-                                        <%--</ul>--%>
-                                    <%--</li>--%>
-                                    <%--<li class="list-floor">--%>
-                                        <%--<div class="floor-head"><strong>前端框架</strong></div>--%>
-                                        <%--<ul class="list-inline floor-menu">--%>
-                                            <%--<li class="entry">jQuery</li>--%>
-                                            <%--<li class="entry">jQueryUI</li>--%>
-                                            <%--<li class="entry">jQuery Mobile</li>--%>
-                                            <%--<li class="entry">Ext JS</li>--%>
-                                            <%--<li class="entry">AngularJS</li>--%>
-                                            <%--<li class="entry">ReactJS</li>--%>
-                                            <%--<li class="entry">Bootstrap</li>--%>
-                                            <%--<li class="entry">React Native</li>--%>
-                                            <%--<li class="entry">Backbone</li>--%>
-                                            <%--<li class="entry">Three.js</li>--%>
-                                            <%--<li class="entry">MooTools</li>--%>
-                                            <%--<li class="entry">Compass</li>--%>
-                                        <%--</ul>--%>
-                                    <%--</li>--%>
-                                    <%--<li class="list-floor">--%>
-                                        <%--<div class="floor-head"><strong>HTML5游戏</strong></div>--%>
-                                        <%--<ul class="list-inline floor-menu">--%>
-                                            <%--<li class="entry">Canvas</li>--%>
-                                            <%--<li class="entry">SVG</li>--%>
-                                            <%--<li class="entry">WebGL</li>--%>
-                                            <%--<li class="entry">Cocos2d-js</li>--%>
-                                            <%--<li class="entry">CreateJS</li>--%>
-                                            <%--<li class="entry">Flash</li>--%>
-                                            <%--<li class="entry">Unreal</li>--%>
-                                            <%--<li class="entry">Egret</li>--%>
-                                            <%--<li class="entry">Phaser</li>--%>
-                                        <%--</ul>--%>
-                                    <%--</li>--%>
-                                <%--</ul>--%>
-                            <%--</div>--%>
-                        <%--</li>--%>
-                        <%--<li class="list-head">             <!--这是一个大头！！！！-->--%>
-                            <%--<div>--%>
-                                <%--<a href="">升学考研</a>--%>
-
-                                <%--<ul class="list-inline">--%>
-                                    <%--<li>移动开发</li>--%>
-                                    <%--<li>编程</li>--%>
-                                    <%--<li>设计</li>--%>
-                                    <%--<li>产品策划</li>--%>
-                                <%--</ul>--%>
-                            <%--</div>--%>
-
-                            <%--<div class="list-menu">--%>
-                                <%--<ul>--%>
-                                    <%--<li class="list-floor">--%>
-                                        <%--<div class="floor-head"><strong>应用开发5</strong></div>--%>
-                                        <%--<ul class="list-inline floor-menu">--%>
-                                            <%--<li class="entry">Android</li>--%>
-                                            <%--<li class="entry">IOS</li>--%>
-                                            <%--<li class="entry">WP</li>--%>
-                                            <%--<li class="entry">黑莓</li>--%>
-                                        <%--</ul>--%>
-                                    <%--</li>--%>
-                                    <%--<li class="list-floor">--%>
-                                        <%--<div class="floor-head"><strong>前端进阶</strong></div>--%>
-                                        <%--<ul class="list-inline floor-menu">--%>
-                                            <%--<li class="entry">Typescript</li>--%>
-                                            <%--<li class="entry">前端安全</li>--%>
-                                            <%--<li class="entry">项目实战</li>--%>
-                                        <%--</ul>--%>
-                                    <%--</li>--%>
-                                    <%--<li class="list-floor">--%>
-                                        <%--<div class="floor-head"><strong>前端框架</strong></div>--%>
-                                        <%--<ul class="list-inline floor-menu">--%>
-                                            <%--<li class="entry">jQuery</li>--%>
-                                            <%--<li class="entry">jQueryUI</li>--%>
-                                            <%--<li class="entry">jQuery Mobile</li>--%>
-                                            <%--<li class="entry">Ext JS</li>--%>
-                                            <%--<li class="entry">AngularJS</li>--%>
-                                            <%--<li class="entry">ReactJS</li>--%>
-                                            <%--<li class="entry">Bootstrap</li>--%>
-                                            <%--<li class="entry">React Native</li>--%>
-                                            <%--<li class="entry">Backbone</li>--%>
-                                            <%--<li class="entry">Three.js</li>--%>
-                                            <%--<li class="entry">MooTools</li>--%>
-                                            <%--<li class="entry">Compass</li>--%>
-                                        <%--</ul>--%>
-                                    <%--</li>--%>
-                                    <%--<li class="list-floor">--%>
-                                        <%--<div class="floor-head"><strong>HTML5游戏</strong></div>--%>
-                                        <%--<ul class="list-inline floor-menu">--%>
-                                            <%--<li class="entry">Canvas</li>--%>
-                                            <%--<li class="entry">SVG</li>--%>
-                                            <%--<li class="entry">WebGL</li>--%>
-                                            <%--<li class="entry">Cocos2d-js</li>--%>
-                                            <%--<li class="entry">CreateJS</li>--%>
-                                            <%--<li class="entry">Flash</li>--%>
-                                            <%--<li class="entry">Unreal</li>--%>
-                                            <%--<li class="entry">Egret</li>--%>
-                                            <%--<li class="entry">Phaser</li>--%>
-                                        <%--</ul>--%>
-                                    <%--</li>--%>
-                                <%--</ul>--%>
-                            <%--</div>--%>
-                        <%--</li>--%>
-                        <%--<li class="list-head">             <!--这是一个大头！！！！-->--%>
-                            <%--<div>--%>
-                                <%--<a href="">更多分类</a>--%>
-
-                                <%--<ul class="list-inline">--%>
-                                    <%--<li>移动开发</li>--%>
-                                    <%--<li>编程</li>--%>
-                                    <%--<li>设计</li>--%>
-                                    <%--<li>产品策划</li>--%>
-                                <%--</ul>--%>
-                            <%--</div>--%>
-
-                            <%--<div class="list-menu">--%>
-                                <%--<ul>--%>
-                                    <%--<li class="list-floor">--%>
-                                        <%--<div class="floor-head"><strong>应用开发5</strong></div>--%>
-                                        <%--<ul class="list-inline floor-menu">--%>
-                                            <%--<li class="entry">Android</li>--%>
-                                            <%--<li class="entry">IOS</li>--%>
-                                            <%--<li class="entry">WP</li>--%>
-                                            <%--<li class="entry">黑莓</li>--%>
-                                        <%--</ul>--%>
-                                    <%--</li>--%>
-                                    <%--<li class="list-floor">--%>
-                                        <%--<div class="floor-head"><strong>前端进阶</strong></div>--%>
-                                        <%--<ul class="list-inline floor-menu">--%>
-                                            <%--<li class="entry">Typescript</li>--%>
-                                            <%--<li class="entry">前端安全</li>--%>
-                                            <%--<li class="entry">项目实战</li>--%>
-                                        <%--</ul>--%>
-                                    <%--</li>--%>
-                                    <%--<li class="list-floor">--%>
-                                        <%--<div class="floor-head"><strong>前端框架</strong></div>--%>
-                                        <%--<ul class="list-inline floor-menu">--%>
-                                            <%--<li class="entry">jQuery</li>--%>
-                                            <%--<li class="entry">jQueryUI</li>--%>
-                                            <%--<li class="entry">jQuery Mobile</li>--%>
-                                            <%--<li class="entry">Ext JS</li>--%>
-                                            <%--<li class="entry">AngularJS</li>--%>
-                                            <%--<li class="entry">ReactJS</li>--%>
-                                            <%--<li class="entry">Bootstrap</li>--%>
-                                            <%--<li class="entry">React Native</li>--%>
-                                            <%--<li class="entry">Backbone</li>--%>
-                                            <%--<li class="entry">Three.js</li>--%>
-                                            <%--<li class="entry">MooTools</li>--%>
-                                            <%--<li class="entry">Compass</li>--%>
-                                        <%--</ul>--%>
-                                    <%--</li>--%>
-                                    <%--<li class="list-floor">--%>
-                                        <%--<div class="floor-head"><strong>HTML5游戏</strong></div>--%>
-                                        <%--<ul class="list-inline floor-menu">--%>
-                                            <%--<li class="entry">Canvas</li>--%>
-                                            <%--<li class="entry">SVG</li>--%>
-                                            <%--<li class="entry">WebGL</li>--%>
-                                            <%--<li class="entry">Cocos2d-js</li>--%>
-                                            <%--<li class="entry">CreateJS</li>--%>
-                                            <%--<li class="entry">Flash</li>--%>
-                                            <%--<li class="entry">Unreal</li>--%>
-                                            <%--<li class="entry">Egret</li>--%>
-                                            <%--<li class="entry">Phaser</li>--%>
-                                        <%--</ul>--%>
-                                    <%--</li>--%>
-                                <%--</ul>--%>
-                            <%--</div>--%>
-                        <%--</li>--%>
-
                     </ul>
                 </div>
 
-                <div class="col-md-6 tabimg">
-                    <div>
-                        <ul class="list-inline">
-                            <li class="head">免费课程</li><!--
-                                --><li class="head">收费课程</li><!--
-                                --><li class="head">精品课程</li><!--
-                                --><li class="head">考试达人</li>
-                        </ul>
-                    </div><!--
-                        --><div id="carousel-generic" class="carousel slide photo" data-ride="carousel">
+                <div class="col-md-9 tabimg">
+                    <%--<div>--%>
+                        <%--<ul class="list-inline">--%>
+                            <%--<li class="head">免费课程</li><!----%>
+                                <%----><li class="head">收费课程</li><!----%>
+                                <%----><li class="head">精品课程</li><!----%>
+                                <%----><li class="head">考试达人</li>--%>
+                        <%--</ul>--%>
+                    <%--</div><!----%>
+                        <%---->--%><div id="carousel-generic" class="carousel slide photo" data-ride="carousel">
                     <!-- Indicators -->
                     <ol class="carousel-indicators">
                         <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
@@ -691,286 +230,359 @@
                 </div>
                 </div>
 
-                <div class="col-md-3 addimg">
-                </div>
-            </div>
-
-            <div class="course" class="container">
-                <div class="row">
-                    <div class="col-md-6 img-left">
-                        <a href="#"><img src="${assetsPath}/images/course.jpg " alt=""/></a>
-                        <p>这是一个标题这是一个标题这是一个标题这是一个标题这是一个标题这是一个标题</p>
-                        <div class="addon"><i class="fa fa-fire fa-2x">热门</i></div>
-                    </div>
-                    <div class="col-md-6 img-right">
-                        <div class="row">
-                            <div class="col-xs-6 img-right-small">
-                                <a href="#"><img src="${assetsPath}/images/course.jpg " alt=""/></a>
-                                <p>这是一个小标题这是一个小标题这是一个小标题</p>
-                            </div>
-                            <div class="col-xs-6 img-right-small">
-                                <a href="#"><img src="${assetsPath}/images/course.jpg " alt=""/></a>
-                                <p>这是一个小标题这是一个小标题这是一个小标题]</p>
-                            </div>
-                        </div>
-                        <div class="clearfix visible-xs-block"></div>
-                        <div class="row">
-                            <div class="col-xs-6 img-right-small">
-                                <a href="#"><img src="${assetsPath}/images/course.jpg " alt=""/></a>
-                                <p>这是一个小标题这是一个小标题这是一个小标题]</p>
-                            </div>
-                            <div class="col-xs-6 img-right-small">
-                                <a href="#"><img src="${assetsPath}/images/course.jpg " alt=""/></a>
-                                <p>这是一个小标题这是一个小标题这是一个小标题]</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-
+                <%--<div class="col-md-3 addimg">--%>
+                <%--</div>--%>
             </div>
 
             <!----------------------------
                            courses
               ------------------------------->
-            <div class="courses">
-                <div class="container-fluid">
-                    <div class="row header">
-                        <div class="pull-left col-md-3">
-                            <div class="title">生活/文化/兴趣</div>
+
+            <div class="courses-all flex-row">
+                <div class="flex-10">
+                    <div class="courses">
+                        <div class="container-fluid">
+                            <div class="row header">
+                                <div class="pull-left col-md-3">
+                                    <div class="title">生活/文化/兴趣</div>
+                                </div>
+                                <div class="col-md-4">
+                                    <ul class="list-inline head-list">
+                                        <li>前端</li>
+                                        <li>后端</li>
+                                        <li>移动开发</li>
+                                    </ul>
+                                </div>
+                                <div class="col-md-5 more"><a href="" class="pull-right">&gt;&gt;More</a></div>
+                                <!--<div class="clearfix"></div>-->
+                            </div>
+                            <div class="row body">
+                                <div class="row">
+                                    <div class="col-md-3">
+                                        <img src="${assetsPath}/images/courses1.jpg" alt=""/>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="info">
+                                            <div class="title">
+                                                HTML5从如门到精通
+                                            </div>
+                                            <div class="addon">
+                                                <div class="time"><i class="fa fa-clock-o"></i>48课时</div>
+                                                <div class="people"><i class="fa fa-user"></i>143人在学</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <img src="${assetsPath}/images/courses2.jpg" alt=""/>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="info">
+                                            <div class="title">
+                                                IOS8企业项目开发系列课程
+                                            </div>
+                                            <div class="addon">
+                                                <div class="time"><i class="fa fa-clock-o"></i>107课时</div>
+                                                <div class="people"><i class="fa fa-user"></i>850人在学</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-3">
+                                        <img src="${assetsPath}/images/courses3.jpg" alt=""/>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="info">
+                                            <div class="title">
+                                                交互设计精品课--输入和输出
+                                            </div>
+                                            <div class="addon">
+                                                <div class="time"><i class="fa fa-clock-o"></i>2课时</div>
+                                                <div class="people"><i class="fa fa-user"></i>5人在学</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <img src="${assetsPath}/images/courses4.png" alt=""/>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="info">
+                                            <div class="title">
+                                                Web前端开发规范
+                                            </div>
+                                            <div class="addon">
+                                                <div class="time"><i class="fa fa-clock-o"></i>25课时</div>
+                                                <div class="people"><i class="fa fa-user"></i>1302人在学</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        <div class="col-md-4">
-                            <ul class="list-inline head-list">
-                                <li>前端</li>
-                                <li>后端</li>
-                                <li>移动开发</li>
-                            </ul>
-                        </div>
-                        <div class="col-md-5 more"><a href="" class="pull-right">&gt;&gt;More</a></div>
-                        <!--<div class="clearfix"></div>-->
                     </div>
-                    <div class="row body">
-                        <div class="row">
-                            <div class="col-md-3">
-                                <img src="${assetsPath}/images/courses1.jpg" alt=""/>
+
+                    <div class="courses">
+                        <div class="container-fluid">
+                            <div class="row header">
+                                <div class="pull-left col-md-3">
+                                    <div class="title">生活/文化/兴趣</div>
+                                </div>
+                                <div class="col-md-4">
+                                    <ul class="list-inline head-list">
+                                        <li>前端</li>
+                                        <li>后端</li>
+                                        <li>移动开发</li>
+                                    </ul>
+                                </div>
+                                <div class="col-md-5 more"><a href="" class="pull-right">&gt;&gt;More</a></div>
+                                <!--<div class="clearfix"></div>-->
                             </div>
-                            <div class="col-md-3">
-                                <div class="info">
-                                    <div class="title">
-                                        HTML5从如门到精通
+                            <div class="row body">
+                                <div class="row">
+                                    <div class="col-md-3">
+                                        <img src="${assetsPath}/images/courses1.jpg" alt=""/>
                                     </div>
-                                    <div class="addon">
-                                        <div class="time"><i class="fa fa-clock-o"></i>48课时</div>
-                                        <div class="people"><i class="fa fa-user"></i>143人在学</div>
+                                    <div class="col-md-3">
+                                        <div class="info">
+                                            <div class="title">
+                                                HTML5从如门到精通
+                                            </div>
+                                            <div class="addon">
+                                                <div class="time"><i class="fa fa-clock-o"></i>48课时</div>
+                                                <div class="people"><i class="fa fa-user"></i>143人在学</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <img src="${assetsPath}/images/courses2.jpg" alt=""/>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="info">
+                                            <div class="title">
+                                                IOS8企业项目开发系列课程
+                                            </div>
+                                            <div class="addon">
+                                                <div class="time"><i class="fa fa-clock-o"></i>107课时</div>
+                                                <div class="people"><i class="fa fa-user"></i>850人在学</div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="col-md-3">
-                                <img src="${assetsPath}/images/courses2.jpg" alt=""/>
-                            </div>
-                            <div class="col-md-3">
-                                <div class="info">
-                                    <div class="title">
-                                        IOS8企业项目开发系列课程
+                                <div class="row">
+                                    <div class="col-md-3">
+                                        <img src="${assetsPath}/images/courses3.jpg" alt=""/>
                                     </div>
-                                    <div class="addon">
-                                        <div class="time"><i class="fa fa-clock-o"></i>107课时</div>
-                                        <div class="people"><i class="fa fa-user"></i>850人在学</div>
+                                    <div class="col-md-3">
+                                        <div class="info">
+                                            <div class="title">
+                                                交互设计精品课--输入和输出
+                                            </div>
+                                            <div class="addon">
+                                                <div class="time"><i class="fa fa-clock-o"></i>2课时</div>
+                                                <div class="people"><i class="fa fa-user"></i>5人在学</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <img src="${assetsPath}/images/courses4.png" alt=""/>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="info">
+                                            <div class="title">
+                                                Web前端开发规范
+                                            </div>
+                                            <div class="addon">
+                                                <div class="time"><i class="fa fa-clock-o"></i>25课时</div>
+                                                <div class="people"><i class="fa fa-user"></i>1302人在学</div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="row">
-                            <div class="col-md-3">
-                                <img src="${assetsPath}/images/courses3.jpg" alt=""/>
+                    </div>
+
+                    <div class="courses">
+                        <div class="container-fluid">
+                            <div class="row header">
+                                <div class="pull-left col-md-3">
+                                    <div class="title">生活/文化/兴趣</div>
+                                </div>
+                                <div class="col-md-4">
+                                    <ul class="list-inline head-list">
+                                        <li>前端</li>
+                                        <li>后端</li>
+                                        <li>移动开发</li>
+                                    </ul>
+                                </div>
+                                <div class="col-md-5 more"><a href="" class="pull-right">&gt;&gt;More</a></div>
+                                <!--<div class="clearfix"></div>-->
                             </div>
-                            <div class="col-md-3">
-                                <div class="info">
-                                    <div class="title">
-                                        交互设计精品课--输入和输出
+                            <div class="row body">
+                                <div class="row">
+                                    <div class="col-md-3">
+                                        <img src="${assetsPath}/images/courses1.jpg" alt=""/>
                                     </div>
-                                    <div class="addon">
-                                        <div class="time"><i class="fa fa-clock-o"></i>2课时</div>
-                                        <div class="people"><i class="fa fa-user"></i>5人在学</div>
+                                    <div class="col-md-3">
+                                        <div class="info">
+                                            <div class="title">
+                                                HTML5从如门到精通
+                                            </div>
+                                            <div class="addon">
+                                                <div class="time"><i class="fa fa-clock-o"></i>48课时</div>
+                                                <div class="people"><i class="fa fa-user"></i>143人在学</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <img src="${assetsPath}/images/courses2.jpg" alt=""/>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="info">
+                                            <div class="title">
+                                                IOS8企业项目开发系列课程
+                                            </div>
+                                            <div class="addon">
+                                                <div class="time"><i class="fa fa-clock-o"></i>107课时</div>
+                                                <div class="people"><i class="fa fa-user"></i>850人在学</div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="col-md-3">
-                                <img src="${assetsPath}/images/courses4.png" alt=""/>
-                            </div>
-                            <div class="col-md-3">
-                                <div class="info">
-                                    <div class="title">
-                                        Web前端开发规范
+                                <div class="row">
+                                    <div class="col-md-3">
+                                        <img src="${assetsPath}/images/courses3.jpg" alt=""/>
                                     </div>
-                                    <div class="addon">
-                                        <div class="time"><i class="fa fa-clock-o"></i>25课时</div>
-                                        <div class="people"><i class="fa fa-user"></i>1302人在学</div>
+                                    <div class="col-md-3">
+                                        <div class="info">
+                                            <div class="title">
+                                                交互设计精品课--输入和输出
+                                            </div>
+                                            <div class="addon">
+                                                <div class="time"><i class="fa fa-clock-o"></i>2课时</div>
+                                                <div class="people"><i class="fa fa-user"></i>5人在学</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <img src="${assetsPath}/images/courses4.png" alt=""/>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="info">
+                                            <div class="title">
+                                                Web前端开发规范
+                                            </div>
+                                            <div class="addon">
+                                                <div class="time"><i class="fa fa-clock-o"></i>25课时</div>
+                                                <div class="people"><i class="fa fa-user"></i>1302人在学</div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="courses">
-                <div class="container-fluid">
-                    <div class="row header">
-                        <div class="pull-left col-md-3">
-                            <div class="title">生活/文化/兴趣</div>
+
+                <div class="recommend-all flex-4">
+                    <div class="recommend">
+                        <div class="title">发掘</div>
+
+                        <div class="recommend-body">
+                            <div class="free-all">
+                                <div class="free">
+                                    <div>免费</div>
+                                    <div>课程</div>
+                                </div>
+                                <div class="article pull-right">
+                                    <ul>
+                                        <li><a href="">月薪过万的设计师养成记</a></li>
+                                        <li><a href="">8小时学会HTML网页开发</a></li>
+                                        <li><a href="">一天玩转MySQL</a></li>
+                                    </ul>
+                                </div>
+                                <div class="clearfix"></div>
+                            </div>
+                            <div class="good-all">
+                                <div class="good">
+                                    <div>精品</div>
+                                    <div>课程</div>
+                                </div>
+                                <div class="article pull-right">
+                                    <ul>
+                                        <li><a href="">月薪过万的设计师养成记</a></li>
+                                        <li><a href="">8小时学会HTML网页开发</a></li>
+                                        <li><a href="">一天玩转MySQL</a></li>
+                                    </ul>
+                                </div>
+                                <div class="clearfix"></div>
+                            </div>
+                            <div class="fire-all">
+                                <div class="fire">
+                                    <div>热门</div>
+                                    <div>课程</div>
+                                </div>
+                                <div class="article pull-right">
+                                    <ul>
+                                        <li><a href="">月薪过万的设计师养成记</a></li>
+                                        <li><a href="">8小时学会HTML网页开发</a></li>
+                                        <li><a href="">一天玩转MySQL</a></li>
+                                    </ul>
+                                </div>
+                                <div class="clearfix"></div>
+                            </div>
                         </div>
-                        <div class="col-md-4">
-                            <ul class="list-inline head-list">
-                                <li>前端</li>
-                                <li>后端</li>
-                                <li>移动开发</li>
+                    </div>
+
+
+                    <div class="recommend-2 flex-col">
+                        <div class="title">
+                            <ul>
+                                <li class="article recommend-title-active">文章</li>
+                                <li class="plan">计划</li>
                             </ul>
                         </div>
-                        <div class="col-md-5 more"><a href="" class="pull-right">&gt;&gt;More</a></div>
-                        <!--<div class="clearfix"></div>-->
-                    </div>
-                    <div class="row body">
-                        <div class="row">
-                            <div class="col-md-3">
-                                <img src="${assetsPath}/images/courses1.jpg" alt=""/>
-                            </div>
-                            <div class="col-md-3">
-                                <div class="info">
-                                    <div class="title">
-                                        HTML5从如门到精通
-                                    </div>
-                                    <div class="addon">
-                                        <div class="time"><i class="fa fa-clock-o"></i>48课时</div>
-                                        <div class="people"><i class="fa fa-user"></i>143人在学</div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-3">
-                                <img src="${assetsPath}/images/courses2.jpg" alt=""/>
-                            </div>
-                            <div class="col-md-3">
-                                <div class="info">
-                                    <div class="title">
-                                        IOS8企业项目开发系列课程
-                                    </div>
-                                    <div class="addon">
-                                        <div class="time"><i class="fa fa-clock-o"></i>107课时</div>
-                                        <div class="people"><i class="fa fa-user"></i>850人在学</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-3">
-                                <img src="${assetsPath}/images/courses3.jpg" alt=""/>
-                            </div>
-                            <div class="col-md-3">
-                                <div class="info">
-                                    <div class="title">
-                                        交互设计精品课--输入和输出
-                                    </div>
-                                    <div class="addon">
-                                        <div class="time"><i class="fa fa-clock-o"></i>2课时</div>
-                                        <div class="people"><i class="fa fa-user"></i>5人在学</div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-3">
-                                <img src="${assetsPath}/images/courses4.png" alt=""/>
-                            </div>
-                            <div class="col-md-3">
-                                <div class="info">
-                                    <div class="title">
-                                        Web前端开发规范
-                                    </div>
-                                    <div class="addon">
-                                        <div class="time"><i class="fa fa-clock-o"></i>25课时</div>
-                                        <div class="people"><i class="fa fa-user"></i>1302人在学</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="courses">
-                <div class="container-fluid">
-                    <div class="row header">
-                        <div class="pull-left col-md-3">
-                            <div class="title">生活/文化/兴趣</div>
-                        </div>
-                        <div class="col-md-4">
-                            <ul class="list-inline head-list">
-                                <li>前端</li>
-                                <li>后端</li>
-                                <li>移动开发</li>
+                        <div class="list-article">
+                            <ul>
+                                <li><a href="">1.这里是文章</a></li>
+                                <li><a href="">2.Cursor:url()的使用</a></li>
+                                <li><a href="">3.Java基本数据类型与包装类、字符串之间的转换dafadfasfasdfasdfasdf</a></li>
+                                <li><a href="">4.ImageView自动来回循环移动,用到Animation</a></li>
+                                <li><a href="">5.关于JDBC的连接深入理解</a></li>
+                                <a href="" class="more pull-right">&gt;&gt;More</a>
                             </ul>
                         </div>
-                        <div class="col-md-5 more"><a href="" class="pull-right">&gt;&gt;More</a></div>
-                        <!--<div class="clearfix"></div>-->
-                    </div>
-                    <div class="row body">
-                        <div class="row">
-                            <div class="col-md-3">
-                                <img src="${assetsPath}/images/courses1.jpg" alt=""/>
-                            </div>
-                            <div class="col-md-3">
-                                <div class="info">
-                                    <div class="title">
-                                        HTML5从如门到精通
-                                    </div>
-                                    <div class="addon">
-                                        <div class="time"><i class="fa fa-clock-o"></i>48课时</div>
-                                        <div class="people"><i class="fa fa-user"></i>143人在学</div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-3">
-                                <img src="${assetsPath}/images/courses2.jpg" alt=""/>
-                            </div>
-                            <div class="col-md-3">
-                                <div class="info">
-                                    <div class="title">
-                                        IOS8企业项目开发系列课程
-                                    </div>
-                                    <div class="addon">
-                                        <div class="time"><i class="fa fa-clock-o"></i>107课时</div>
-                                        <div class="people"><i class="fa fa-user"></i>850人在学</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-3">
-                                <img src="${assetsPath}/images/courses3.jpg" alt=""/>
-                            </div>
-                            <div class="col-md-3">
-                                <div class="info">
-                                    <div class="title">
-                                        交互设计精品课--输入和输出
-                                    </div>
-                                    <div class="addon">
-                                        <div class="time"><i class="fa fa-clock-o"></i>2课时</div>
-                                        <div class="people"><i class="fa fa-user"></i>5人在学</div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-3">
-                                <img src="${assetsPath}/images/courses4.png" alt=""/>
-                            </div>
-                            <div class="col-md-3">
-                                <div class="info">
-                                    <div class="title">
-                                        Web前端开发规范
-                                    </div>
-                                    <div class="addon">
-                                        <div class="time"><i class="fa fa-clock-o"></i>25课时</div>
-                                        <div class="people"><i class="fa fa-user"></i>1302人在学</div>
-                                    </div>
-                                </div>
-                            </div>
+                        <div class="list-plan">
+                            <ul>
+                                <li><a href="">1.这里是计划</a></li>
+                                <li><a href="">2.Cursor:url()的使用</a></li>
+                                <li><a href="">3.Java基本数据类型与包装类、字符串之间的转换dafadfasfasdfasdfasdf</a></li>
+                                <li><a href="">4.ImageView自动来回循环移动,用到Animation</a></li>
+                                <li><a href="">5.关于JDBC的连接深入理解</a></li>
+                                <a href="" class="more pull-right">&gt;&gt;More</a>
+                            </ul>
                         </div>
                     </div>
+
+                    <script>
+                        $(document).ready(function () {
+                            $(".article").click(function(){
+                                $(".list-article").fadeIn(500);
+                                $(".list-plan").hide();
+                                $(this).addClass("recommend-title-active");
+                                $(".plan").removeClass("recommend-title-active");
+
+                            });
+                            $(".plan").click(function(){
+                                $(".list-article").hide();
+                                $(".list-plan").fadeIn(500);
+                                $(this).addClass("recommend-title-active");
+                                $(".article").removeClass("recommend-title-active");
+                            });
+
+                        });
+                    </script>
+
                 </div>
             </div>
 
