@@ -3,7 +3,6 @@
 pageEncoding="UTF-8"%>
 <%@ page isELIgnored="false" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -16,120 +15,10 @@ pageEncoding="UTF-8"%>
     <script src="${assetsPath}/js/navLink.js"></script>
 </head>
 <body>
-<header>
-    <div class="container-fluid">
-
-        <div class="row">
-            <div class="col-md-4 logo">
-                iLearn
-            </div>
-            <div class="col-md-4 search">
-                <div class="input-group">
-                    <input type="text" class="form-control" placeholder="搜索内容...">
-                              <span class="input-group-btn">
-                                <button class="btn btn-default" type="button">搜索</button>
-                              </span>
-                </div><!-- /input-group -->
-            </div>
-            <div class="col-md-4 button-group">
-                <span class="login"><a id="userlogin" href="javascript:void(0)" onclick="openLogin()"><c:if test="${username ==null}">登录</c:if>
-                                                                    <c:if test="${username!=null}">${username} </c:if></a></span>
-                <span class="registe"><a id="logout" href="javascript:void(0)" onclick="openRegister()">注册</a></span>
-            </div>
-
-            <script>
-                //            alert($("#nav-login").text());
-                if($("#userlogin").text().trim()=="${user}"){
-                    $("#userlogin").attr("onclick","window.location.href='/views/user/user-info.jsp'");
-                    $("#logout").attr("onclick","window.location.href='${rootPath}/user/logout'");
-                }
-            </script>
-
-            <div id="modal">
-                <!--弹出式登录框-->
-                <div class="modal-dialog" id="login">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <button type="button" class="close" onclick="closeLogin()">x</button>
-                            <h1 class="text-center text-primary">登录</h1>
-                        </div>
-                        <div class="modal-body center-block">
-                            <form action="" class="form center-block">
-                                <div class="input-group">
-                                    <!--<label for="examInputEmail1">邮箱:</label>-->
-                                    <span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
-                                    <input type="text" class="form-control input-lg" id="examInputEmail1" name="username"
-                                           placeholder="请输入您的用户名"/>
-                                </div>
-                                <div class="input-group">
-                                    <span class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></span>
-                                    <input type="password" class="form-control input-lg" id="examInputPassword1" name="password"
-                                           placeholder="请输入您的密码"/>
-                                </div>
-
-                                <div class="form-group">
-                                    <input type="submit" class="btn btn-primary btn-lg btn-block" value="登录" id="login-in">
-                                    <span><a href="javascript:void(0)" style="text-align: left">找回密码</a></span>
-                                    <span><a href="javascript:void(0)" class="pull-right re-register">注册</a></span>
-                                </div>
-                            </form>
-                        </div>
-                        <div class="modal-footer">
-                        </div>
-                    </div>
-                </div>
-                <!--注册框-->
-                <div class="modal-dialog" id="register">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <button type="button" class="close" onclick="closeRegister()">x</button>
-                            <h1 class="text-center text-primary">注册</h1>
-                        </div>
-                        <div class="modal-body center-block">
-                            <form action="" class="form center-block">
-                                <div class="input-group">
-                                    <!--<label for="examInputEmail1">邮箱:</label>-->
-                                    <span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
-                                    <input type="email" class="form-control input-lg" id="username"
-                                           placeholder="请输入您的用户名"/>
-                                </div>
-                                <div class="input-group">
-                                    <span class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></span>
-                                    <input type="password" class="form-control input-lg" id="password1"
-                                           placeholder="请输入您的密码"/>
-                                </div>
-                                <div class="input-group">
-                                    <span class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></span>
-                                    <input type="password" class="form-control input-lg" id="password2"
-                                           placeholder="确认密码"/>
-                                </div>
-                                <div class="input-group">
-                                    <span class="input-group-addon"><span class="glyphicon glyphicon-envelope"></span></span>
-                                    <input type="password" class="form-control input-lg" id="email"
-                                           placeholder="邮箱"/>
-                                </div>
-
-                                <div class="form-group">
-                                    <button class="btn btn-primary btn-lg btn-block">注册</button>
-                                    <span><a href="javascript:void(0)" style="text-align: left">找回密码</a></span>
-                                    <span><a href="javascript:void(0)" class="pull-right re-login">登录</a></span>
-                                </div>
-                            </form>
-                        </div>
-                        <div class="modal-footer">
-
-                        </div>
-                    </div>
-                </div>
-                <!--遮罩层-->
-                <div class="modal-dialog-mask"></div>
-            </div>
 
 
-        </div>
-    </div>
+<jsp:include page="common/header.jsp" />
 
-</header>
 
 <div class="main course">
     <div class="contain">
@@ -267,18 +156,22 @@ pageEncoding="UTF-8"%>
                         <dl>
                             <c:set var="selectResult" value="0"></c:set>
                             <dt>已选条件：</dt>
+
                             <c:if test="${nowCate1.cateName!='全部' && nowCate1!=null}">
-                                <dd>${nowCate1.cateName}</dd>
+                                <dd id="selectA" class="selected"><a href="">${nowCate1.cateName}</a></dd>
                                 <c:set var="selectResult" value="1"></c:set>
                             </c:if>
+
                             <c:if test="${nowCate2.cateName!='全部' && nowCate2!=null}">
-                                <dd>${nowCate2.cateName}</dd>
+                                <dd id="selectB" class="selected"><a href="">${nowCate2.cateName}</a></dd>
                                 <c:set var="selectResult" value="1"></c:set>
                             </c:if>
+
                             <c:if test="${nowCate3.cateName!='全部' && nowCate3!=null}">
-                                <dd>${nowCate3.cateName}</dd>
+                                <dd id="selectC" class="selected"><a href="">${nowCate3.cateName}</a></dd>
                                 <c:set var="selectResult" value="1"></c:set>
                             </c:if>
+
                             <c:if test="${selectResult!='1'}">
                                 <dd class="select-no">暂时没有选择过滤条件</dd>
                             </c:if>
@@ -322,6 +215,8 @@ pageEncoding="UTF-8"%>
                             <div class="clearfix"></div>
                         </ul>
                     </div>
+
+
                 </div>
                 <nav>
                     <ul class="pagination pull-right">
@@ -345,40 +240,8 @@ pageEncoding="UTF-8"%>
 </div>
 
 
-<footer>
-    <div class="container site-info">
-        <div class="row">
-            <div class="col-xs-2"><a href="/"><img src="${assetsPath}/images/logo.png" alt="" width="120"></a></div>
-            <div class="col-xs-6">
-                <div class="row">
-                    <div class="col-xs-6">
-                        <h3>统计信息</h3>
-                        <p>网站总访问量 : 1365544</p>
-                        <p>当前在线人数 : 42554</p>
-                        <p>页面加载时间 : 0.000234</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-xs-4 contacts">
-                <div class="contact-detail">
-                    <p><i class="fa fa-map-marker"></i>江苏省南京市</p>
-                    <p><i class="fa fa-phone"></i>123-456-789</p>
-                    <p><i class="fa fa-envelope"></i>1234567@qq.com</p>
-                </div>
-                <span>关注我们:</span>
-                <a href=""><i class="contact-icon fa fa-weibo"></i></a>
-                <a href=""><i class="contact-icon fa fa-weixin"></i></a>
-                <a href=""><i class="contact-icon fa fa-qq"></i></a>
-                <a href=""><i class="contact-icon fa fa-renren"></i></a>
-            </div>
-        </div>
-    </div>
-    </div>
-    <div class="copyright">
+<jsp:include page="common/footer.jsp" />
 
-        <p>CopyrightBy--Mr.z</p>
-    </div>
-</footer>
 
 <script>
     $(document).ready(function () {

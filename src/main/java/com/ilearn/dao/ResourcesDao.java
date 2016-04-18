@@ -51,23 +51,15 @@ public class ResourcesDao extends BaseDao {
 
 
 
+    public Page<ResourcesEntity> search(String keyword , int pageNum){
+        String hql = "from ResourcesEntity as res where res.rkey like '%"
+                +keyword+"%'";
 
-//    public List<ResourcesEntity> getPageResourcesOfLeaf(int id , int pageNum){
-//
-//        if(this.HQuery("category1Id", id) != null){
-//            return this.PageQuery("category1Id", id, pageNum);
-//        }else if(this.HQuery("category2Id", id) != null){
-//            return this.PageQuery("category2Id", id, pageNum);
-//        }else if(this.HQuery("category3Id", id) != null){
-//            return this.PageQuery("category3Id", id, pageNum);
-//        }else {
-//            System.out.println("111111111111111111111111111111111111111111111111111111111");
-//            return null;
-//        }
-//    }
+        Query query = query(hql);
 
-
-
+        return pageHandler.getPage(pageNum,20,
+                ResourcesEntity.class,query);
+    }
 
 
 

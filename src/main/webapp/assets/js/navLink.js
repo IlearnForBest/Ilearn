@@ -42,21 +42,21 @@ $(document).ready(function(){
 		}
 	});
 
-	$(document).on("click","#selectA",function(){
-		$(this).remove();
-		$("#select1 .select-all").addClass("selected").siblings().removeClass("selected");
-	});
-
-
-	$(document).on("click","#selectB", function () {
-		$(this).remove();
-		$("#select2 .select-all").addClass("selected").siblings().removeClass("selected");
-	});
-
-	$(document).on("click","#selectC", function () {
-		$(this).remove();
-		$("#select3 .select-all").addClass("selected").siblings().removeClass("selected");
-	});
+	//$(document).on("click","#selectA",function(){
+	//	$(this).remove();
+	//	$("#select1 .select-all").addClass("selected").siblings().removeClass("selected");
+	//});
+    //
+    //
+	//$(document).on("click","#selectB", function () {
+	//	$(this).remove();
+	//	$("#select2 .select-all").addClass("selected").siblings().removeClass("selected");
+	//});
+    //
+	//$(document).on("click","#selectC", function () {
+	//	$(this).remove();
+	//	$("#select3 .select-all").addClass("selected").siblings().removeClass("selected");
+	//});
 
 	$(document).on("click",".select dd",function(){
 		if ($(".select-result dd").length > 1) {
