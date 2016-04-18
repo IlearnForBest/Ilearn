@@ -30,6 +30,27 @@ public class CategoryDao extends BaseDao {
 
 
 
+
+
+    public List<CategoryEntity> getChildrenCate(int id){
+
+        CategoryEntity category = getById(id);
+        String hql;
+
+        if(category.getCategory1Id()==null){//categoey是一级目录
+            hql = "from CategoryEntity as cate where cate.category1Id =?";
+        }else {
+            hql = "from CategoryEntity as cate where cate.category2Id =?";
+        }
+        Query query = query(hql);
+        query.setInteger(0,id);
+
+        return query.list();
+
+    }
+
+
+
     public List<CateBean> getSecondCategory(){
 
         List<CateBean> cateBeans = new ArrayList<>();

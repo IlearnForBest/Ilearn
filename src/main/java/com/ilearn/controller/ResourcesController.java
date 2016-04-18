@@ -38,8 +38,8 @@ public class ResourcesController {
     @RequestMapping(value = "/course" , method = RequestMethod.GET)
     public String list(Model model){
 
-        model.addAttribute("resources",resourcesDao.queryByPage(1,20));
-        model.addAttribute("nowCate1Id",-1);
+        model.addAttribute("resources",resourcesDao.queryByPage(1,20).getList());
+        model.addAttribute("nowCate1",null);
         return "course";
     }
 
@@ -58,14 +58,14 @@ public class ResourcesController {
 
         CategoryEntity category = categoryDao.getById(id);
         if(category.getCategory1Id()==null){
-            model.addAttribute("nowCate1Id", id);
+            model.addAttribute("nowCate1", category);
         }else if(category.getCategory2Id()==null){
-            model.addAttribute("nowCate1Id", category.getCategory1Id());
-            model.addAttribute("nowCate2Id", id);
+            model.addAttribute("nowCate1", categoryDao.getById(category.getCategory1Id()));
+            model.addAttribute("nowCate2", category);
         }else{
-            model.addAttribute("nowCate1Id", category.getCategory1Id());
-            model.addAttribute("nowCate2Id", category.getCategory2Id());
-            model.addAttribute("nowCate3Id", id);
+            model.addAttribute("nowCate1", categoryDao.getById(category.getCategory1Id()));
+            model.addAttribute("nowCate2", categoryDao.getById(category.getCategory2Id()));
+            model.addAttribute("nowCate3", category);
         }
 
 

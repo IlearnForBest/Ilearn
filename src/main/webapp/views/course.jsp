@@ -147,35 +147,51 @@ pageEncoding="UTF-8"%>
                     <li class="select-list">
                         <dl id="select1">
                             <dt>领域：</dt>
-                            <c:if test="${nowCate1Id==-1}">
+                            <c:if test="${nowCate1==null}">
                                 <c:set var="selectedOfClass" value="select-all selected"></c:set>
                             </c:if>
                             <dd class="${selectedOfClass}"><a href="${rootPath}/resource/course">全部</a></dd>
 
+                            <%--<c:set var="selectedOfClass1" value=""></c:set>--%>
                             <c:forEach items="${secondcates}" var="cate1">
-                                <c:if test="${nowCate1Id==cate1.cate_id}">
+                                <c:if test="${nowCate1.cid == cate1.cate_id}">
                                     <c:set var="selectedOfClass1" value="select-all selected"></c:set>
                                 </c:if>
                                 <dd class="${selectedOfClass1}"><a href="${rootPath}/resource/${cate1.cate_id}/1">${cate1.cate_name}</a></dd>
                                 <c:set var="selectedOfClass1" value=""></c:set>
                             </c:forEach>
-
-                            <%--<dd><a href="#">语言留学</a></dd>--%>
-                            <%--<dd><a href="#">职场技能</a></dd>--%>
-                            <%--<dd><a href="#">兴趣爱好</a></dd>--%>
-                            <%--<dd><a href="#">升学考研</a></dd>--%>
                         </dl>
                     </li>
 
                     <li class="select-list">
                         <dl id="select2">
                             <dt>方向：</dt>
-                            <dd class="select-all selected"><a href="#">全部</a></dd>
-                            <dd><a href="#">前端开发</a></dd>
-                            <dd><a href="#">后端开发</a></dd>
-                            <dd><a href="#">移动开发</a></dd>
-                            <dd><a href="#">数据处理</a></dd>
-                            <dd><a href="#">图像处理</a></dd>
+
+                            <c:forEach items="${secondcates}" var="cate1">
+                            <c:if test="${nowCate1.cid == cate1.cate_id}">
+                                <c:set var="cate2s" value="${cate1.cate2s}"></c:set>
+                            </c:if>
+                            </c:forEach>
+
+                            <c:if test="${nowCate1==null}">
+                                <c:set var="selectedOfClass21" value="select-all selected"></c:set>
+                                <c:set var="cate2Url" value="${rootPath}/resource/course"></c:set>
+                            </c:if>
+                            <c:if test="${nowCate2==null}">
+                                <c:set var="selectedOfClass21" value="select-all selected"></c:set>
+                                <c:set var="cate2Url" value="${rootPath}/resource/${nowCate1.cid}/1"></c:set>
+
+                            </c:if>
+                            <dd class="${selectedOfClass21}"><a href="${cate2Url}">全部</a></dd>
+
+                            <c:forEach items="${cate2s}" var="cate2">
+                                <c:if test="${nowCate2.cid == cate2.cid}">
+                                    <c:set var="selectedOfClass22" value="select-all selected"></c:set>
+                                </c:if>
+                                <dd class="${selectedOfClass22}"><a href="${rootPath}/resource/${cate2.cid}/1">${cate2.cateName}</a></dd>
+                                <c:set var="selectedOfClass22" value=""></c:set>
+                            </c:forEach>
+
                         </dl>
                     </li>
                     <li class="select-list">
