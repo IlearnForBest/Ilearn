@@ -115,6 +115,16 @@ public class UserController {
 
 
 
+    @RequestMapping(value = "/person" , method = RequestMethod.GET)
+    public String person(){
+        return "user/user-info";
+    }
+
+    @RequestMapping(value = "/logout" , method = RequestMethod.GET)
+    public String logout(HttpSession session){
+        session.invalidate();
+        return "redirect:/index";
+    }
 
 
 

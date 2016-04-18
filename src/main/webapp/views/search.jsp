@@ -1,4 +1,8 @@
-<!DOCTYPE html>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+pageEncoding="UTF-8"%>
+<%@ page isELIgnored="false" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -25,9 +29,20 @@
                 </div><!-- /input-group -->
             </div>
             <div class="col-md-4 button-group">
-                <span class="login"><a href="javascript:void(0)" onclick="openLogin()">登录</a></span>
-                <span class="registe"><a href="javascript:void(0)" onclick="openRegister()">注册</a></span>
+                <span class="login"><a id="userlogin" href="javascript:void(0)" onclick="openLogin()"><c:if test="${username ==null}">登录</c:if>
+                                                                     <c:if test="${username!=null}">${username} </c:if></a></span>
+                <span class="registe"><a id="logout" href="javascript:void(0)" onclick="openRegister()"> <c:if test="${username ==null}">注册</c:if>
+                                                                        <c:if test="${username!=null}">退出 </c:if></a></span>
             </div>
+
+
+            <script>
+                //                        alert($("#userlogin").text());
+                if($("#userlogin").text().trim()=="${username}"){
+                    $("#userlogin").attr("onclick","window.location.href='${rootPath}/user/person'");
+                    $("#logout").attr("onclick","window.location.href='${rootPath}/user/logout'");
+                }
+            </script>
 
 
             <div id="modal">

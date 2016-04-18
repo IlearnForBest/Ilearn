@@ -34,19 +34,20 @@
                 </div><!-- /input-group -->
             </div>
             <div class="col-md-4 button-group">
-                <span class="login"><a href="javascript:void(0)" onclick="openLogin()"><c:if test="${username ==null}">登录</c:if>
+                <span class="login"><a id="userlogin" href="javascript:void(0)" onclick="openLogin()"><c:if test="${username ==null}">登录</c:if>
                                                                         <c:if test="${username!=null}">${username} </c:if></a></span>
-                <span class="registe"><a href="javascript:void(0)" onclick="openRegister()">注册</a></span>
+                <span class="registe"><a id="logout" href="javascript:void(0)" onclick="openRegister()"> <c:if test="${username ==null}">注册</c:if>
+                                                                        <c:if test="${username!=null}">退出 </c:if></a></span>
             </div>
 
 
-            <%--<script>--%>
-            <%--//            alert($("#nav-login").text());--%>
-            <%--if($("#login").text().trim()=="${user}"){--%>
-            <%--$("#login").attr("onclick","window.location.href='/views/v3.6admin/user/user-info.jsp'");--%>
-            <%--$("#logout").attr("onclick","window.location.href='${pageContext.request.contextPath}/main/logout'");--%>
-            <%--}--%>
-            <%--</script>--%>
+            <script>
+//                        alert($("#userlogin").text());
+            if($("#userlogin").text().trim()=="${username}"){
+            $("#userlogin").attr("onclick","window.location.href='${rootPath}/user/person'");
+            $("#logout").attr("onclick","window.location.href='${rootPath}/user/logout'");
+            }
+            </script>
 
             <div id="modal">
                 <!--弹出式登录框-->
@@ -93,7 +94,7 @@
                                 <div class="input-group">
                                     <!--<label for="examInputEmail1">邮箱:</label>-->
                                     <span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
-                                    <input type="email" class="form-control input-lg" name="userName"
+                                    <input type="text" class="form-control input-lg" name="userName"
                                            placeholder="请输入您的用户名"/>
                                 </div>
                                 <div class="input-group">
@@ -108,7 +109,7 @@
                                 </div>
                                 <div class="input-group">
                                     <span class="input-group-addon"><span class="glyphicon glyphicon-envelope"></span></span>
-                                    <input type="text" class="form-control input-lg" name="email"
+                                    <input type="email" class="form-control input-lg" name="email"
                                            placeholder="邮箱"/>
                                 </div>
 
