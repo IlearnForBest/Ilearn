@@ -77,29 +77,16 @@ public class ResourcesController {
     }
 
 
-    /**
-     * 根据一级或二级目录的名字查找资源
-     * @param
-     * @return
-     */
-//    @RequestMapping(value = "/course/{cateName}/{pageNum}",
-//            method = RequestMethod.GET)
-//    public String  getPageResoucesOfCateName(@PathVariable("cateName") String cateName ,
-//                                                           @PathVariable("pageNum") int pageNum ,
-//                                                           Model model){
-//
-//
-//        model.addAttribute("pageNum",pageNum);
-//
-//        System.out.println("in getPageResoucesOfCateName ........");
-//
-//        model.addAttribute("resourcesOfCateName", resourcesDao.getPageResourcesOfCateName(cateName, pageNum));
-//
-//        return "course";
-//    }
 
+   // @ResponseBody
+    @RequestMapping(value = "/search/{pageNum}" , method = RequestMethod.POST)
+    public String search(String keyword , @PathVariable("pageNum") int pageNum,
+                         Model model){
 
-
+        System.out.println("111111111111111111111111111111111111111111");
+        model.addAttribute("searchResults",resourcesDao.search(keyword,pageNum).getList());
+        return "search";
+    }
 
 
 

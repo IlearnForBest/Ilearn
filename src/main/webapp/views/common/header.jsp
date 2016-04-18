@@ -13,10 +13,14 @@
       </div>
       <div class="col-md-4 search">
         <div class="input-group">
-          <input type="text" class="form-control" placeholder="搜索内容...">
-                              <span class="input-group-btn">
-                                <button class="btn btn-default" type="button">搜索</button>
-                              </span>
+
+          <form action="${rootPath}/resource/search/1" method="post">
+          <input type="text" class="form-control" name="keyword" placeholder="搜索内容...">
+            <span class="input-group-btn">
+              <button class="btn btn-default" type="submit">搜索</button>
+            </span>
+          </form>
+
         </div><!-- /input-group -->
       </div>
       <div class="col-md-4 button-group">
