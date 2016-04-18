@@ -267,18 +267,22 @@ pageEncoding="UTF-8"%>
                         <dl>
                             <c:set var="selectResult" value="0"></c:set>
                             <dt>已选条件：</dt>
+
                             <c:if test="${nowCate1.cateName!='全部' && nowCate1!=null}">
-                                <dd>${nowCate1.cateName}</dd>
+                                <dd id="selectA" class="selected"><a href="">${nowCate1.cateName}</a></dd>
                                 <c:set var="selectResult" value="1"></c:set>
                             </c:if>
+
                             <c:if test="${nowCate2.cateName!='全部' && nowCate2!=null}">
-                                <dd>${nowCate2.cateName}</dd>
+                                <dd id="selectB" class="selected"><a href="">${nowCate2.cateName}</a></dd>
                                 <c:set var="selectResult" value="1"></c:set>
                             </c:if>
+
                             <c:if test="${nowCate3.cateName!='全部' && nowCate3!=null}">
-                                <dd>${nowCate3.cateName}</dd>
+                                <dd id="selectC" class="selected"><a href="">${nowCate3.cateName}</a></dd>
                                 <c:set var="selectResult" value="1"></c:set>
                             </c:if>
+
                             <c:if test="${selectResult!='1'}">
                                 <dd class="select-no">暂时没有选择过滤条件</dd>
                             </c:if>
@@ -322,6 +326,8 @@ pageEncoding="UTF-8"%>
                             <div class="clearfix"></div>
                         </ul>
                     </div>
+
+
                 </div>
                 <nav>
                     <ul class="pagination pull-right">
