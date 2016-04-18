@@ -43,7 +43,7 @@ pageEncoding="UTF-8"%>
 
                     <div class="floor">
                         <ul>
-                            <c:forEach items="${searchResults}" var="result">
+                            <c:forEach items="${page.list}" var="result">
                                 <li>
                                     <div class="image">
                                         <img src="${result.imgurl}" alt=""/>
@@ -63,20 +63,8 @@ pageEncoding="UTF-8"%>
 
                 </div>
 
-                <nav>
-                    <ul class="pagination pull-right">
-                        <li><a href="#">上一页</a></li>
-                        <li class="active"><a href="#">1</a></li>
-                        <li><a href="#">2</a></li>
-                        <li><a href="#">3</a></li>
-                        <li><a href="#">4</a></li>
-                        <li><a href="#">5</a></li>
-                        <li>
-                            <a href="#">下一页</a>
-                        </li>
-                    </ul>
-                    <div class="clearfix"></div>
-                </nav>
+                <jsp:include page="common/pagination.jsp" />
+
             </div>
 
         </div>

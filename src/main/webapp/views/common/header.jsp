@@ -14,7 +14,7 @@
       <div class="col-md-4 search">
         <div class="input-group">
 
-          <form action="${rootPath}/resource/search/1" method="post">
+          <form action="${rootPath}/resource/search" method="post">
           <input type="text" class="form-control" name="keyword" placeholder="搜索内容...">
             <span class="input-group-btn">
               <button class="btn btn-default" type="submit">搜索</button>

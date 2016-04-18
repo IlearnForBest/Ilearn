@@ -79,12 +79,28 @@ public class ResourcesController {
 
 
    // @ResponseBody
-    @RequestMapping(value = "/search/{pageNum}" , method = RequestMethod.POST)
-    public String search(String keyword , @PathVariable("pageNum") int pageNum,
-                         Model model){
+    @RequestMapping(value = "/search" , method = RequestMethod.POST)
+    public String search(String keyword , String page,
+                         Model model,HttpSession session){
 
-        System.out.println("111111111111111111111111111111111111111111");
-        model.addAttribute("searchResults",resourcesDao.search(keyword,pageNum).getList());
+
+        int pageNum = page == null ? 1 : Integer.valueOf(page);
+        session.setAttribute("keyword",keyword);
+        model.addAttribute("page",resourcesDao.search(keyword,pageNum));
+        model.addAttribute("currentPage", pageNum);
+
+        return "search";
+    }
+
+    @RequestMapping(value = "/search" , method = RequestMethod.GET)
+    public String search(String page,Model model,HttpSession session){
+
+
+        int pageNum = page == null ? 1 : Integer.valueOf(page);
+        String keyword = session.getAttribute("keyword").toString();
+        model.addAttribute("page",resourcesDao.search(keyword,pageNum));
+        model.addAttribute("currentPage", pageNum);
+
         return "search";
     }
 
