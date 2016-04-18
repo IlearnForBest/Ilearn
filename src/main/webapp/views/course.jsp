@@ -15,7 +15,10 @@ pageEncoding="UTF-8"%>
     <script src="${assetsPath}/js/navLink.js"></script>
 </head>
 <body>
+
+
 <jsp:include page="common/header.jsp" />
+
 
 <div class="main course">
     <div class="contain">

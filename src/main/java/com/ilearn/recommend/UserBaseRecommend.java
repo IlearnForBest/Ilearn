@@ -2,12 +2,12 @@ package com.ilearn.recommend;
 
 import com.mysql.jdbc.jdbc2.optional.MysqlDataSource;
 import org.apache.mahout.cf.taste.common.TasteException;
+import org.apache.mahout.cf.taste.impl.model.jdbc.MySQLJDBCDataModel;
 import org.apache.mahout.cf.taste.impl.neighborhood.NearestNUserNeighborhood;
 import org.apache.mahout.cf.taste.impl.recommender.GenericUserBasedRecommender;
 import org.apache.mahout.cf.taste.impl.similarity.PearsonCorrelationSimilarity;
 import org.apache.mahout.cf.taste.model.DataModel;
 import org.apache.mahout.cf.taste.model.JDBCDataModel;
-import org.apache.mahout.cf.taste.impl.model.jdbc.MySQLJDBCDataModel;
 import org.apache.mahout.cf.taste.neighborhood.UserNeighborhood;
 import org.apache.mahout.cf.taste.recommender.RecommendedItem;
 import org.apache.mahout.cf.taste.recommender.Recommender;
@@ -27,7 +27,7 @@ public class UserBaseRecommend {
         dataSource.setServerName("localhost");
         dataSource.setPort(3306);
         dataSource.setUser("root");
-        dataSource.setPassword("111111");
+        dataSource.setPassword("root");
         dataSource.setDatabaseName("db_ilearn");
         JDBCDataModel dataModel=new MySQLJDBCDataModel(dataSource,"ilearn_recommend",
                 "user_id","resource_id","grade", "time");
