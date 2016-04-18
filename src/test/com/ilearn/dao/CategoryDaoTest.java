@@ -42,22 +42,22 @@ public class CategoryDaoTest {
 
         for(CateBean cateBean : secondCategory){
             System.out.println(cateBean.getCate_name());
-            List<String> cate2s = cateBean.getCate2s();
+//            List<String> cate2s = cateBean.getCate2s();
 
-            for(String cate2 : cate2s){
-                System.out.println(cate2);
-
-                List<CateBean> cate2s2 = cateBean.getChildren();
-
-                for (CateBean cate22 : cate2s2){
-                    List<String> cate3s = cate22.getCate2s();
-                        for (String cate3 : cate3s){
-                            System.out.println(cate3);
-                        }
-                    System.out.println();
-                }
-                System.out.println();
-            }
+//            for(String cate2 : cate2s){
+//                System.out.println(cate2);
+//
+//                List<CateBean> cate2s2 = cateBean.getChildren();
+//
+//                for (CateBean cate22 : cate2s2){
+//                    List<String> cate3s = cate22.getCate2s();
+//                        for (String cate3 : cate3s){
+//                            System.out.println(cate3);
+//                        }
+//                    System.out.println();
+//                }
+//                System.out.println();
+//            }
 
             System.out.println();
 

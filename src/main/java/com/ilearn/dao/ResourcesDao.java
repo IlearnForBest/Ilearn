@@ -37,24 +37,36 @@ public class ResourcesDao extends BaseDao {
      */
     public Page<ResourcesEntity> getPageResourcesOfLeaf(int id , int pageNum){
 
-        CategoryEntity category = categoryDao.getById(id);
-
-        return PageQuery("cateName",category.getCateName(),pageNum);
-
-    }
-
-
-    public Page<ResourcesEntity> getPageResourcesOfCateName(String cateName , int pageNum){
-        if(HQuery("category1" , cateName) != null){
-            return PageQuery("category1" , cateName , pageNum);
-        }else if(HQuery("category2" , cateName) != null){
-            return PageQuery("category2" , cateName , pageNum);
-        }else if(HQuery("cateName" , cateName) != null){
-            return PageQuery("cateName" , cateName , pageNum);
-        }else{
+        if(this.HQuery("category1Id", id).size() !=0){
+            return this.PageQuery("category1Id", id, pageNum);
+        }else if(this.HQuery("category2Id", id).size() !=0){
+            return this.PageQuery("category2Id", id, pageNum);
+        }else if(this.HQuery("category3Id", id).size() !=0){
+            return this.PageQuery("category3Id", id, pageNum);
+        }else {
+            System.out.println("111111111111111111111111111111111111111111111111111111111");
             return null;
         }
     }
+
+
+
+
+//    public List<ResourcesEntity> getPageResourcesOfLeaf(int id , int pageNum){
+//
+//        if(this.HQuery("category1Id", id) != null){
+//            return this.PageQuery("category1Id", id, pageNum);
+//        }else if(this.HQuery("category2Id", id) != null){
+//            return this.PageQuery("category2Id", id, pageNum);
+//        }else if(this.HQuery("category3Id", id) != null){
+//            return this.PageQuery("category3Id", id, pageNum);
+//        }else {
+//            System.out.println("111111111111111111111111111111111111111111111111111111111");
+//            return null;
+//        }
+//    }
+
+
 
 
 
@@ -93,7 +105,7 @@ public class ResourcesDao extends BaseDao {
      * @param value
      * @return
      */
-    private List<ResourcesEntity> HQuery(String colume , String value){
+    private List<ResourcesEntity> HQuery(String colume , int value){
         String hql = "from ResourcesEntity as resources where resources."+colume+"=?";
         Query query = query(hql);
         query.setString(0, String.valueOf(value));
@@ -109,7 +121,7 @@ public class ResourcesDao extends BaseDao {
      * @param pageNum
      * @return
      */
-    private Page<ResourcesEntity> PageQuery(String colume , String value , int pageNum){
+    private Page<ResourcesEntity> PageQuery(String colume , int value , int pageNum){
         String hql = "from ResourcesEntity as resources where resources."+colume+"=?";
 
         Query query = query(hql);

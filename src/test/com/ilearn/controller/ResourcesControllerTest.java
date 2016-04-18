@@ -12,6 +12,8 @@ import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.web.context.WebApplicationContext;
 
+import javax.servlet.http.HttpSession;
+
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
@@ -39,7 +41,7 @@ public class ResourcesControllerTest {
     @Test
     public void testGetPageResoucesOfCateName() throws Exception {
         mockMvc
-                .perform(get("/resources/course/{cateName}/{pageNum}","PHP",1))
+                .perform(get("/resource/{id}/{pageNum}",842,1))
                 .andExpect(status().isOk())
                 .andDo(print());
     }

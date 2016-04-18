@@ -22,8 +22,8 @@ public class CategoryDao extends BaseDao {
     }
 
 
-    public List<String> getFirstCategory(){
-        String hql = "select distinct category1 from CategoryEntity";
+    public List<CategoryEntity> getFirstCategory(){
+        String hql = "from CategoryEntity as cate where cate.category1Id is null";
         Query query = query(hql);
         return query.list();
     }
@@ -33,30 +33,33 @@ public class CategoryDao extends BaseDao {
     public List<CateBean> getSecondCategory(){
 
         List<CateBean> cateBeans = new ArrayList<>();
-        List<String> cate1s = getFirstCategory();
+        List<CategoryEntity> cate1s = getFirstCategory();
 
-        for(String cate1 : cate1s){
+        for(CategoryEntity cate1 : cate1s){
 
             CateBean cateBean = new CateBean();
 
             List<CateBean> cate2Beans = new ArrayList<>();
             //cate2Beans = cateBean.getChildren();
 
-            cateBean.setCate_name(cate1);
+            cateBean.setCate_name(cate1.getCateName());
+            cateBean.setCate_id(cate1.getCid());
 
 
-            String hql = "select distinct cate.category2 from CategoryEntity as cate where cate.category1='"+cate1+"'";
+            String hql = "from CategoryEntity as cate where cate.category1Id='"
+                    +cate1.getCid()+"' and cate.category2Id is null";
             Query query = query(hql);
-            List<String> cate2s =  query.list();
+            List<CategoryEntity> cate2s =  query.list();
             cateBean.setCate2s(cate2s);
 
-            for(String cate2 : cate2s){
+            for(CategoryEntity cate2 : cate2s){
 
 //                System.out.println("cate2: "+cate2);
                 CateBean cate2Bean = new CateBean();
 
-                cate2Bean.setCate2s(getThirdCategory(cate2));
-                cate2Bean.setCate_name(cate2);
+                cate2Bean.setCate2s(getThirdCategory(cate2.getCateName()));
+                cate2Bean.setCate_name(cate2.getCateName());
+                cate2Bean.setCate_id(cate2.getCid());
                 cate2Beans.add(cate2Bean);
 
             }
@@ -70,11 +73,11 @@ public class CategoryDao extends BaseDao {
 
     }
 
-    public List<String> getThirdCategory(String cate2){
+    public List<CategoryEntity> getThirdCategory(String cate2){
 
-        String hql = "select cate.cateName from CategoryEntity as cate where cate.category2='"+cate2+"'";
+        String hql = "from CategoryEntity as cate where cate.category2='"+cate2+"'";
         Query query = query(hql);
-        List<String> cate3s =  query.list();
+        List<CategoryEntity> cate3s =  query.list();
 
         return cate3s;
 

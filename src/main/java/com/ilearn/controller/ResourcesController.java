@@ -1,15 +1,19 @@
 package com.ilearn.controller;
 
+import com.ilearn.bean.CategoryEntity;
 import com.ilearn.bean.ResourcesEntity;
+import com.ilearn.dao.CategoryDao;
 import com.ilearn.dao.ResourcesDao;
 import com.ilearn.page.Page;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.util.List;
 
 /**
@@ -24,13 +28,18 @@ public class ResourcesController {
     private static final int PAGESIZE = 20;
 
     @Autowired
+    @Qualifier("resourcesDao")
     private ResourcesDao resourcesDao;
 
-    @RequestMapping(value = "/course/show" , method = RequestMethod.GET)
+    @Autowired
+    @Qualifier("categoryDao")
+    private CategoryDao categoryDao;
+
+    @RequestMapping(value = "/course" , method = RequestMethod.GET)
     public String list(Model model){
 
-        model.addAttribute("coursePage1",resourcesDao.queryByPage(1,20));
-
+        model.addAttribute("resources",resourcesDao.queryByPage(1,20));
+        model.addAttribute("nowCate1Id",-1);
         return "course";
     }
 
@@ -41,35 +50,50 @@ public class ResourcesController {
      * @param pageNum
      * @return
      */
-    @ResponseBody
-    @RequestMapping(value = "/course1/{id}/{pageNum}" , method = RequestMethod.GET)
-    public Page<ResourcesEntity> getPageResoucesOfLeaf(@PathVariable("id") int id ,
-                                        @PathVariable("pageNum") int pageNum){
+    //@ResponseBody
+    @RequestMapping(value = "/{id}/{pageNum}" , method = RequestMethod.GET)
+    public String  getPageResoucesOfLeaf(@PathVariable("id") int id ,
+                                         @PathVariable("pageNum") int pageNum,
+                                         HttpSession session,Model model){
 
-        return resourcesDao.getPageResourcesOfLeaf(id,pageNum);
+        CategoryEntity category = categoryDao.getById(id);
+        if(category.getCategory1Id()==null){
+            model.addAttribute("nowCate1Id", id);
+        }else if(category.getCategory2Id()==null){
+            model.addAttribute("nowCate1Id", category.getCategory1Id());
+            model.addAttribute("nowCate2Id", id);
+        }else{
+            model.addAttribute("nowCate1Id", category.getCategory1Id());
+            model.addAttribute("nowCate2Id", category.getCategory2Id());
+            model.addAttribute("nowCate3Id", id);
+        }
+
+
+        model.addAttribute("resources", resourcesDao.getPageResourcesOfLeaf(id, pageNum).getList());
+        return "course";
     }
 
 
     /**
      * 根据一级或二级目录的名字查找资源
-     * @param pageNum
+     * @param
      * @return
      */
-    @RequestMapping(value = "/course/{cateName}/{pageNum}",
-            method = RequestMethod.GET)
-    public String  getPageResoucesOfCateName(@PathVariable("cateName") String cateName ,
-                                                           @PathVariable("pageNum") int pageNum ,
-                                                           Model model){
-
-
-        model.addAttribute("pageNum",pageNum);
-
-        System.out.println("in getPageResoucesOfCateName ........");
-
-        model.addAttribute("resourcesOfCateName", resourcesDao.getPageResourcesOfCateName(cateName, pageNum));
-
-        return "course";
-    }
+//    @RequestMapping(value = "/course/{cateName}/{pageNum}",
+//            method = RequestMethod.GET)
+//    public String  getPageResoucesOfCateName(@PathVariable("cateName") String cateName ,
+//                                                           @PathVariable("pageNum") int pageNum ,
+//                                                           Model model){
+//
+//
+//        model.addAttribute("pageNum",pageNum);
+//
+//        System.out.println("in getPageResoucesOfCateName ........");
+//
+//        model.addAttribute("resourcesOfCateName", resourcesDao.getPageResourcesOfCateName(cateName, pageNum));
+//
+//        return "course";
+//    }
 
 
 

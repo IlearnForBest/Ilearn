@@ -151,12 +151,12 @@
                             <li class="list-head">             <!--这是一个大头！！！！-->
                                 <div>
                                     <%--resource/${oneTwo.cate_name}--%>
-                                    <a href="${rootPath}/resource/course/${oneTwo.cate_name}/1">${oneTwo.cate_name}</a>
+                                    <a href="${rootPath}/resource/${oneTwo.cate_id}/1">${oneTwo.cate_name}</a>
                                     <ul class="list-inline">
                                         <li>
                                             <c:forEach items="${oneTwo.cate2s}" var="oneTwo_list" begin="0" end="2">
-                                                <a href="${rootPath}/resource/course/JAVA/1">
-                                                        ${oneTwo_list}</a>
+                                                <a href="${rootPath}/resource/${oneTwo_list.cid}/1">
+                                                        ${oneTwo_list.cateName}</a>
 
                                             </c:forEach>
                                         </li>
@@ -170,12 +170,7 @@
                                             <div class="floor-head"><strong>${oneTwo_list.cate_name}</strong></div>      <%--右边二级目录测试--%>
                                             <ul class="list-inline floor-menu">
                                                 <c:forEach items="${oneTwo_list.cate2s}" var="thirdCate">
-                                                    <li class="entry">${thirdCate}</li>
-                                                    <%--<li class="entry">Android</li>--%>
-                                                    <%--<li class="entry">Android</li>--%>
-                                                    <%--<li class="entry">IOS</li>--%>
-                                                    <%--<li class="entry">WP</li>--%>
-                                                    <%--<li class="entry">黑莓</li>--%>
+                                                    <li class="entry">${thirdCate.cateName}</li>
                                                 </c:forEach>
                                             </ul>
                                         </li>

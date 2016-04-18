@@ -147,12 +147,23 @@ pageEncoding="UTF-8"%>
                     <li class="select-list">
                         <dl id="select1">
                             <dt>领域：</dt>
-                            <dd class="select-all selected"><a href="#">全部</a></dd>
-                            <dd><a href="#">IT互联网</a></dd>
-                            <dd><a href="#">语言留学</a></dd>
-                            <dd><a href="#">职场技能</a></dd>
-                            <dd><a href="#">兴趣爱好</a></dd>
-                            <dd><a href="#">升学考研</a></dd>
+                            <c:if test="${nowCate1Id==-1}">
+                                <c:set var="selectedOfClass" value="select-all selected"></c:set>
+                            </c:if>
+                            <dd class="${selectedOfClass}"><a href="${rootPath}/resource/course">全部</a></dd>
+
+                            <c:forEach items="${secondcates}" var="cate1">
+                                <c:if test="${nowCate1Id==cate1.cate_id}">
+                                    <c:set var="selectedOfClass1" value="select-all selected"></c:set>
+                                </c:if>
+                                <dd class="${selectedOfClass1}"><a href="${rootPath}/resource/${cate1.cate_id}/1">${cate1.cate_name}</a></dd>
+                                <c:set var="selectedOfClass1" value=""></c:set>
+                            </c:forEach>
+
+                            <%--<dd><a href="#">语言留学</a></dd>--%>
+                            <%--<dd><a href="#">职场技能</a></dd>--%>
+                            <%--<dd><a href="#">兴趣爱好</a></dd>--%>
+                            <%--<dd><a href="#">升学考研</a></dd>--%>
                         </dl>
                     </li>
 
@@ -206,18 +217,18 @@ pageEncoding="UTF-8"%>
 
                     <div class="floor">
                         <ul>
-                            <c:forEach items="${coursePage1.list}" var="coursepage1">
+                            <c:forEach items="${resources}" var="course">
                                 <li>
                                     <div class="image">
-                                        <img src="${coursepage1.imgurl}" alt=""/>
+                                        <img src="${course.imgurl}" alt=""/>
                                     </div>
-                                    <div class="title">${coursepage1.title}</div>
+                                    <div class="title">${course.title}</div>
                                         <%--<div class="price">${coursepage1.price}</div>--%>
                                     <div class="add pull-left">附加信息</div>
-                                    <div class="people pull-right">${coursepage1.joinNumber}</div>
+                                    <div class="people pull-right">${course.joinNumber}</div>
                                     <div class="clearfix"></div>
                                     <div class="line"></div>
-                                    <div class="src">${coursepage1.sourceWeb}</div>
+                                    <div class="src">${course.sourceWeb}</div>
                                 </li>
                             </c:forEach>
                             <%--<li>--%>

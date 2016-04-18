@@ -7,8 +7,9 @@ import java.util.List;
  */
 public class CateBean {
 
+    private int cate_id;
     private String cate_name;
-    private List<String> cate2s;
+    private List<CategoryEntity> cate2s;
     private List<CateBean> children;
 
     public String getCate_name() {
@@ -27,11 +28,20 @@ public class CateBean {
         this.children = children;
     }
 
-    public List<String> getCate2s() {
+
+    public int getCate_id() {
+        return cate_id;
+    }
+
+    public void setCate_id(int cate_id) {
+        this.cate_id = cate_id;
+    }
+
+    public List<CategoryEntity> getCate2s() {
         return cate2s;
     }
 
-    public void setCate2s(List<String> cate2s) {
+    public void setCate2s(List<CategoryEntity> cate2s) {
         this.cate2s = cate2s;
     }
 }
