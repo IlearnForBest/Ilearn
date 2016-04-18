@@ -163,6 +163,8 @@ pageEncoding="UTF-8"%>
                         </dl>
                     </li>
 
+
+
                     <li class="select-list">
                         <dl id="select2">
                             <dt>方向：</dt>
@@ -173,44 +175,113 @@ pageEncoding="UTF-8"%>
                             </c:if>
                             </c:forEach>
 
+
+                            <c:set var="selectedOfClass21" value=""></c:set>
+                            <c:set var="cate2Url" value="${rootPath}/resource/${nowCate1.cid}/1"></c:set>
+
                             <c:if test="${nowCate1==null}">
                                 <c:set var="selectedOfClass21" value="select-all selected"></c:set>
                                 <c:set var="cate2Url" value="${rootPath}/resource/course"></c:set>
                             </c:if>
+
                             <c:if test="${nowCate2==null}">
                                 <c:set var="selectedOfClass21" value="select-all selected"></c:set>
                                 <c:set var="cate2Url" value="${rootPath}/resource/${nowCate1.cid}/1"></c:set>
-
                             </c:if>
                             <dd class="${selectedOfClass21}"><a href="${cate2Url}">全部</a></dd>
+
+                            <c:if test="${nowCate1==null}">
+                                <c:forEach items="${allOfCate2}" var="allcate2" begin="6" end="56">
+                                    <dd><a href="${rootPath}/resource/${allcate2.cid}/1">
+                                            ${allcate2.cateName}</a></dd>
+                                </c:forEach>
+                            </c:if>
 
                             <c:forEach items="${cate2s}" var="cate2">
                                 <c:if test="${nowCate2.cid == cate2.cid}">
                                     <c:set var="selectedOfClass22" value="select-all selected"></c:set>
                                 </c:if>
-                                <dd class="${selectedOfClass22}"><a href="${rootPath}/resource/${cate2.cid}/1">${cate2.cateName}</a></dd>
+                                <dd class="${selectedOfClass22}"><a href="${rootPath}/resource/${cate2.cid}/1">
+                                ${cate2.cateName}</a></dd>
                                 <c:set var="selectedOfClass22" value=""></c:set>
                             </c:forEach>
-
                         </dl>
                     </li>
+
+
                     <li class="select-list">
                         <dl id="select3">
                             <dt>分类：</dt>
-                            <dd class="select-all selected"><a href="#">全部</a></dd>
-                            <dd><a href="#">HTML/CSS</a></dd>
-                            <dd><a href="#">JavaScript</a></dd>
-                            <dd><a href="#">CSS3</a></dd>
-                            <dd><a href="#">HTML5</a></dd>
-                            <dd><a href="#">jQuery</a></dd>
-                            <dd><a href="#">AngularJS</a></dd>
-                            <dd><a href="#">node.js</a></dd>
+
+                            <c:forEach items="${secondcates}" var="cate1">
+                            <c:forEach items="${cate1.children}" var="cate2">
+                                <c:if test="${nowCate2.cid == cate2.cate_id}">
+                                    <c:set var="cate3s" value="${cate2.cate2s}"></c:set>
+                                </c:if>
+                            </c:forEach>
+                            </c:forEach>
+
+                            <c:set var="selectedOfClass31" value=""></c:set>
+                            <c:set var="cate3Url" value="${rootPath}/resource/${nowCate2.cid}/1"></c:set>
+
+                            <c:if test="${nowCate1==null}">
+                                <c:set var="selectedOfClass31" value="select-all selected"></c:set>
+                                <c:set var="cate3Url" value="${rootPath}/resource/course"></c:set>
+                            </c:if>
+                            <c:if test="${nowCate2==null}">
+                                <c:set var="selectedOfClass31" value="select-all selected"></c:set>
+                                <c:set var="cate3Url" value="${rootPath}/resource/${nowCate1.cid}/1"></c:set>
+                            </c:if>
+                            <c:if test="${nowCate3==null}">
+                                <c:set var="selectedOfClass31" value="select-all selected"></c:set>
+                                <c:set var="cate3Url" value="${rootPath}/resource/${nowCate2.cid}/1"></c:set>
+                            </c:if>
+
+                            <dd class="${selectedOfClass31}"><a href="${cate3Url}">全部</a></dd>
+
+                            <c:if test="${nowCate1==null}">
+                                <c:forEach items="${allOfCate3}" var="allcate3" begin="6" end="56">
+                                    <dd><a href="${rootPath}/resource/${allcate3.cid}/1">
+                                            ${allcate3.cateName}</a></dd>
+                                </c:forEach>
+                            </c:if>
+
+                            <c:if test="${nowCate2==null && nowCate1!=null}">
+                                <c:forEach items="${allOfCate3OfNowCate1}" var="allcate3" begin="6" end="56">
+                                    <dd><a href="${rootPath}/resource/${allcate3.cid}/1">
+                                            ${allcate3.cateName}</a></dd>
+                                </c:forEach>
+                            </c:if>
+
+                            <c:forEach items="${cate3s}" var="cate3">
+                                <c:if test="${nowCate3.cid == cate3.cid}">
+                                    <c:set var="selectedOfClass32" value="select-all selected"></c:set>
+                                </c:if>
+                                <dd class="${selectedOfClass32}"><a href="${rootPath}/resource/${cate3.cid}/1">
+                                        ${cate3.cateName}</a></dd>
+                                <c:set var="selectedOfClass32" value=""></c:set>
+                            </c:forEach>
                         </dl>
                     </li>
                     <li class="select-result">
                         <dl>
+                            <c:set var="selectResult" value="0"></c:set>
                             <dt>已选条件：</dt>
-                            <dd class="select-no">暂时没有选择过滤条件</dd>
+                            <c:if test="${nowCate1.cateName!='全部' && nowCate1!=null}">
+                                <dd>${nowCate1.cateName}</dd>
+                                <c:set var="selectResult" value="1"></c:set>
+                            </c:if>
+                            <c:if test="${nowCate2.cateName!='全部' && nowCate2!=null}">
+                                <dd>${nowCate2.cateName}</dd>
+                                <c:set var="selectResult" value="1"></c:set>
+                            </c:if>
+                            <c:if test="${nowCate3.cateName!='全部' && nowCate3!=null}">
+                                <dd>${nowCate3.cateName}</dd>
+                                <c:set var="selectResult" value="1"></c:set>
+                            </c:if>
+                            <c:if test="${selectResult!='1'}">
+                                <dd class="select-no">暂时没有选择过滤条件</dd>
+                            </c:if>
                         </dl>
                     </li>
 
@@ -247,42 +318,7 @@ pageEncoding="UTF-8"%>
                                     <div class="src">${course.sourceWeb}</div>
                                 </li>
                             </c:forEach>
-                            <%--<li>--%>
-                            <%--<div class="image">--%>
-                            <%--<img src="${assetsPath}/images/courses4.png" alt=""/>--%>
-                            <%--</div>--%>
-                            <%--<div class="title">课程简介课程简介课程简介</div>--%>
-                            <%--<div class="price">免费</div>--%>
-                            <%--<div class="add pull-left">附加信息</div>--%>
-                            <%--<div class="people pull-right">240人已学</div>--%>
-                            <%--<div class="clearfix"></div>--%>
-                            <%--<div class="line"></div>--%>
-                            <%--<div class="src">来自网易云课堂</div>--%>
-                            <%--</li>--%>
-                            <%--<li>--%>
-                            <%--<div class="image">--%>
-                            <%--<img src="${assetsPath}/images/courses4.png" alt=""/>--%>
-                            <%--</div>--%>
-                            <%--<div class="title">课程简介课程简介课程简介</div>--%>
-                            <%--<div class="price">免费</div>--%>
-                            <%--<div class="add pull-left">附加信息</div>--%>
-                            <%--<div class="people pull-right">240人已学</div>--%>
-                            <%--<div class="clearfix"></div>--%>
-                            <%--<div class="line"></div>--%>
-                            <%--<div class="src">来自网易云课堂</div>--%>
-                            <%--</li>--%>
-                            <%--<li>--%>
-                            <%--<div class="image">--%>
-                            <%--<img src="${assetsPath}/images/courses4.png" alt=""/>--%>
-                            <%--</div>--%>
-                            <%--<div class="title">课程简介课程简介课程简介</div>--%>
-                            <%--<div class="price">免费</div>--%>
-                            <%--<div class="add pull-left">附加信息</div>--%>
-                            <%--<div class="people pull-right">240人已学</div>--%>
-                            <%--<div class="clearfix"></div>--%>
-                            <%--<div class="line"></div>--%>
-                            <%--<div class="src">来自网易云课堂</div>--%>
-                            <%--</li>--%>
+
                             <div class="clearfix"></div>
                         </ul>
                     </div>

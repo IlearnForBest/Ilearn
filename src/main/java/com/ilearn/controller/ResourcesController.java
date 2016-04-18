@@ -61,6 +61,7 @@ public class ResourcesController {
         CategoryEntity category = categoryDao.getById(id);
         if(category.getCategory1Id()==null){
             model.addAttribute("nowCate1", category);
+            model.addAttribute("allOfCate3OfNowCate1",categoryDao.getAllOfCategory3OfNowCate1(id));
         }else if(category.getCategory2Id()==null){
             model.addAttribute("nowCate1", categoryDao.getById(category.getCategory1Id()));
             model.addAttribute("nowCate2", category);

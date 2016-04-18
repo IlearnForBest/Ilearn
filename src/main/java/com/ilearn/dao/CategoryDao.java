@@ -33,7 +33,7 @@ public class CategoryDao extends BaseDao {
 
     public List<CategoryEntity> getAllOfCategory2(){
         String hql = "from CategoryEntity as cate where "+
-                "cate.category2Id is null and cate.categoey1Id is not null";
+                "cate.category2Id is null and cate.category1Id is not null";
 
         Query query = query(hql);
         return query.list();
@@ -41,12 +41,21 @@ public class CategoryDao extends BaseDao {
 
     public List<CategoryEntity> getAllOfCategory3(){
         String hql = "from CategoryEntity as cate where "+
-                "cate.category2Id is not null and cate.categoey1Id is not null";
+                "cate.category2Id is not null and cate.category1Id is not null";
 
         Query query = query(hql);
         return query.list();
     }
 
+
+    public List<CategoryEntity> getAllOfCategory3OfNowCate1(int id){
+        String hql = "from CategoryEntity as cate where "+
+                "cate.category2Id is not null and cate.category1Id=?";
+
+        Query query = query(hql);
+        query.setInteger(0,id);
+        return query.list();
+    }
 
 
     public List<CategoryEntity> getChildrenCate(int id){
