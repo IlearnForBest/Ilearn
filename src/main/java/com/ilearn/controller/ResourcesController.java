@@ -39,6 +39,8 @@ public class ResourcesController {
     public String list(Model model){
 
         model.addAttribute("resources",resourcesDao.queryByPage(1,20).getList());
+        model.addAttribute("allOfCate2",categoryDao.getAllOfCategory2());
+        model.addAttribute("allOfCate3",categoryDao.getAllOfCategory3());
         model.addAttribute("nowCate1",null);
         return "course";
     }
