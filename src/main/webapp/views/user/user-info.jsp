@@ -1,4 +1,8 @@
-<!doctype html>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+pageEncoding="UTF-8"%>
+<%@ page isELIgnored="false" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html lang="en">
 <head>
     <meta charset="utf-8">
@@ -7,7 +11,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="stylesheet" href="css/app.min.css"/>
+    <link rel="stylesheet" href="${assetsPath}/css/app.min.css"/>
     <script src="//cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
     <script src="//cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 
@@ -53,11 +57,11 @@
 </script>
 
 <!-- Le fav and touch icons -->
-<link rel="shortcut icon" href="../assets/ico/favicon.ico">
-<link rel="apple-touch-icon-precomposed" sizes="144x144" href="../assets/ico/apple-touch-icon-144-precomposed.png">
-<link rel="apple-touch-icon-precomposed" sizes="114x114" href="../assets/ico/apple-touch-icon-114-precomposed.png">
-<link rel="apple-touch-icon-precomposed" sizes="72x72" href="../assets/ico/apple-touch-icon-72-precomposed.png">
-<link rel="apple-touch-icon-precomposed" href="../assets/ico/apple-touch-icon-57-precomposed.png">
+<%--<link rel="shortcut icon" href="../assets/ico/favicon.ico">--%>
+<%--<link rel="apple-touch-icon-precomposed" sizes="144x144" href="../assets/ico/apple-touch-icon-144-precomposed.png">--%>
+<%--<link rel="apple-touch-icon-precomposed" sizes="114x114" href="../assets/ico/apple-touch-icon-114-precomposed.png">--%>
+<%--<link rel="apple-touch-icon-precomposed" sizes="72x72" href="../assets/ico/apple-touch-icon-72-precomposed.png">--%>
+<%--<link rel="apple-touch-icon-precomposed" href="../assets/ico/apple-touch-icon-57-precomposed.png">--%>
 
 <!--<![endif]-->
 <!--------------------
@@ -71,7 +75,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
         </button>
-        <a class="" href="index.html"><span class="navbar-brand"><span class="fa fa-cloud"></span> MagicCloud</span></a>
+        <a class="" href="${rootPah}/views/index.jsp"><span class="navbar-brand"><span class="fa fa-cloud"></span> MagicCloud</span></a>
     </div>
 
     <div class="navbar-collapse collapse" style="height: 1px;">
@@ -79,7 +83,7 @@
             <li class="dropdown hidden-xs">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                     <span class="glyphicon glyphicon-user padding-right-small"
-                          style="position:relative;top: 3px;"></span> xuzhao***.com
+                          style="position:relative;top: 3px;"></span> ${username}
                     <i class="fa fa-caret-down"></i>
                 </a>
 
@@ -91,7 +95,7 @@
                     <li><a href="../">Security</a></li>
                     <li><a tabindex="-1" href="../">Payments</a></li>
                     <li class="divider"></li>
-                    <li><a tabindex="-1" href="sign-in.html">Logout</a></li>
+                    <li><a tabindex="-1" href="${rootPath}/user/logout">Logout</a></li>
                 </ul>
             </li>
         </ul>
@@ -110,16 +114,16 @@
 
         <li>
             <ul class="dashboard-menu2 nav nav-list collapse in">
-                <li class="active"><a href="user-info.html"><span class="fa fa-caret-right"></span> 查看个人信息</a></li>
-                <li><a href="user-change.html"><span class="fa fa-caret-right"></span> 修改个人信息</a></li>
-                <li><a href="user-password.html"><span class="fa fa-caret-right"></span> 修改密码</a></li>
+                <li class="active"><a href="${rootPath}/views/user/user-info.jsp"><span class="fa fa-caret-right"></span> 查看个人信息</a></li>
+                <li><a href="${rootPath}/views/user/user-change.jsp"><span class="fa fa-caret-right"></span> 修改个人信息</a></li>
+                <li><a href="${rootPath}/views/user/user-password.jsp"><span class="fa fa-caret-right"></span> 修改密码</a></li>
             </ul>
         </li>
 
-        <li><a href="user-do.html" data-target=".dashboard-menu3" class="nav-header" data-toggle="collapse"><i
+        <li><a href="${rootPath}/views/user/user-do.jsp" data-target=".dashboard-menu3" class="nav-header" data-toggle="collapse"><i
                 class="fa fa-bug"></i> 浏览记录</a></li>
 
-        <li><a href="user-collection.html" data-target=".dashboard-menu4" class="nav-header" data-toggle="collapse"><i
+        <li><a href="${rootPath}/views/user/user-collection.jsp" data-target=".dashboard-menu4" class="nav-header" data-toggle="collapse"><i
                 class="fa fa-bug"></i> 收藏</a></li>
     </ul>
 </div>
@@ -133,7 +137,7 @@
     <div class="main-content">
         <div class="row">
             <div class="user-img col-md-4">
-                <div><img src="images/cloud.ico" alt=""/></div>
+                <div><img src="${assetsPath}/images/cloud.ico" alt=""/></div>
             </div>
             <div class="user-info col-md-4">
                     <div><span>用户名:</span><span>xuzhaozhengwei@163.com</span></div>
@@ -152,7 +156,7 @@
 
 
 <script src="lib/bootstrap/js/bootstrap.js"></script>
-<script src="./js/Chart.js"></script>
+<script src="${assetsPath}/js/Chart.js"></script>
 <script type="text/javascript">
     $("[rel=tooltip]").tooltip();
     $(function () {
