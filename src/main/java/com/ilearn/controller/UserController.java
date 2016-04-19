@@ -1,17 +1,22 @@
 package com.ilearn.controller;
 
+import com.ilearn.bean.ResourcesEntity;
 import com.ilearn.bean.StatusMessage;
 import com.ilearn.bean.UserEntity;
+import com.ilearn.dao.ResourcesDao;
 import com.ilearn.dao.UserDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by sl on 16-4-5.
@@ -24,6 +29,8 @@ public class UserController {
     @Autowired
     @Qualifier("userDao")
     private UserDao userDao;
+
+
 
 
 
@@ -97,6 +104,7 @@ public class UserController {
                 statusMessage.setMessage(message);
                 System.out.println("message1 : "+message);
                 request.getSession().setAttribute("username",username);
+                //session.setAttribute("userid",user.getId());
                 // redirectAttributes.addAttribute("loginMsg",message);
                 return "redirect:/index";
             }
@@ -117,6 +125,7 @@ public class UserController {
 
     @RequestMapping(value = "/person" , method = RequestMethod.GET)
     public String person(){
+
         return "user/user-info";
     }
 

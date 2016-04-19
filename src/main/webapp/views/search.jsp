@@ -48,19 +48,19 @@ pageEncoding="UTF-8"%>
                                     <div class="image">
                                         <img src="${result.imgurl}" alt=""/>
                                     </div>
-                                    <div class="title"><a href="${course.url}">${course.title}</a></div>
+                                    <div class="title"><a href="${result.url}">${result.title}</a></div>
                                         <%--<div class="price">${coursepage1.price}</div>--%>
-                                    <c:if test="${course.joinNumber!='0'}">
+                                    <c:if test="${result.joinNumber!='0'}">
                                         <div class="add pull-left">学习人数</div>
-                                        <div class="people pull-right">${course.joinNumber}</div>
+                                        <div class="people pull-right">${result.joinNumber}</div>
                                     </c:if>
-                                    <c:if test="${course.collection!='0'}">
+                                    <c:if test="${result.collection!='0'}">
                                         <div class="add pull-left">收藏人数</div>
-                                        <div class="people pull-right">${course.collection}</div>
+                                        <div class="people pull-right">${result.collection}</div>
                                     </c:if>
-                                    <c:if test="${course.satisfaction!='0'}">
+                                    <c:if test="${result.satisfaction!='0'}">
                                         <div class="add pull-left">满意度</div>
-                                        <div class="people pull-right">${course.satisfaction}</div>
+                                        <div class="people pull-right">${result.satisfaction}</div>
                                     </c:if>
                                     <div class="clearfix"></div>
                                     <div class="line"></div>
