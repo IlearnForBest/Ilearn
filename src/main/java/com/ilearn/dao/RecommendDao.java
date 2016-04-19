@@ -40,5 +40,14 @@ public class RecommendDao extends BaseDao{
 
     }
 
+    public List<ResourcesEntity> getRecommendByUser(int id){
+        String hql = "from RecommendEntity as resources where resources.id=? " +
+                "order by resources.recommendGrade desc";
+        Query query = query(hql);
+        query.setInteger(0, id);
+
+        return query.list();
+    }
+
 
 }

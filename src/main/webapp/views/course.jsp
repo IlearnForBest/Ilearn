@@ -6,7 +6,7 @@ pageEncoding="UTF-8"%>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title></title>
+    <title>course</title>
     <link rel="stylesheet" href="${assetsPath}/css/app.min.css"/>
     <!-- <link rel="stylesheet" href="css/course.css"/> -->
     <!--<script src="./js/jquery-1.7.2.min.js"></script>-->
@@ -200,15 +200,26 @@ pageEncoding="UTF-8"%>
                             <c:forEach items="${resources}" var="course">
                                 <li>
                                     <div class="image">
-                                        <img src="${course.imgurl}" alt=""/>
+                                        <img src="${course.imgurl}" alt="${course.url}"/>
                                     </div>
-                                    <div class="title">${course.title}</div>
+                                    <div class="title"><a href="${course.url}">${course.title}</a></div>
                                         <%--<div class="price">${coursepage1.price}</div>--%>
-                                    <div class="add pull-left">附加信息</div>
-                                    <div class="people pull-right">${course.joinNumber}</div>
+                                    <c:if test="${course.joinNumber!='0'}">
+                                        <div class="add pull-left">学习人数</div>
+                                        <div class="people pull-right">${course.joinNumber}</div>
+                                    </c:if>
+                                    <c:if test="${course.collection!='0'}">
+                                        <div class="add pull-left">收藏人数</div>
+                                        <div class="people pull-right">${course.collection}</div>
+                                    </c:if>
+                                    <c:if test="${course.satisfaction!='0'}">
+                                        <div class="add pull-left">满意度</div>
+                                        <div class="people pull-right">${course.satisfaction}</div>
+                                    </c:if>
+
                                     <div class="clearfix"></div>
                                     <div class="line"></div>
-                                    <div class="src">${course.sourceWeb}</div>
+                                    <div class="src">课程来源： ${course.sourceWeb}</div>
                                 </li>
                             </c:forEach>
 

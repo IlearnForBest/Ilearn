@@ -41,10 +41,10 @@ public class UserController {
 
 
 
-    @ResponseBody
+   // @ResponseBody
     @RequestMapping(value = "/register" , method = RequestMethod.POST)
-    public StatusMessage register(HttpServletRequest request, String userName , String password,
-                                  String password1 ,String email){
+    public String  register(String userName , String password,
+                                  String password1 ,String email,HttpServletRequest request){
 
         System.out.println("111111111111111111  "+userName+" "+password+" "+password1
         +" "+email);
@@ -68,23 +68,23 @@ public class UserController {
             request.getSession().setAttribute("username",userName);
         }
 
-        return statusMessage;
+        return "redirect:/index";
 
     }
 
     @RequestMapping(value = "/login" , method = RequestMethod.POST)
-    public String login(HttpServletRequest request,String userName , String password , HttpSession session){
+    public String login(HttpServletRequest request,String username , String password , HttpSession session){
         int status = 0;
         String message = "";
         StatusMessage statusMessage = new StatusMessage(status,message);
 
 
-        System.out.println("1111111111111111111111"+userName+"  "+password);
+        System.out.println("1111111111111111111111"+username+"  "+password);
 
-        if(userName == ""){
+        if(username == ""){
             message = "请输入用户名";
         }else{
-            UserEntity user = userDao.getByName(userName);
+            UserEntity user = userDao.getByName(username);
             if(password == ""){
                 message = "请输入密码";
             }else if(!user.getPassword().equals(password)){
@@ -96,7 +96,7 @@ public class UserController {
                 statusMessage.setStatus(status);
                 statusMessage.setMessage(message);
                 System.out.println("message1 : "+message);
-                request.getSession().setAttribute("username",userName);
+                request.getSession().setAttribute("username",username);
                 // redirectAttributes.addAttribute("loginMsg",message);
                 return "redirect:/index";
             }

@@ -24,18 +24,19 @@
         </div><!-- /input-group -->
       </div>
       <div class="col-md-4 button-group">
-                <span class="login"><a href="javascript:void(0)" onclick="openLogin()"><c:if test="${username ==null}">登录</c:if>
-                  <c:if test="${username!=null}">${username} </c:if></a></span>
-        <span class="registe"><a href="javascript:void(0)" onclick="openRegister()">注册</a></span>
+                <span class="login"><a id="login1" href="javascript:void(0)" onclick="openLogin()"><c:if test="${username ==null}">登录</c:if>
+                                                                                  <c:if test="${username!=null}">${username} </c:if></a></span>
+        <span class="registe"><a id="logout" href="javascript:void(0)" onclick="openRegister()"><c:if test="${username ==null}">注册</c:if>
+                                                                                   <c:if test="${username!=null}">退出</c:if></a></span>
       </div>
 
-      <%--<script>--%>
-      <%--//            alert($("#nav-login").text());--%>
-      <%--if($("#login").text().trim()=="${user}"){--%>
-      <%--$("#login").attr("onclick","window.location.href='/views/v3.6admin/user/user-info.jsp'");--%>
-      <%--$("#logout").attr("onclick","window.location.href='${pageContext.request.contextPath}/main/logout'");--%>
-      <%--}--%>
-      <%--</script>--%>
+      <script>
+      //            alert($("#nav-login").text());
+      if($("#login1").text().trim()=="${username}"){
+      $("#login1").attr("onclick","window.location.href='${rootPath}/user/person'");
+      $("#logout").attr("onclick","window.location.href='${rootPath}/user/logout'");
+      }
+      </script>
 
       <div id="modal">
         <!--弹出式登录框-->
@@ -46,7 +47,7 @@
               <h1 class="text-center text-primary">登录</h1>
             </div>
             <div class="modal-body center-block">
-              <form action="" class="form center-block">
+              <form action="${rootPath}/user/login" method="post" class="form center-block">
                 <div class="input-group">
                   <!--<label for="examInputEmail1">邮箱:</label>-->
                   <span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
@@ -78,26 +79,26 @@
               <h1 class="text-center text-primary">注册</h1>
             </div>
             <div class="modal-body center-block">
-              <form action="" class="form center-block">
+              <form action="${rootPath}/user/register" method="post" class="form center-block">
                 <div class="input-group">
                   <!--<label for="examInputEmail1">邮箱:</label>-->
                   <span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
-                  <input type="email" class="form-control input-lg" id="username"
+                  <input type="text" class="form-control input-lg" id="userName" name="userName"
                          placeholder="请输入您的用户名"/>
                 </div>
                 <div class="input-group">
                   <span class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></span>
-                  <input type="password" class="form-control input-lg" id="password1"
+                  <input type="password" class="form-control input-lg" id="password" name="password"
                          placeholder="请输入您的密码"/>
                 </div>
                 <div class="input-group">
                   <span class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></span>
-                  <input type="password" class="form-control input-lg" id="password2"
+                  <input type="password" class="form-control input-lg" id="password1" name="password1"
                          placeholder="确认密码"/>
                 </div>
                 <div class="input-group">
                   <span class="input-group-addon"><span class="glyphicon glyphicon-envelope"></span></span>
-                  <input type="password" class="form-control input-lg" id="email"
+                  <input type="email" class="form-control input-lg" id="email" name="email"
                          placeholder="邮箱"/>
                 </div>
 

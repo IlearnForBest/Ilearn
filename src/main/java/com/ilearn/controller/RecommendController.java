@@ -36,4 +36,13 @@ public class RecommendController {
         return "index";
     }
 
+    @RequestMapping(value = "/user/{id}" , method = RequestMethod.GET)
+    public String recommendBaseUser(@PathVariable("id") int id , Model model){
+
+
+        model.addAttribute("recommendResources" ,
+                recommendDao.getRecommendByItems(id,6));
+        return "index";
+    }
+
 }
