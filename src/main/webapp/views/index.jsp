@@ -71,15 +71,8 @@
                 </div>
 
                 <div class="col-md-9 tabimg">
-                    <%--<div>--%>
-                        <%--<ul class="list-inline">--%>
-                            <%--<li class="head">免费课程</li><!----%>
-                                <%----><li class="head">收费课程</li><!----%>
-                                <%----><li class="head">精品课程</li><!----%>
-                                <%----><li class="head">考试达人</li>--%>
-                        <%--</ul>--%>
-                    <%--</div><!----%>
-                        <%---->--%><div id="carousel-generic" class="carousel slide photo" data-ride="carousel">
+
+                        <div id="carousel-generic" class="carousel slide photo" data-ride="carousel">
                     <!-- Indicators -->
                     <ol class="carousel-indicators">
                         <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
@@ -124,8 +117,6 @@
                 </div>
                 </div>
 
-                <%--<div class="col-md-3 addimg">--%>
-                <%--</div>--%>
             </div>
 
             <!----------------------------
@@ -138,13 +129,13 @@
                         <div class="container-fluid">
                             <div class="row header">
                                 <div class="pull-left col-md-3">
-                                    <div class="title">生活/文化/兴趣</div>
+                                    <div class="title"><a href="${rootPath}/recommend/838">IT/互联网精品推荐</a></div>
                                 </div>
                                 <div class="col-md-4">
                                     <ul class="list-inline head-list">
-                                        <li>前端</li>
-                                        <li>后端</li>
-                                        <li>移动开发</li>
+                                        <li><a href="${rootPath}/recommend/849">前端开发</a></li>
+                                        <li><a href="${rootPath}/recommend/850">后台开发</a></li>
+                                        <li><a href="${rootPath}/recommend/845">移动开发</a></li>
                                     </ul>
                                 </div>
                                 <div class="col-md-5 more"><a href="" class="pull-right">&gt;&gt;More</a></div>

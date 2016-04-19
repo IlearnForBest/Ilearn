@@ -1,7 +1,10 @@
 package com.ilearn.dao;
 
+import com.ilearn.bean.CategoryEntity;
 import com.ilearn.bean.ResourcesEntity;
 import org.hibernate.Query;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -12,12 +15,26 @@ import java.util.List;
 @Repository("recommendDao")
 public class RecommendDao extends BaseDao{
 
-    public List<ResourcesEntity> getRecommendByItems(int cate3_id , int recommendNumber){
+    @Autowired
+    @Qualifier("categoryDao")
+    private CategoryDao categoryDao;
 
-        String hql = "from ResourcesEntity as resources where resources.category3Id=? " +
+    public List<ResourcesEntity> getRecommendByItems(int id , int recommendNumber){
+
+        String coloum;
+
+        CategoryEntity category = categoryDao.getById(id);
+        if(category.getCategory1Id()==null){
+            coloum = "category1Id";
+        }else if(category.getCategory2Id()==null){
+            coloum = "category2Id";
+        }else{
+            coloum = "category3Id";
+        }
+        String hql = "from ResourcesEntity as resources where resources."+coloum+"=? " +
                 "order by resources.recommendGrade desc";
         Query query = query(hql);
-        query.setInteger(0, cate3_id);
+        query.setInteger(0, id);
         List<ResourcesEntity> results = query.list().subList(0,recommendNumber-1);
         return results;
 
