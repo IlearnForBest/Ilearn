@@ -14,11 +14,18 @@
       <div class="col-md-4 search">
         <div class="input-group">
 
-          <form action="${rootPath}/resource/search" method="post">
-          <input type="text" class="form-control" name="keyword" placeholder="搜索内容...">
-            <span class="input-group-btn">
-              <button class="btn btn-default" type="submit">搜索</button>
-            </span>
+          <form action="${rootPath}/resource/search" method="post" class="form-horizontal col-md-offset-2" role="form">
+            <%--<form action="" class="form-horizontal col-md-offset-1" role="form">--%>
+            <%--<div class="row">--%>
+              <div class="input-group">
+                <input type="text" class="form-control" name="keyword" placeholder="搜索内容...">
+                <span class="input-group-btn">
+                     <button class="btn btn-default" type="submit">搜索</button>
+                </span>
+              </div>
+
+            <%--</div>--%>
+
           </form>
 
         </div><!-- /input-group -->
