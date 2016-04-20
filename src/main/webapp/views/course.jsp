@@ -6,7 +6,7 @@ pageEncoding="UTF-8"%>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>course</title>
+    <title>课程资源</title>
     <link rel="stylesheet" href="${assetsPath}/css/app.min.css"/>
     <!-- <link rel="stylesheet" href="css/course.css"/> -->
     <!--<script src="./js/jquery-1.7.2.min.js"></script>-->
@@ -25,8 +25,8 @@ pageEncoding="UTF-8"%>
         <div class="container">
             <div class="breadcrumb-main">
                     <ol class="breadcrumb">
-                        <li><a href="/">首页</a></li>
-                        <li><a href="">课程</a></li>
+                        <li><a href="${rootPath}/index">首页</a></li>
+                        <%--<li><a href="">课程</a></li>--%>
                         <!--<li class="active"><a href="">所有课程</a></li>-->
                     </ol>
             </div>
@@ -208,11 +208,11 @@ pageEncoding="UTF-8"%>
                                         <div class="add pull-left">学习人数</div>
                                         <div class="people pull-right">${course.joinNumber}</div>
                                     </c:if>
-                                    <c:if test="${course.collection!='0'}">
+                                    <c:if test="${course.collection!='0' && result.joinNumber=='0'}">
                                         <div class="add pull-left">收藏人数</div>
                                         <div class="people pull-right">${course.collection}</div>
                                     </c:if>
-                                    <c:if test="${course.satisfaction!='0'}">
+                                    <c:if test="${course.satisfaction!='0'  && result.joinNumber=='0' && result.collection=='0'}">
                                         <div class="add pull-left">满意度</div>
                                         <div class="people pull-right">${course.satisfaction}</div>
                                     </c:if>
@@ -221,8 +221,7 @@ pageEncoding="UTF-8"%>
                                     <div class="line"></div>
                                     <div class="src">课程来源： ${course.sourceWeb}</div>
 
-                                    <%--<a href="#CollectModal" role="button" data-toggle="modal"><i class="fa fa-star collect active" title="取消收藏"></i></a>--%>
-                                    <a href="" role="button"><i class="fa fa-star collect" title="收藏"></i></a>
+                                    <a href="#CollectModal" role="button" data-toggle="modal"><i class="fa fa-star collect " title="收藏"></i></a>
                                 </li>
                             </c:forEach>
 
