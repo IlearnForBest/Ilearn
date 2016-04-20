@@ -1,7 +1,11 @@
 package com.ilearn.controller;
 
+import com.ilearn.bean.CollectionEntity;
+import com.ilearn.bean.LogEntity;
 import com.ilearn.bean.ResourcesEntity;
 import com.ilearn.bean.UserEntity;
+import com.ilearn.dao.CollectionDao;
+import com.ilearn.dao.LogDao;
 import com.ilearn.dao.ResourcesDao;
 import com.ilearn.dao.UserDao;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,11 +33,24 @@ public class CollectionController {
     @Qualifier("userDao")
     private UserDao userDao;
 
+    @Autowired
+    @Qualifier("collectionDao")
+    private CollectionDao collectionDao;
+
+    @Autowired
+    @Qualifier("logDao")
+    private LogDao logDao;
+
 
     @RequestMapping(value = "/getcollection" , method = RequestMethod.GET)
     public String getCollection(HttpSession session){
+        List<ResourcesEntity> resources = new ArrayList<ResourcesEntity>();
+        List<CollectionEntity> collecitons = new ArrayList<CollectionEntity>();
         UserEntity user = (UserEntity)session.getAttribute("loginUser");
-
+        collecitons = collectionDao.getCollectionByUid(user.getId());
+        for(CollectionEntity collection:collecitons){
+            resources.add(resourcesDao.getById(collection.getResourceid()));
+        }
         session.setAttribute("collection",resources);
         return "user/user-collection";
     }
@@ -42,11 +59,10 @@ public class CollectionController {
     public String getRecord(HttpSession session){
         UserEntity user = (UserEntity)session.getAttribute("loginUser");
         List<ResourcesEntity> resources = new ArrayList<ResourcesEntity>();
-        String[]  logs ;
-        logs = user.getArrLogId().split(",");
-        for(String log:logs){
-            System.out.println(log+"abcsdfsgfdshg");
-            resources.add(resourcesDao.getById(Integer.parseInt(log)));
+        List<LogEntity> logs = new ArrayList<LogEntity>();
+        logs = logDao.getLogByUid(user.getId());
+        for(LogEntity l:logs){
+            resources.add(resourcesDao.getById(l.getResourceid()));
         }
         session.setAttribute("logs",resources);
         return "user/user-do";

@@ -2,8 +2,8 @@ package com.ilearn.dao;
 
 import com.ilearn.bean.CollectionEntity;
 import com.ilearn.bean.UserEntity;
+import org.hibernate.Query;
 import org.springframework.stereotype.Repository;
-
 import java.util.List;
 
 /**
@@ -16,6 +16,9 @@ public class CollectionDao extends BaseDao{
     }
 
     public List<CollectionEntity> getCollectionByUid(int uid){
-        
+        String hql = "from CollectionEntity as collection where userid='"+uid+"'";
+        Query query = query(hql);
+        List<CollectionEntity> collections = query.list();
+        return collections;
     }
 }
