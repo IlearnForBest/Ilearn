@@ -75,7 +75,7 @@ pageEncoding="UTF-8"%>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
         </button>
-        <a class="" href="${rootPah}/views/index.jsp"><span class="navbar-brand"><span class="fa fa-cloud"></span> MagicCloud</span></a>
+        <a class="" href="${rootPah}/views/index.jsp"><span class="navbar-brand"><span class="fa fa-cloud"></span> Ilearn</span></a>
     </div>
 
     <div class="navbar-collapse collapse" style="height: 1px;">
@@ -114,13 +114,13 @@ pageEncoding="UTF-8"%>
 
         <li>
             <ul class="dashboard-menu2 nav nav-list collapse in">
-                <li class="active"><a href="${rootPath}/views/user/user-info.jsp"><span class="fa fa-caret-right"></span> 查看个人信息</a></li>
-                <li><a href="${rootPath}/views/user/user-change.jsp"><span class="fa fa-caret-right"></span> 修改个人信息</a></li>
-                <li><a href="${rootPath}/views/user/user-password.jsp"><span class="fa fa-caret-right"></span> 修改密码</a></li>
+                <li class="active"><a href="${rootPath}/collection/getinfo"><span class="fa fa-caret-right"></span> 查看个人信息</a></li>
+                <li><a href="${rootPath}/collection/getchange"><span class="fa fa-caret-right"></span> 修改个人信息</a></li>
+                <li><a href="${rootPath}/collection/getpassword"><span class="fa fa-caret-right"></span> 修改密码</a></li>
             </ul>
         </li>
 
-        <li><a href="${rootPath}/views/user/user-do.jsp" data-target=".dashboard-menu3" class="nav-header" data-toggle="collapse"><i
+        <li><a href="${rootPath}/collection/getrecord" data-target=".dashboard-menu3" class="nav-header" data-toggle="collapse"><i
                 class="fa fa-bug"></i> 浏览记录</a></li>
 
         <li><a href="${rootPath}/collection/getcollection" data-target=".dashboard-menu4" class="nav-header" data-toggle="collapse"><i

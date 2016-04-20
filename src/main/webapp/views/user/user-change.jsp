@@ -67,7 +67,7 @@ pageEncoding="UTF-8"%>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
         </button>
-        <a class="" href="${rootPath}/index.jsp"><span class="navbar-brand"><span class="fa fa-cloud"></span> MagicCloud</span></a>
+        <a class="" href="${rootPath}/index.jsp"><span class="navbar-brand"><span class="fa fa-cloud"></span> Ilearn</span></a>
     </div>
 
     <div class="navbar-collapse collapse" style="height: 1px;">
@@ -106,17 +106,17 @@ pageEncoding="UTF-8"%>
 
         <li>
             <ul class="dashboard-menu2 nav nav-list collapse in">
-                <li><a href="user-info.jsp"><span class="fa fa-caret-right"></span> 查看个人信息</a></li>
-                <li class="active"><a href="user-change.jsp"><span class="fa fa-caret-right"></span> 修改个人信息</a></li>
-                <li><a href="user-password.jsp"><span class="fa fa-caret-right"></span> 修改密码</a></li>
+                <li><a href="${rootPath}/collection/getinfo"><span class="fa fa-caret-right"></span> 查看个人信息</a></li>
+                <li class="active"><a href="${rootPath}/collection/getchange"><span class="fa fa-caret-right"></span> 修改个人信息</a></li>
+                <li><a href="${rootPath}/collection/getpassword"><span class="fa fa-caret-right"></span> 修改密码</a></li>
                 <!--<li><a href="user-do.jsp"><span class="fa fa-caret-right"></span> 操作日志</a></li>-->
             </ul>
         </li>
 
-        <li><a href="user-do.jsp" data-target=".dashboard-menu3" class="nav-header" data-toggle="collapse"><i
+        <li><a href="${rootPath}/collection/getrecord" data-target=".dashboard-menu3" class="nav-header" data-toggle="collapse"><i
                 class="fa fa-bug"></i> 浏览记录</a></li>
 
-        <li><a href="user-collection.jsp" data-target=".dashboard-menu4" class="nav-header" data-toggle="collapse"><i
+        <li><a href="${rootPath}/collection/getcollection" data-target=".dashboard-menu4" class="nav-header" data-toggle="collapse"><i
                 class="fa fa-bug"></i> 收藏</a></li>
     </ul>
 </div>
@@ -134,17 +134,17 @@ pageEncoding="UTF-8"%>
                 <input type="button" value="上传头像" class="btn btn-default"/>
             </div>
             <div class="user-info col-md-3">
-                <form action="">
-                    <div><span>用户名:</span><input type="text" class="form-control"/></div>
-                    <div><span>昵&nbsp;&nbsp;&nbsp;&nbsp;称:</span><input type="text" class="form-control"/></div>
+                <form action="${rootPath}/collection/changeinfo" method="post" >
+                    <div><span>用户名:</span><input name="changeusername" type="text" class="form-control" value="${loginUser.userName}"/></div>
+                    <div><span>昵&nbsp;&nbsp;&nbsp;&nbsp;称:</span><input type="text" class="form-control" /></div>
                     <div><span>性&nbsp;&nbsp;&nbsp;&nbsp;别:</span>
                         <div class="radio">
                             <input type="radio" name="sex" checked/><span>男</span><input type="radio" name="sex" /><span>女</span>
                         </div>
                     </div>
-                    <div><span>邮&nbsp;&nbsp;&nbsp;&nbsp;箱:</span><input type="text" class="form-control"/></div>
-                    <div><span>手机号码:</span><input type="text" class="form-control"/></div>
-                    <input type="button" class="btn btn-default pull-right" value="提交"/>
+                    <div><span>邮&nbsp;&nbsp;&nbsp;&nbsp;箱:</span><input name="changeemail" type="text" class="form-control" value="${loginUser.email}"/></div>
+                    <div><span>手机号码:</span><input name="changetelephone" type="text" class="form-control" value="${loginUser.telephone}"/></div>
+                    <input type="submit" class="btn btn-default pull-right" value="提交"/>
                     <div class="clearfix"></div>
                 </form>
             </div>

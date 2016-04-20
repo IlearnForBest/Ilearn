@@ -88,11 +88,11 @@ public class UserController {
 
         System.out.println("1111111111111111111111"+username+"  "+password);
 
-        if(username == ""){
+        if(username.isEmpty()){
             message = "请输入用户名";
         }else{
             UserEntity user = userDao.getByName(username);
-            if(password == ""){
+            if(password.isEmpty()){
                 message = "请输入密码";
             }else if(!user.getPassword().equals(password)){
                 message = "密码错误";
