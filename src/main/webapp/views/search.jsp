@@ -10,7 +10,7 @@ pageEncoding="UTF-8"%>
     <link rel="stylesheet" href="${assetsPath}/css/app.min.css"/>
     <script src="//cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
     <script src="//cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-    <script src="./js/navLink.js"></script>
+    <script src="${assetsPath}/js/navLink.js"></script>
 </head>
 <body>
 <jsp:include page="common/header.jsp" />
@@ -48,23 +48,29 @@ pageEncoding="UTF-8"%>
                                     <div class="image">
                                         <img src="${result.imgurl}" alt=""/>
                                     </div>
-                                    <div class="title">${result.title}</div>
+                                    <div class="title"><a href="${course.url}">${course.title}</a></div>
                                         <%--<div class="price">${coursepage1.price}</div>--%>
-                                    <div class="add pull-left">附加信息</div>
-                                    <div class="people pull-right">${result.joinNumber}</div>
+                                    <c:if test="${course.joinNumber!='0'}">
+                                        <div class="add pull-left">学习人数</div>
+                                        <div class="people pull-right">${course.joinNumber}</div>
+                                    </c:if>
+                                    <c:if test="${course.collection!='0'}">
+                                        <div class="add pull-left">收藏人数</div>
+                                        <div class="people pull-right">${course.collection}</div>
+                                    </c:if>
+                                    <c:if test="${course.satisfaction!='0'}">
+                                        <div class="add pull-left">满意度</div>
+                                        <div class="people pull-right">${course.satisfaction}</div>
+                                    </c:if>
                                     <div class="clearfix"></div>
                                     <div class="line"></div>
                                     <div class="src">${result.sourceWeb}</div>
                                 </li>
                             </c:forEach>
-                            
+
                             <div class="clearfix"></div>
                         </ul>
                     </div>
-
-
-
-
 
                 </div>
 
@@ -78,40 +84,7 @@ pageEncoding="UTF-8"%>
 </div>
 
 
-<footer>
-    <div class="container site-info">
-        <div class="row">
-            <div class="col-xs-2"><a href="/"><img src="images/logo.png" alt="" width="120"></a></div>
-            <div class="col-xs-6">
-                <div class="row">
-                    <div class="col-xs-6">
-                        <h3>统计信息</h3>
-                        <p>网站总访问量 : 1365544</p>
-                        <p>当前在线人数 : 42554</p>
-                        <p>页面加载时间 : 0.000234</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-xs-4 contacts">
-                <div class="contact-detail">
-                    <p><i class="fa fa-map-marker"></i>江苏省南京市</p>
-                    <p><i class="fa fa-phone"></i>123-456-789</p>
-                    <p><i class="fa fa-envelope"></i>1234567@qq.com</p>
-                </div>
-                <span>关注我们:</span>
-                <a href=""><i class="contact-icon fa fa-weibo"></i></a>
-                <a href=""><i class="contact-icon fa fa-weixin"></i></a>
-                <a href=""><i class="contact-icon fa fa-qq"></i></a>
-                <a href=""><i class="contact-icon fa fa-renren"></i></a>
-            </div>
-        </div>
-    </div>
-    </div>
-    <div class="copyright">
-
-        <p>CopyrightBy--Mr.z</p>
-    </div>
-</footer>
+<jsp:include page="common/footer.jsp" />
 
 <script>
     $(document).ready(function () {

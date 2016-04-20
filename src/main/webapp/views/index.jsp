@@ -1,4 +1,4 @@
-﻿<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ page isELIgnored="false" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -133,11 +133,14 @@
 
             <div class="courses-all flex-row">
                 <div class="flex-10">
+
+
                     <div class="courses">
                         <div class="container-fluid">
+
                             <div class="row header">
                                 <div class="pull-left col-md-3">
-                                    <div class="title">生活/文化/兴趣</div>
+                                    <div class="title">IT/互联网</div>
                                 </div>
                                 <div class="col-md-4">
                                     <ul class="list-inline head-list">
@@ -149,232 +152,222 @@
                                 <div class="col-md-5 more"><a href="" class="pull-right">&gt;&gt;More</a></div>
                                 <!--<div class="clearfix"></div>-->
                             </div>
+
                             <div class="row body">
-                                <div class="row">
-                                    <div class="col-md-3">
-                                        <img src="${assetsPath}/images/courses1.jpg" alt=""/>
-                                    </div>
-                                    <div class="col-md-3">
-                                        <div class="info">
-                                            <div class="title">
-                                                HTML5从如门到精通
+
+                                <div class="row">            <%--一列两个--%>
+                                    <c:forEach items="${recommend1}" var="img_set" begin="0" end="1">
+                                        <div class="col-md-6">
+                                            <div class="col-md-6">
+                                                <img src="${img_set.imgurl}" alt="" style="width: 100%"/>
                                             </div>
-                                            <div class="addon">
-                                                <div class="time"><i class="fa fa-clock-o"></i>48课时</div>
-                                                <div class="people"><i class="fa fa-user"></i>143人在学</div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-3">
-                                        <img src="${assetsPath}/images/courses2.jpg" alt=""/>
-                                    </div>
-                                    <div class="col-md-3">
-                                        <div class="info">
-                                            <div class="title">
-                                                IOS8企业项目开发系列课程
-                                            </div>
-                                            <div class="addon">
-                                                <div class="time"><i class="fa fa-clock-o"></i>107课时</div>
-                                                <div class="people"><i class="fa fa-user"></i>850人在学</div>
+
+                                            <div class="col-md-6">
+                                                <div class="info">
+                                                    <div class="title">
+                                                            ${img_set.title}
+                                                    </div>
+                                                    <div class="addon">
+                                                        <div class="time"><i class="fa fa-clock-o"></i>48课时</div>
+                                                        <div class="people"><i class="fa fa-user"></i>143人在学</div>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
+                                    </c:forEach>
                                 </div>
-                                <div class="row">
-                                    <div class="col-md-3">
-                                        <img src="${assetsPath}/images/courses3.jpg" alt=""/>
-                                    </div>
-                                    <div class="col-md-3">
-                                        <div class="info">
-                                            <div class="title">
-                                                交互设计精品课--输入和输出
+
+                                <div class="row">            <%--一列两个--%>
+                                    <c:forEach items="${recommend1}" var="img_set" begin="2" end="3">
+                                        <div class="col-md-6">
+                                            <div class="col-md-6">
+                                                <img src="${img_set.imgurl}" alt="" style="width: 100%"/>
                                             </div>
-                                            <div class="addon">
-                                                <div class="time"><i class="fa fa-clock-o"></i>2课时</div>
-                                                <div class="people"><i class="fa fa-user"></i>5人在学</div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-3">
-                                        <img src="${assetsPath}/images/courses4.png" alt=""/>
-                                    </div>
-                                    <div class="col-md-3">
-                                        <div class="info">
-                                            <div class="title">
-                                                Web前端开发规范
-                                            </div>
-                                            <div class="addon">
-                                                <div class="time"><i class="fa fa-clock-o"></i>25课时</div>
-                                                <div class="people"><i class="fa fa-user"></i>1302人在学</div>
+
+                                            <div class="col-md-6">
+                                                <div class="info">
+                                                    <div class="title">
+                                                            ${img_set.title}
+                                                    </div>
+                                                    <div class="addon">
+                                                        <div class="time"><i class="fa fa-clock-o"></i>48课时</div>
+                                                        <div class="people"><i class="fa fa-user"></i>143人在学</div>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
+                                    </c:forEach>
                                 </div>
+
                             </div>
                         </div>
                     </div>
 
-                    <div class="courses">
-                        <div class="container-fluid">
-                            <div class="row header">
-                                <div class="pull-left col-md-3">
-                                    <div class="title">生活/文化/兴趣</div>
-                                </div>
-                                <div class="col-md-4">
-                                    <ul class="list-inline head-list">
-                                        <li>前端</li>
-                                        <li>后端</li>
-                                        <li>移动开发</li>
-                                    </ul>
-                                </div>
-                                <div class="col-md-5 more"><a href="" class="pull-right">&gt;&gt;More</a></div>
-                                <!--<div class="clearfix"></div>-->
-                            </div>
-                            <div class="row body">
-                                <div class="row">
-                                    <div class="col-md-3">
-                                        <img src="${assetsPath}/images/courses1.jpg" alt=""/>
-                                    </div>
-                                    <div class="col-md-3">
-                                        <div class="info">
-                                            <div class="title">
-                                                HTML5从如门到精通
-                                            </div>
-                                            <div class="addon">
-                                                <div class="time"><i class="fa fa-clock-o"></i>48课时</div>
-                                                <div class="people"><i class="fa fa-user"></i>143人在学</div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-3">
-                                        <img src="${assetsPath}/images/courses2.jpg" alt=""/>
-                                    </div>
-                                    <div class="col-md-3">
-                                        <div class="info">
-                                            <div class="title">
-                                                IOS8企业项目开发系列课程
-                                            </div>
-                                            <div class="addon">
-                                                <div class="time"><i class="fa fa-clock-o"></i>107课时</div>
-                                                <div class="people"><i class="fa fa-user"></i>850人在学</div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-md-3">
-                                        <img src="${assetsPath}/images/courses3.jpg" alt=""/>
-                                    </div>
-                                    <div class="col-md-3">
-                                        <div class="info">
-                                            <div class="title">
-                                                交互设计精品课--输入和输出
-                                            </div>
-                                            <div class="addon">
-                                                <div class="time"><i class="fa fa-clock-o"></i>2课时</div>
-                                                <div class="people"><i class="fa fa-user"></i>5人在学</div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-3">
-                                        <img src="${assetsPath}/images/courses4.png" alt=""/>
-                                    </div>
-                                    <div class="col-md-3">
-                                        <div class="info">
-                                            <div class="title">
-                                                Web前端开发规范
-                                            </div>
-                                            <div class="addon">
-                                                <div class="time"><i class="fa fa-clock-o"></i>25课时</div>
-                                                <div class="people"><i class="fa fa-user"></i>1302人在学</div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
 
-                    <div class="courses">
-                        <div class="container-fluid">
-                            <div class="row header">
-                                <div class="pull-left col-md-3">
-                                    <div class="title">生活/文化/兴趣</div>
-                                </div>
-                                <div class="col-md-4">
-                                    <ul class="list-inline head-list">
-                                        <li>前端</li>
-                                        <li>后端</li>
-                                        <li>移动开发</li>
-                                    </ul>
-                                </div>
-                                <div class="col-md-5 more"><a href="" class="pull-right">&gt;&gt;More</a></div>
-                                <!--<div class="clearfix"></div>-->
-                            </div>
-                            <div class="row body">
-                                <div class="row">
-                                    <div class="col-md-3">
-                                        <img src="${assetsPath}/images/courses1.jpg" alt=""/>
-                                    </div>
-                                    <div class="col-md-3">
-                                        <div class="info">
-                                            <div class="title">
-                                                HTML5从如门到精通
-                                            </div>
-                                            <div class="addon">
-                                                <div class="time"><i class="fa fa-clock-o"></i>48课时</div>
-                                                <div class="people"><i class="fa fa-user"></i>143人在学</div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-3">
-                                        <img src="${assetsPath}/images/courses2.jpg" alt=""/>
-                                    </div>
-                                    <div class="col-md-3">
-                                        <div class="info">
-                                            <div class="title">
-                                                IOS8企业项目开发系列课程
-                                            </div>
-                                            <div class="addon">
-                                                <div class="time"><i class="fa fa-clock-o"></i>107课时</div>
-                                                <div class="people"><i class="fa fa-user"></i>850人在学</div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-md-3">
-                                        <img src="${assetsPath}/images/courses3.jpg" alt=""/>
-                                    </div>
-                                    <div class="col-md-3">
-                                        <div class="info">
-                                            <div class="title">
-                                                交互设计精品课--输入和输出
-                                            </div>
-                                            <div class="addon">
-                                                <div class="time"><i class="fa fa-clock-o"></i>2课时</div>
-                                                <div class="people"><i class="fa fa-user"></i>5人在学</div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-3">
-                                        <img src="${assetsPath}/images/courses4.png" alt=""/>
-                                    </div>
-                                    <div class="col-md-3">
-                                        <div class="info">
-                                            <div class="title">
-                                                Web前端开发规范
-                                            </div>
-                                            <div class="addon">
-                                                <div class="time"><i class="fa fa-clock-o"></i>25课时</div>
-                                                <div class="people"><i class="fa fa-user"></i>1302人在学</div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    <%--<div class="courses">--%>
+                        <%--<div class="container-fluid">--%>
+                            <%--<div class="row header">--%>
+                                <%--<div class="pull-left col-md-3">--%>
+                                    <%--<div class="title">语言留学</div>--%>
+                                <%--</div>--%>
+                                <%--<div class="col-md-4">--%>
+                                    <%--<ul class="list-inline head-list">--%>
+                                        <%--<li>前端</li>--%>
+                                        <%--<li>后端</li>--%>
+                                        <%--<li>移动开发</li>--%>
+                                    <%--</ul>--%>
+                                <%--</div>--%>
+                                <%--<div class="col-md-5 more"><a href="" class="pull-right">&gt;&gt;More</a></div>--%>
+                                <%--<!--<div class="clearfix"></div>-->--%>
+                            <%--</div>--%>
+                            <%--<div class="row body">--%>
+                                <%--<div class="row">--%>
+                                    <%--<div class="col-md-3">--%>
+                                        <%--<img src="${assetsPath}/images/courses1.jpg" alt=""/>--%>
+                                    <%--</div>--%>
+                                    <%--<div class="col-md-3">--%>
+                                        <%--<div class="info">--%>
+                                            <%--<div class="title">--%>
+                                                <%--HTML5从如门到精通--%>
+                                            <%--</div>--%>
+                                            <%--<div class="addon">--%>
+                                                <%--<div class="time"><i class="fa fa-clock-o"></i>48课时</div>--%>
+                                                <%--<div class="people"><i class="fa fa-user"></i>143人在学</div>--%>
+                                            <%--</div>--%>
+                                        <%--</div>--%>
+                                    <%--</div>--%>
+                                    <%--<div class="col-md-3">--%>
+                                        <%--<img src="${assetsPath}/images/courses2.jpg" alt=""/>--%>
+                                    <%--</div>--%>
+                                    <%--<div class="col-md-3">--%>
+                                        <%--<div class="info">--%>
+                                            <%--<div class="title">--%>
+                                                <%--IOS8企业项目开发系列课程--%>
+                                            <%--</div>--%>
+                                            <%--<div class="addon">--%>
+                                                <%--<div class="time"><i class="fa fa-clock-o"></i>107课时</div>--%>
+                                                <%--<div class="people"><i class="fa fa-user"></i>850人在学</div>--%>
+                                            <%--</div>--%>
+                                        <%--</div>--%>
+                                    <%--</div>--%>
+                                <%--</div>--%>
+                                <%--<div class="row">--%>
+                                    <%--<div class="col-md-3">--%>
+                                        <%--<img src="${assetsPath}/images/courses3.jpg" alt=""/>--%>
+                                    <%--</div>--%>
+                                    <%--<div class="col-md-3">--%>
+                                        <%--<div class="info">--%>
+                                            <%--<div class="title">--%>
+                                                <%--交互设计精品课--输入和输出--%>
+                                            <%--</div>--%>
+                                            <%--<div class="addon">--%>
+                                                <%--<div class="time"><i class="fa fa-clock-o"></i>2课时</div>--%>
+                                                <%--<div class="people"><i class="fa fa-user"></i>5人在学</div>--%>
+                                            <%--</div>--%>
+                                        <%--</div>--%>
+                                    <%--</div>--%>
+                                    <%--<div class="col-md-3">--%>
+                                        <%--<img src="${assetsPath}/images/courses4.png" alt=""/>--%>
+                                    <%--</div>--%>
+                                    <%--<div class="col-md-3">--%>
+                                        <%--<div class="info">--%>
+                                            <%--<div class="title">--%>
+                                                <%--Web前端开发规范--%>
+                                            <%--</div>--%>
+                                            <%--<div class="addon">--%>
+                                                <%--<div class="time"><i class="fa fa-clock-o"></i>25课时</div>--%>
+                                                <%--<div class="people"><i class="fa fa-user"></i>1302人在学</div>--%>
+                                            <%--</div>--%>
+                                        <%--</div>--%>
+                                    <%--</div>--%>
+                                <%--</div>--%>
+                            <%--</div>--%>
+                        <%--</div>--%>
+                    <%--</div>--%>
+
+                    <%--<div class="courses">--%>
+                    <%--<div class="container-fluid">--%>
+                        <%--<div class="row header">--%>
+                            <%--<div class="pull-left col-md-3">--%>
+                                <%--<div class="title">兴趣爱好</div>--%>
+                            <%--</div>--%>
+                            <%--<div class="col-md-4">--%>
+                                <%--<ul class="list-inline head-list">--%>
+                                    <%--<li>前端</li>--%>
+                                    <%--<li>后端</li>--%>
+                                    <%--<li>移动开发</li>--%>
+                                <%--</ul>--%>
+                            <%--</div>--%>
+                            <%--<div class="col-md-5 more"><a href="" class="pull-right">&gt;&gt;More</a></div>--%>
+                            <%--<!--<div class="clearfix"></div>-->--%>
+                        <%--</div>--%>
+                        <%--<div class="row body">--%>
+
+
+                            <%--<div class="row">--%>
+                                <%--<div class="col-md-3">--%>
+                                    <%--<img src="${assetsPath}/images/courses1.jpg" alt=""/>--%>
+                                <%--</div>--%>
+                                <%--<div class="col-md-3">--%>
+                                    <%--<div class="info">--%>
+                                        <%--<div class="title">--%>
+                                            <%--HTML5从如门到精通--%>
+                                        <%--</div>--%>
+                                        <%--<div class="addon">--%>
+                                            <%--<div class="time"><i class="fa fa-clock-o"></i>48课时</div>--%>
+                                            <%--<div class="people"><i class="fa fa-user"></i>143人在学</div>--%>
+                                        <%--</div>--%>
+                                    <%--</div>--%>
+                                <%--</div>--%>
+                                <%--<div class="col-md-3">--%>
+                                    <%--<img src="${assetsPath}/images/courses2.jpg" alt=""/>--%>
+                                <%--</div>--%>
+                                <%--<div class="col-md-3">--%>
+                                    <%--<div class="info">--%>
+                                        <%--<div class="title">--%>
+                                            <%--IOS8企业项目开发系列课程--%>
+                                        <%--</div>--%>
+                                        <%--<div class="addon">--%>
+                                            <%--<div class="time"><i class="fa fa-clock-o"></i>107课时</div>--%>
+                                            <%--<div class="people"><i class="fa fa-user"></i>850人在学</div>--%>
+                                        <%--</div>--%>
+                                    <%--</div>--%>
+                                <%--</div>--%>
+                            <%--</div>--%>
+
+                            <%--<div class="row">--%>
+                                <%--<div class="col-md-3">--%>
+                                    <%--<img src="${assetsPath}/images/courses3.jpg" alt=""/>--%>
+                                <%--</div>--%>
+                                <%--<div class="col-md-3">--%>
+                                    <%--<div class="info">--%>
+                                        <%--<div class="title">--%>
+                                            <%--交互设计精品课--输入和输出--%>
+                                        <%--</div>--%>
+                                        <%--<div class="addon">--%>
+                                            <%--<div class="time"><i class="fa fa-clock-o"></i>2课时</div>--%>
+                                            <%--<div class="people"><i class="fa fa-user"></i>5人在学</div>--%>
+                                        <%--</div>--%>
+                                    <%--</div>--%>
+                                <%--</div>--%>
+                                <%--<div class="col-md-3">--%>
+                                    <%--<img src="${assetsPath}/images/courses4.png" alt=""/>--%>
+                                <%--</div>--%>
+                                <%--<div class="col-md-3">--%>
+                                    <%--<div class="info">--%>
+                                        <%--<div class="title">--%>
+                                            <%--Web前端开发规范--%>
+                                        <%--</div>--%>
+                                        <%--<div class="addon">--%>
+                                            <%--<div class="time"><i class="fa fa-clock-o"></i>25课时</div>--%>
+                                            <%--<div class="people"><i class="fa fa-user"></i>1302人在学</div>--%>
+                                        <%--</div>--%>
+                                    <%--</div>--%>
+                                <%--</div>--%>
+                            <%--</div>--%>
+                        <%--</div>--%>
+                    <%--</div>--%>
+                <%--</div>--%>
                 </div>
 
                 <div class="recommend-all flex-4">

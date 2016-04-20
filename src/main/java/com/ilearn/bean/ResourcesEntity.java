@@ -9,9 +9,9 @@ import javax.persistence.*;
 @Table(name = "ilearn_resources", schema = "", catalog = "db_ilearn")
 public class ResourcesEntity {
     private int rid;
-    private String title;
+    private String title;    //小图标题
     private String url;
-    private String imgurl;
+    private String imgurl;    //图片url
     private String category1;
     private String category2;
     private String category3;
