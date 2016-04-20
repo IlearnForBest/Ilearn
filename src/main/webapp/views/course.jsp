@@ -221,7 +221,7 @@ pageEncoding="UTF-8"%>
                                     <div class="line"></div>
                                     <div class="src">课程来源： ${course.sourceWeb}</div>
 
-                                    <a href="#CollectModal" role="button" data-toggle="modal"><i class="fa fa-star collect active" title="取消收藏"></i></a>
+                                    <a href="#CollectModal" role="button" data-toggle="modal"><i class="fa fa-star collect " title="收藏"></i></a>
                                 </li>
                             </c:forEach>
 
