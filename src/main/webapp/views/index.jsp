@@ -37,11 +37,11 @@
                             <li class="list-head">             <!--这是一个大头！！！！-->
                                 <div>
                                     <%--resource/${oneTwo.cate_name}--%>
-                                    <a href="${rootPath}/resource/${oneTwo.cate_id}?page=1">${oneTwo.cate_name}</a>
+                                    <a href="${rootPath}/resource/${oneTwo.cate_id}/1">${oneTwo.cate_name}</a>
                                     <ul class="list-inline">
                                         <li>
                                             <c:forEach items="${oneTwo.cate2s}" var="oneTwo_list" begin="0" end="2">
-                                                <a href="${rootPath}/resource/${oneTwo_list.cid}?page=1">
+                                                <a href="${rootPath}/resource/${oneTwo_list.cid}/1">
                                                         ${oneTwo_list.cateName}</a>
 
                                             </c:forEach>
@@ -144,7 +144,7 @@
                                         <li>移动开发</li>
                                     </ul>
                                 </div>
-                                <div class="col-md-5 more"><a href="${rootPath}/resource/838?page=1" class="pull-right">&gt;&gt;More</a></div>
+                                <div class="col-md-5 more"><a href="${rootPath}/resource/838/1" class="pull-right">&gt;&gt;More</a></div>
                                 <!--<div class="clearfix"></div>-->
                             </div>
 
@@ -212,7 +212,7 @@
                                         <li>国内考试</li>
                                     </ul>
                                 </div>
-                                <div class="col-md-5 more"><a href="${rootPath}/resource/839?page=1" class="pull-right">&gt;&gt;More</a></div>
+                                <div class="col-md-5 more"><a href="${rootPath}/resource/839/1" class="pull-right">&gt;&gt;More</a></div>
                                 <!--<div class="clearfix"></div>-->
                             </div>
 

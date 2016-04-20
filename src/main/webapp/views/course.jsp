@@ -197,7 +197,7 @@ pageEncoding="UTF-8"%>
 
                     <div class="floor">
                         <ul>
-                            <c:forEach items="${page.list}" var="course">
+                            <c:forEach items="${resources}" var="course">
                                 <li>
                                     <div class="image">
                                         <img src="${course.imgurl}" alt="${course.url}"/>

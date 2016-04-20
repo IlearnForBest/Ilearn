@@ -44,9 +44,9 @@ public class ResourcesController {
      * @return
      */
 //@ResponseBody
-    @RequestMapping(value = "/{id}" , method = RequestMethod.GET)
+    @RequestMapping(value = "/{id}/{pageNum}" , method = RequestMethod.GET)
     public String getPageResoucesOfLeaf(@PathVariable("id") int id ,
-                                        int pageNum , Model model){
+                                        @PathVariable("pageNum") int pageNum , Model model){
         CategoryEntity category = categoryDao.getById(id);
         if(category.getCategory1Id()==null){
             model.addAttribute("nowCate1", category);
