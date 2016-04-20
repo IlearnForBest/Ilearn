@@ -123,7 +123,7 @@ pageEncoding="UTF-8"%>
         <li><a href="${rootPath}/views/user/user-do.jsp" data-target=".dashboard-menu3" class="nav-header" data-toggle="collapse"><i
                 class="fa fa-bug"></i> 浏览记录</a></li>
 
-        <li><a href="${rootPath}/views/user/user-collection.jsp" data-target=".dashboard-menu4" class="nav-header" data-toggle="collapse"><i
+        <li><a href="${rootPath}/collection/getcollection" data-target=".dashboard-menu4" class="nav-header" data-toggle="collapse"><i
                 class="fa fa-bug"></i> 收藏</a></li>
     </ul>
 </div>
@@ -140,13 +140,13 @@ pageEncoding="UTF-8"%>
                 <div><img src="${assetsPath}/images/cloud.ico" alt=""/></div>
             </div>
             <div class="user-info col-md-4">
-                    <div><span>用户名:</span><span>xuzhaozhengwei@163.com</span></div>
+                    <div><span>用户名:</span><span>${loginUser.userName}</span></div>
                     <div><span>昵&nbsp;&nbsp;&nbsp;&nbsp;称:</span><span>gaowu9595</span></div>
                     <div><span>性&nbsp;&nbsp;&nbsp;&nbsp;别:</span>
                         <span>男</span>
                     </div>
-                    <div><span>邮&nbsp;&nbsp;&nbsp;&nbsp;箱:</span><span>xuzhaozhengwei@163.com</span></div>
-                    <div><span>手机号码:</span><span>18351967235</span></div>
+                    <div><span>邮&nbsp;&nbsp;&nbsp;&nbsp;箱:</span><span>${loginUser.email}</span></div>
+                    <div><span>手机号码:</span><span>${loginUser.telephone}</span></div>
                     <div class="clearfix"></div>
             </div>
         </div>
