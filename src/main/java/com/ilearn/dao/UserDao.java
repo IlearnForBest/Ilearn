@@ -79,4 +79,20 @@ public class UserDao extends BaseDao{
         return results;
     }
 
+    public void updateInfo(String username,String changeusername,String changeemail,String changetelephone){
+        String hql = "update UserEntity as user set user.userName='" + changeusername+
+                "',user.email='"+changeemail+"',user.telephone='"+changetelephone+"' where user.userName='"+username+"'";
+        Query query = query(hql);
+        query.executeUpdate();
+
+    }
+
+    public void updatePassword(String oldpassword,String newpassword){
+        String hql = "update UserEntity as user set user.password='" + newpassword+
+                "' where user.password='"+oldpassword+"'";
+        Query query = query(hql);
+        query.executeUpdate();
+
+    }
+
 }
