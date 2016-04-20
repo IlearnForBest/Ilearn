@@ -91,13 +91,13 @@
                         <div class="item active">
                             <img src="${assetsPath}/images/02.jpg" alt="...">
                             <div class="carousel-caption">
-                                2
+                                1
                             </div>
                         </div>
                         <div class="item">
                             <img src="${assetsPath}/images/03.jpg" alt="...">
                             <div class="carousel-caption">
-                                3
+                                2
                             </div>
                         </div>
                         <div class="item">
