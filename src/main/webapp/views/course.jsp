@@ -208,11 +208,11 @@ pageEncoding="UTF-8"%>
                                         <div class="add pull-left">学习人数</div>
                                         <div class="people pull-right">${course.joinNumber}</div>
                                     </c:if>
-                                    <c:if test="${course.collection!='0'}">
+                                    <c:if test="${course.collection!='0' && result.joinNumber=='0'}">
                                         <div class="add pull-left">收藏人数</div>
                                         <div class="people pull-right">${course.collection}</div>
                                     </c:if>
-                                    <c:if test="${course.satisfaction!='0'}">
+                                    <c:if test="${course.satisfaction!='0'  && result.joinNumber=='0' && result.collection=='0'}">
                                         <div class="add pull-left">满意度</div>
                                         <div class="people pull-right">${course.satisfaction}</div>
                                     </c:if>
