@@ -220,6 +220,8 @@ pageEncoding="UTF-8"%>
                                     <div class="clearfix"></div>
                                     <div class="line"></div>
                                     <div class="src">课程来源： ${course.sourceWeb}</div>
+
+                                    <a href="#CollectModal" role="button" data-toggle="modal"><i class="fa fa-star collect active" title="取消收藏"></i></a>
                                 </li>
                             </c:forEach>
 
@@ -253,6 +255,25 @@ pageEncoding="UTF-8"%>
 
 <jsp:include page="common/footer.jsp" />
 
+<!--CommonDiv-->
+<!--取消收藏模态-->
+<div class="modal small fade" id="CollectModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <h3 id="myModalLabel">消息</h3>
+            </div>
+            <div class="modal-body">
+                <p class="error-text"><i class="fa fa-warning modal-icon"></i><span class="pull-right">取消收藏?</span><div class="clearfix"></div></p>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-default" data-dismiss="modal" aria-hidden="true">取消</button>
+                <button class="btn btn-danger" data-dismiss="modal">确定</button>
+            </div>
+        </div>
+    </div>
+</div>
 
 <script>
     $(document).ready(function () {
