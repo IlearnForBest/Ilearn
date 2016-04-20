@@ -36,6 +36,8 @@ public class IndexController {
         session.setAttribute("secondcates",secondCates);
         model.addAttribute("recommend1" ,
                 recommendDao.getRecommendByItems(838,5));
+        model.addAttribute("recommend2" ,
+                recommendDao.getRecommendByItems(839,5));
 
         return "index";
     }

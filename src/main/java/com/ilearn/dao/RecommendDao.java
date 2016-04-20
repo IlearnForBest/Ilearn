@@ -36,13 +36,13 @@ public class RecommendDao extends BaseDao{
         Query query = query(hql);
         query.setInteger(0, id);
         List<ResourcesEntity> results = query.list().subList(0,recommendNumber-1);
-    for (ResourcesEntity res : results){
-        System.out.println(res.getTitle());
-        System.out.println(res.getUrl());
-        System.out.println(res.getImgurl());
-        System.out.println(res.getCollection());
-        System.out.println();
-    }
+//    for (ResourcesEntity res : results){
+//        System.out.println(res.getTitle());
+//        System.out.println(res.getUrl());
+//        System.out.println(res.getImgurl());
+//        System.out.println(res.getCollection());
+//        System.out.println();
+//    }
 
         return results;
 
