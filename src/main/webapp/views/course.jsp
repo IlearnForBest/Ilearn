@@ -6,7 +6,7 @@ pageEncoding="UTF-8"%>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>course</title>
+    <title>课程资源</title>
     <link rel="stylesheet" href="${assetsPath}/css/app.min.css"/>
     <!-- <link rel="stylesheet" href="css/course.css"/> -->
     <!--<script src="./js/jquery-1.7.2.min.js"></script>-->
@@ -25,8 +25,8 @@ pageEncoding="UTF-8"%>
         <div class="container">
             <div class="breadcrumb-main">
                     <ol class="breadcrumb">
-                        <li><a href="/">首页</a></li>
-                        <li><a href="">课程</a></li>
+                        <li><a href="${rootPath}/index">首页</a></li>
+                        <%--<li><a href="">课程</a></li>--%>
                         <!--<li class="active"><a href="">所有课程</a></li>-->
                     </ol>
             </div>
