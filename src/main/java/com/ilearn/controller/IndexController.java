@@ -34,8 +34,8 @@ public class IndexController {
         List<CateBean> secondCates = categoryDao.getSecondCategory();
 
         session.setAttribute("secondcates",secondCates);
-        model.addAttribute("recommendResources" ,
-                recommendDao.getRecommendByItems(838,6));
+        model.addAttribute("recommend1" ,
+                recommendDao.getRecommendByItems(838,5));
 
         return "index";
     }
