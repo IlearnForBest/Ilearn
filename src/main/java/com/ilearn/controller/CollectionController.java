@@ -29,16 +29,11 @@ public class CollectionController {
     @Qualifier("userDao")
     private UserDao userDao;
 
+
     @RequestMapping(value = "/getcollection" , method = RequestMethod.GET)
     public String getCollection(HttpSession session){
         UserEntity user = (UserEntity)session.getAttribute("loginUser");
-        List<ResourcesEntity> resources = new ArrayList<ResourcesEntity>();
-        String[]  collections = new String[5];
-        collections = user.getArrCollectionId().split(",");
-        for(String collection:collections){
-            System.out.println(collection+"2543523526526");
-            resources.add(resourcesDao.getById(Integer.parseInt(collection)));
-        }
+
         session.setAttribute("collection",resources);
         return "user/user-collection";
     }
