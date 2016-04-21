@@ -48,10 +48,14 @@ public class CollectionController {
         List<CollectionEntity> collecitons = new ArrayList<CollectionEntity>();
         UserEntity user = (UserEntity)session.getAttribute("loginUser");
         collecitons = collectionDao.getCollectionByUid(user.getId());
-        for(CollectionEntity collection:collecitons){
-            resources.add(resourcesDao.getById(collection.getResourceid()));
+        if(!collecitons.isEmpty()){
+            for(CollectionEntity collection:collecitons){
+                resources.add(resourcesDao.getById(collection.getResourceid()));
+            }
+            session.setAttribute("collection",resources);
+        }else{
+            session.setAttribute("nocollection","抱歉，当前您没有收藏信息");
         }
-        session.setAttribute("collection",resources);
         return "user/user-collection";
     }
 
@@ -61,10 +65,14 @@ public class CollectionController {
         List<ResourcesEntity> resources = new ArrayList<ResourcesEntity>();
         List<LogEntity> logs = new ArrayList<LogEntity>();
         logs = logDao.getLogByUid(user.getId());
-        for(LogEntity l:logs){
-            resources.add(resourcesDao.getById(l.getResourceid()));
+        if(!logs.isEmpty()){
+            for(LogEntity l:logs){
+                resources.add(resourcesDao.getById(l.getResourceid()));
+            }
+            session.setAttribute("logs",resources);
+        }else{
+            session.setAttribute("nolog","抱歉，当前您没有浏览信息");
         }
-        session.setAttribute("logs",resources);
         return "user/user-do";
     }
 
