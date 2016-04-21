@@ -1,5 +1,4 @@
 package com.ilearn.controller;
-
 import com.ilearn.bean.CategoryEntity;
 import com.ilearn.bean.ResourcesEntity;
 import com.ilearn.dao.CategoryDao;
@@ -10,12 +9,10 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
-
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.util.List;
-
 /**
  * Created by tsj on 16-4-8.
  * 获取资源用的controller
@@ -26,38 +23,30 @@ public class ResourcesController {
     private static final String ORDERBYCOLLECTION = "collection";
     private static final String ORDERBYREMARK = "remark";
     private static final int PAGESIZE = 20;
-
     @Autowired
     @Qualifier("resourcesDao")
     private ResourcesDao resourcesDao;
-
     @Autowired
     @Qualifier("categoryDao")
     private CategoryDao categoryDao;
-
     @RequestMapping(value = "/course" , method = RequestMethod.GET)
     public String list(Model model){
-
         model.addAttribute("resources",resourcesDao.queryByPage(1,20).getList());
         model.addAttribute("allOfCate2",categoryDao.getAllOfCategory2());
         model.addAttribute("allOfCate3",categoryDao.getAllOfCategory3());
         model.addAttribute("nowCate1",null);
         return "course";
     }
-
-
     /**
      * 根据三级目录的id查找资源
      * @param id
      * @param pageNum
      * @return
      */
-    //@ResponseBody
+//@ResponseBody
     @RequestMapping(value = "/{id}/{pageNum}" , method = RequestMethod.GET)
-    public String  getPageResoucesOfLeaf(@PathVariable("id") int id ,
-                                         @PathVariable("pageNum") int pageNum,
-                                         HttpSession session,Model model){
-
+    public String getPageResoucesOfLeaf(@PathVariable("id") int id ,
+                                        @PathVariable("pageNum") int pageNum , Model model){
         CategoryEntity category = categoryDao.getById(id);
         if(category.getCategory1Id()==null){
             model.addAttribute("nowCate1", category);
@@ -70,47 +59,31 @@ public class ResourcesController {
             model.addAttribute("nowCate2", categoryDao.getById(category.getCategory2Id()));
             model.addAttribute("nowCate3", category);
         }
-
-
         model.addAttribute("resources", resourcesDao.getPageResourcesOfLeaf(id, pageNum).getList());
         return "course";
     }
-
-
-
-   // @ResponseBody
+    // @ResponseBody
     @RequestMapping(value = "/search" , method = RequestMethod.POST)
     public String search(String keyword , String page,
                          Model model,HttpSession session){
-
-
         int pageNum = page == null ? 1 : Integer.valueOf(page);
         session.setAttribute("keyword",keyword);
         model.addAttribute("page",resourcesDao.search(keyword,pageNum));
         model.addAttribute("currentPage", pageNum);
-
         return "search";
     }
-
     @RequestMapping(value = "/search" , method = RequestMethod.GET)
     public String search(String page,Model model,HttpSession session){
-
-
         int pageNum = page == null ? 1 : Integer.valueOf(page);
         String keyword = session.getAttribute("keyword").toString();
         model.addAttribute("page",resourcesDao.search(keyword,pageNum));
         model.addAttribute("currentPage", pageNum);
-
         return "search";
     }
-
-
-
-
-    //    根据前端给出的参数对资源进行排序
+    // 根据前端给出的参数对资源进行排序
     @RequestMapping(value = "/sort", method = RequestMethod.POST)
     public String sort(HttpServletRequest request, HttpServletResponse response,
-                                      @RequestParam String sort) {
+                       @RequestParam String sort) {
         List<ResourcesEntity> resourcesEntities = (List<ResourcesEntity>) request.getSession().getAttribute("list");
         for (int i = 0; i < resourcesEntities.size(); i++) {
             for (int j = i + 1; j < resourcesEntities.size(); j++) {
@@ -119,7 +92,6 @@ public class ResourcesController {
                         int temp = resourcesEntities.get(i).getCollection();
                         resourcesEntities.get(i).setCollection(resourcesEntities.get(j).getCollection());
                         resourcesEntities.get(j).setCollection(temp);
-
                     }
                 } else if (sort.equals(ORDERBYREMARK)) {
                     if (resourcesEntities.get(i).getRemark() < resourcesEntities.get(j).getRemark()) {
@@ -127,31 +99,24 @@ public class ResourcesController {
                         resourcesEntities.get(i).setRemark(resourcesEntities.get(j).getRemark());
                         resourcesEntities.get(j).setRemark(temp);
                     }
-
                 }
             }
-
         }
         request.getSession().setAttribute("list",resourcesEntities);
         return "";
-
     }
-
-//    分页显示，根据所需的页数提供数据
+    // 分页显示，根据所需的页数提供数据
     @RequestMapping(value = "/listbypage" , method = RequestMethod.POST)
     public String ListByPage(HttpServletRequest request,
-                           HttpServletResponse response,@RequestParam int page){
-        List<ResourcesEntity> list =  resourcesDao.queryByPage(page,PAGESIZE).getList();
+                             HttpServletResponse response,@RequestParam int page){
+        List<ResourcesEntity> list = resourcesDao.queryByPage(page,PAGESIZE).getList();
         request.getSession().setAttribute("list", list);
         for(ResourcesEntity re:list){
             System.out.println(re.getTitle());
         }
-
         return "";
-
     }
-
-//    根据给出的目录查询数据，可能是一二或者三级目录
+    // 根据给出的目录查询数据，可能是一二或者三级目录
     @RequestMapping(value = "/getresources" , method = RequestMethod.POST)
     public String getResourcesByCate(HttpServletRequest request, HttpServletResponse response,
                                      @RequestParam String category,@RequestParam int grade){
@@ -159,8 +124,4 @@ public class ResourcesController {
         request.getSession().setAttribute("list",list);
         return "";
     }
-
-
-
-
 }

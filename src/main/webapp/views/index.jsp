@@ -23,6 +23,7 @@
 <div class="main index">
     <div class="contain">
         <div class="container">
+
             <div class="row floor">
 
                 <div class="col-md-3 all-list">
@@ -106,9 +107,6 @@
                                 3
                             </div>
                         </div>
-
-
-
                     </div>
 
                     <!-- Controls -->
@@ -127,9 +125,6 @@
                 <%--</div>--%>
             </div>
 
-            <!----------------------------
-                           courses
-              ------------------------------->
 
             <div class="courses-all flex-row">
                 <div class="flex-10">
@@ -144,12 +139,12 @@
                                 </div>
                                 <div class="col-md-4">
                                     <ul class="list-inline head-list">
-                                        <li>前端</li>
-                                        <li>后端</li>
+                                        <li>前端开发</li>
+                                        <li>后台开发</li>
                                         <li>移动开发</li>
                                     </ul>
                                 </div>
-                                <div class="col-md-5 more"><a href="" class="pull-right">&gt;&gt;More</a></div>
+                                <div class="col-md-5 more"><a href="${rootPath}/resource/838/1" class="pull-right">&gt;&gt;More</a></div>
                                 <!--<div class="clearfix"></div>-->
                             </div>
 
@@ -165,11 +160,11 @@
                                             <div class="col-md-6">
                                                 <div class="info">
                                                     <div class="title">
-                                                            ${img_set.title}
+                                                        <a href="${img_set.url}">${img_set.title}</a>
                                                     </div>
                                                     <div class="addon">
-                                                        <div class="time"><i class="fa fa-clock-o"></i>48课时</div>
-                                                        <div class="people"><i class="fa fa-user"></i>143人在学</div>
+                                                            <%--<div class="time"><i class="fa fa-clock-o"></i>48课时</div>--%>
+                                                        <div class="people"><i class="fa fa-user"></i>&nbsp;&nbsp;${img_set.joinNumber}人在学</div>
                                                     </div>
                                                 </div>
                                             </div>
@@ -187,11 +182,11 @@
                                             <div class="col-md-6">
                                                 <div class="info">
                                                     <div class="title">
-                                                            ${img_set.title}
+                                                        <a href="${img_set.url}">${img_set.title}</a>
                                                     </div>
                                                     <div class="addon">
-                                                        <div class="time"><i class="fa fa-clock-o"></i>48课时</div>
-                                                        <div class="people"><i class="fa fa-user"></i>143人在学</div>
+                                                            <%--<div class="time"><i class="fa fa-clock-o"></i>48课时</div>--%>
+                                                        <div class="people"><i class="fa fa-user"></i>&nbsp;&nbsp;${img_set.joinNumber}人在学</div>
                                                     </div>
                                                 </div>
                                             </div>
@@ -202,6 +197,75 @@
                             </div>
                         </div>
                     </div>
+
+                    <div class="courses">
+                        <div class="container-fluid">
+
+                            <div class="row header">
+                                <div class="pull-left col-md-3">
+                                    <div class="title">语言留学</div>
+                                </div>
+                                <div class="col-md-4">
+                                    <ul class="list-inline head-list">
+                                        <li>英语</li>
+                                        <li>出国留学</li>
+                                        <li>国内考试</li>
+                                    </ul>
+                                </div>
+                                <div class="col-md-5 more"><a href="${rootPath}/resource/839/1" class="pull-right">&gt;&gt;More</a></div>
+                                <!--<div class="clearfix"></div>-->
+                            </div>
+
+                            <div class="row body">
+
+                                <div class="row">            <%--一列两个--%>
+                                    <c:forEach items="${recommend2}" var="img_set" begin="0" end="1">
+                                        <div class="col-md-6">
+                                            <div class="col-md-6">
+                                                <img src="${img_set.imgurl}" alt="" style="width: 100%"/>
+                                            </div>
+
+                                            <div class="col-md-6">
+                                                <div class="info">
+                                                    <div class="title">
+                                                           <a href="${img_set.url}">${img_set.title}</a>
+                                                    </div>
+                                                    <div class="addon">
+                                                        <%--<div class="time"><i class="fa fa-clock-o"></i>48课时</div>--%>
+                                                        <div class="people"><i class="fa fa-user"></i>&nbsp;&nbsp;${img_set.joinNumber}人在学</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </c:forEach>
+                                </div>
+
+                                <div class="row">            <%--一列两个--%>
+                                    <c:forEach items="${recommend2}" var="img_set" begin="2" end="3">
+                                        <div class="col-md-6">
+                                            <div class="col-md-6">
+                                                <img src="${img_set.imgurl}" alt="" style="width: 100%"/>
+                                            </div>
+
+                                            <div class="col-md-6">
+                                                <div class="info">
+                                                    <div class="title">
+                                                        <a href="${img_set.url}">${img_set.title}</a>
+                                                    </div>
+                                                    <div class="addon">
+                                                            <%--<div class="time"><i class="fa fa-clock-o"></i>48课时</div>--%>
+                                                        <div class="people"><i class="fa fa-user"></i>&nbsp;&nbsp;${img_set.joinNumber}人在学</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </c:forEach>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
 
                 </div>
 

@@ -6,7 +6,7 @@ pageEncoding="UTF-8"%>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>course</title>
+    <title>课程资源</title>
     <link rel="stylesheet" href="${assetsPath}/css/app.min.css"/>
     <!-- <link rel="stylesheet" href="css/course.css"/> -->
     <!--<script src="./js/jquery-1.7.2.min.js"></script>-->
@@ -25,8 +25,8 @@ pageEncoding="UTF-8"%>
         <div class="container">
             <div class="breadcrumb-main">
                     <ol class="breadcrumb">
-                        <li><a href="/">首页</a></li>
-                        <li><a href="">课程</a></li>
+                        <li><a href="${rootPath}/index">首页</a></li>
+                        <%--<li><a href="">课程</a></li>--%>
                         <!--<li class="active"><a href="">所有课程</a></li>-->
                     </ol>
             </div>
@@ -208,11 +208,11 @@ pageEncoding="UTF-8"%>
                                         <div class="add pull-left">学习人数</div>
                                         <div class="people pull-right">${course.joinNumber}</div>
                                     </c:if>
-                                    <c:if test="${course.collection!='0'}">
+                                    <c:if test="${course.collection!='0' && result.joinNumber=='0'}">
                                         <div class="add pull-left">收藏人数</div>
                                         <div class="people pull-right">${course.collection}</div>
                                     </c:if>
-                                    <c:if test="${course.satisfaction!='0'}">
+                                    <c:if test="${course.satisfaction!='0'  && result.joinNumber=='0' && result.collection=='0'}">
                                         <div class="add pull-left">满意度</div>
                                         <div class="people pull-right">${course.satisfaction}</div>
                                     </c:if>
@@ -231,20 +231,7 @@ pageEncoding="UTF-8"%>
 
 
                 </div>
-                <nav>
-                    <ul class="pagination pull-right">
-                        <li><a href="#">上一页</a></li>
-                        <li class="active"><a href="#">1</a></li>
-                        <li><a href="#">2</a></li>
-                        <li><a href="#">3</a></li>
-                        <li><a href="#">4</a></li>
-                        <li><a href="#">5</a></li>
-                        <li>
-                            <a href="#">下一页</a>
-                        </li>
-                    </ul>
-                    <div class="clearfix"></div>
-                </nav>
+                <jsp:include page="common/pagination.jsp" />
             </div>
 
         </div>

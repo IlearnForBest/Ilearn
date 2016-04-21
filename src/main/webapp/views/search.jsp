@@ -6,7 +6,7 @@ pageEncoding="UTF-8"%>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title></title>
+    <title>课程搜索</title>
     <link rel="stylesheet" href="${assetsPath}/css/app.min.css"/>
     <script src="//cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
     <script src="//cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
@@ -20,8 +20,8 @@ pageEncoding="UTF-8"%>
         <div class="container">
             <div class="breadcrumb-main">
                 <ol class="breadcrumb">
-                    <li><a href="/">首页</a></li>
-                    <li><a href="">课程</a></li>
+                    <li><a href="${rootPath}/index">首页</a></li>
+                    <li><a href="${rootPath}/resource/course">课程</a></li>
                 </ol>
             </div>
 
@@ -50,15 +50,15 @@ pageEncoding="UTF-8"%>
                                     </div>
                                     <div class="title"><a href="${result.url}">${result.title}</a></div>
                                         <%--<div class="price">${coursepage1.price}</div>--%>
-                                    <c:if test="${result.joinNumber!='0'}">
+                                    <c:if test="${result.joinNumber!='0' }">
                                         <div class="add pull-left">学习人数</div>
                                         <div class="people pull-right">${result.joinNumber}</div>
                                     </c:if>
-                                    <c:if test="${result.collection!='0'}">
+                                    <c:if test="${result.collection!='0' && result.joinNumber=='0'}">
                                         <div class="add pull-left">收藏人数</div>
                                         <div class="people pull-right">${result.collection}</div>
                                     </c:if>
-                                    <c:if test="${result.satisfaction!='0'}">
+                                    <c:if test="${result.satisfaction!='0' && result.joinNumber=='0' && result.collection=='0'}">
                                         <div class="add pull-left">满意度</div>
                                         <div class="people pull-right">${result.satisfaction}</div>
                                     </c:if>

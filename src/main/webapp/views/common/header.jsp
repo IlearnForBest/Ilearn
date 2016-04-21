@@ -9,7 +9,7 @@
 
     <div class="row">
       <div class="col-md-4 logo">
-        iLearn
+        <a href="${rootPath}/index" class="col-md-4 logo">iLearn</a>
       </div>
       <div class="col-md-4 search">
         <div class="input-group">
