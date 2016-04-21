@@ -178,6 +178,7 @@ pageEncoding="UTF-8"%>
                 </tr>
                 </thead>
                 <tbody>
+
                 <c:forEach items="${collection}" var="c" varStatus="status">
                 <tr>
                     <td>${status.index+1}</td>
@@ -189,6 +190,7 @@ pageEncoding="UTF-8"%>
                     </td>
                 </tr>
                 </c:forEach>
+
                 <%--<tr>--%>
                     <%--<td>2</td>--%>
                     <%--<td>2016-02-12</td>--%>
@@ -228,7 +230,7 @@ pageEncoding="UTF-8"%>
 
                 </tbody>
             </table>
-
+            ${nocollection}
         </div>
         <ul class="pagination pull-right">
             <li><a href="#">&laquo;</a></li>
